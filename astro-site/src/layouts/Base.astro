@@ -1,0 +1,51 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  og?: string;
+}
+
+const { title, description = 'Enerterra Chile — representante oficial de Ampd Energy. Sistemas de almacenamiento de energía en baterías (BESS) que reemplazan generadores diésel en faenas exigentes.', og } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title} · Enerterra Chile</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
+  <meta property="og:title" content={`${title} · Enerterra Chile`} />
+  <meta property="og:description" content={description} />
+  {og && <meta property="og:image" content={og} />}
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CL" />
+  <link rel="icon" type="image/png" href="/img/enerterra-logo.png" />
+</head>
+<body>
+  <Navbar />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+  <script>
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      (el as HTMLElement).style.transitionDelay = `${(i % 4) * 60}ms`;
+      io.observe(el);
+    });
+  </script>
+</body>
+</html>

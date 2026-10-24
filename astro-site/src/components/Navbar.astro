@@ -1,0 +1,496 @@
+---
+/* ── Navbar: dark sticky, 72px, blur backdrop ── */
+const productos = [
+  { slug: 'ampd-200', nombre: 'Ampd 200', desc: 'Hasta 292 kW — NextGen, refrigeración líquida', img: '/img/producto-ampd-200.png' },
+  { slug: 'ampd-400', nombre: 'Ampd 400', desc: 'Hasta 585 kW — NextGen, máxima potencia', img: '/img/producto-ampd-400.png' },
+  { slug: 'enertainer', nombre: 'Enertainer', desc: 'Hasta 525 kVA — el ESS original, +1.5M hrs', img: '/img/producto-enertainer-lista.png' },
+  { slug: 'ampd-silo', nombre: 'Ampd Silo', desc: 'Hasta 115 kW — compacto y escalable', img: '/img/producto-ampd-silo.png' },
+  { slug: 'software', nombre: 'Software', desc: 'Ampd Pulse — monitoreo 24/7, analítica', img: '/img/producto-ampd-pulse.jpg' },
+];
+
+const sectores = [
+  { slug: 'construccion', nombre: 'Construcción', icon: 'building' },
+  { slug: 'mineria', nombre: 'Minería', icon: 'pickaxe' },
+  { slug: 'infraestructura', nombre: 'Infraestructura', icon: 'road' },
+  { slug: 'hormigon', nombre: 'Hormigón', icon: 'truck' },
+  { slug: 'oil-gas', nombre: 'Oil & Gas', icon: 'flame' },
+  { slug: 'microtuneles', nombre: 'Microtúneles', icon: 'tunnel' },
+  { slug: 'eventos', nombre: 'Eventos', icon: 'calendar' },
+  { slug: 'puertos', nombre: 'Puertos', icon: 'anchor' },
+];
+---
+
+<header class="nav" id="main-nav">
+  <div class="nav__inner wrap">
+    <!-- Brand lockup -->
+    <a href="/" class="nav__brand" aria-label="Enerterra Chile — Inicio">
+      <img src="/img/enerterra-logo-white.png" alt="Enerterra" class="nav__logo-enerterra" width="130" height="26" />
+      <span class="nav__divider"></span>
+      <span class="nav__rep">REPRESENTANTE OFICIAL</span>
+      <img src="/img/ampd-logo-white.svg" alt="Ampd Energy" class="nav__logo-ampd" width="72" height="18" />
+    </a>
+
+    <!-- Desktop nav links -->
+    <nav class="nav__links" aria-label="Navegación principal">
+      <!-- Productos dropdown -->
+      <div class="nav__dropdown">
+        <button class="nav__link nav__link--trigger" aria-expanded="false" aria-haspopup="true">
+          Productos
+          <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="nav__mega nav__mega--productos">
+          <div class="nav__mega-grid">
+            {productos.map(p => (
+              <a href={`/productos/${p.slug}`} class="nav__mega-item">
+                <div class="nav__mega-thumb">
+                  <img src={p.img} alt={p.nombre} width="44" height="44" loading="lazy" />
+                </div>
+                <div>
+                  <span class="nav__mega-name">{p.nombre}</span>
+                  <span class="nav__mega-desc">{p.desc}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Sectores dropdown -->
+      <div class="nav__dropdown">
+        <button class="nav__link nav__link--trigger" aria-expanded="false" aria-haspopup="true">
+          Sectores
+          <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="nav__mega nav__mega--sectores">
+          <div class="nav__mega-grid nav__mega-grid--sectores">
+            {sectores.map(s => (
+              <a href={`/sectores/${s.slug}`} class="nav__mega-item">
+                <div class="nav__mega-icon">
+                  {s.icon === 'building' && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg>}
+                  {s.icon === 'pickaxe' && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.531 12.469 6.619 20.38a1 1 0 1 1-3-3l7.912-7.912"/><path d="M15.686 4.314A12.5 12.5 0 0 0 5.461 2.958l-.025.025a2 2 0 0 0-.025 2.803L9.05 9.425a1 1 0 0 0 1.414 0l5.222-5.111z"/></svg>}
+                  {s.icon === 'road' && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19L8 5"/><path d="M16 5l4 14"/><path d="M12 6v2"/><path d="M12 12v2"/><path d="M12 18v2"/></svg>}
+                  {s.icon === 'truck' && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18h2a1 1 0 0 0 1-1v-3.28a1 1 0 0 0-.684-.948l-1.923-.641a1 1 0 0 1-.684-.949V8a2 2 0 0 1 2-2h1.382a1 1 0 0 1 .894.553l1.448 2.894A1 1 0 0 0 21.382 10H22a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-1"/><circle cx="7" cy="18" r="2"/><circle cx="19" cy="18" r="2"/></svg>}
+                  {s.icon === 'flame' && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>}
+                  {s.icon === 'tunnel' && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16"/><path d="M4 21V10a8 8 0 0 1 16 0v11"/><path d="M8 21V12a4 4 0 0 1 8 0v9"/></svg>}
+                  {s.icon === 'calendar' && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>}
+                  {s.icon === 'anchor' && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><line x1="12" x2="12" y1="22" y2="8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>}
+                </div>
+                <div>
+                  <span class="nav__mega-name">{s.nombre}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <a href="/nosotros" class="nav__link">Nosotros</a>
+      <a href="/contacto" class="nav__link">Contacto</a>
+    </nav>
+
+    <!-- CTA -->
+    <a href="/contacto" class="nav__cta btn btn-primary">Cotiza tu proyecto</a>
+
+    <!-- Hamburger -->
+    <button class="nav__burger" id="nav-burger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile overlay -->
+<div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+  <div class="nav-mobile__inner">
+    <div class="nav-mobile__section">
+      <p class="nav-mobile__label">Productos</p>
+      {productos.map(p => (
+        <a href={`/productos/${p.slug}`} class="nav-mobile__link">{p.nombre}</a>
+      ))}
+    </div>
+    <div class="nav-mobile__section">
+      <p class="nav-mobile__label">Sectores</p>
+      {sectores.map(s => (
+        <a href={`/sectores/${s.slug}`} class="nav-mobile__link">{s.nombre}</a>
+      ))}
+    </div>
+    <div class="nav-mobile__section">
+      <a href="/nosotros" class="nav-mobile__link nav-mobile__link--top">Nosotros</a>
+      <a href="/contacto" class="nav-mobile__link nav-mobile__link--top">Contacto</a>
+    </div>
+    <a href="/contacto" class="nav-mobile__cta btn btn-primary">Cotiza tu proyecto</a>
+  </div>
+</div>
+
+<script>
+  // Mobile menu toggle
+  const burger = document.getElementById('nav-burger');
+  const mobile = document.getElementById('nav-mobile');
+  const nav = document.getElementById('main-nav');
+
+  burger?.addEventListener('click', () => {
+    const open = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!open));
+    burger.classList.toggle('is-open');
+    mobile?.classList.toggle('is-open');
+    document.body.style.overflow = open ? '' : 'hidden';
+  });
+
+  // Close mobile on link click
+  mobile?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      burger?.setAttribute('aria-expanded', 'false');
+      burger?.classList.remove('is-open');
+      mobile.classList.remove('is-open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Desktop dropdown: toggle aria-expanded on hover
+  document.querySelectorAll('.nav__dropdown').forEach(dd => {
+    const trigger = dd.querySelector('.nav__link--trigger') as HTMLButtonElement | null;
+    dd.addEventListener('mouseenter', () => trigger?.setAttribute('aria-expanded', 'true'));
+    dd.addEventListener('mouseleave', () => trigger?.setAttribute('aria-expanded', 'false'));
+  });
+
+  // Scroll: add bg
+  let ticking = false;
+  const onScroll = () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        nav?.classList.toggle('is-scrolled', window.scrollY > 8);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
+
+<style>
+  /* ── Navbar shell ── */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: var(--nav-height);
+    background: rgba(11, 13, 16, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid transparent;
+    transition: background var(--dur-base) var(--ease-out),
+                border-color var(--dur-base) var(--ease-out);
+  }
+  .nav.is-scrolled {
+    background: rgba(11, 13, 16, 0.95);
+    border-bottom-color: var(--line-d, rgba(255,255,255,.14));
+  }
+
+  .nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    gap: 24px;
+  }
+
+  /* ── Brand lockup ── */
+  .nav__brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    text-decoration: none;
+    color: var(--blanco-0);
+  }
+  .nav__brand:hover { color: var(--blanco-0); }
+  .nav__logo-enerterra { height: 26px; width: auto; }
+  .nav__logo-ampd { height: 18px; width: auto; }
+  .nav__divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(255,255,255,.24);
+    flex-shrink: 0;
+  }
+  .nav__rep {
+    font-size: 10px;
+    font-weight: var(--weight-semibold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--acero-300);
+    white-space: nowrap;
+  }
+
+  /* ── Nav links (desktop) ── */
+  .nav__links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .nav__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: var(--weight-medium);
+    color: rgba(255,255,255,.8);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: color var(--dur-fast) var(--ease-out),
+                background var(--dur-fast) var(--ease-out);
+    white-space: nowrap;
+  }
+  .nav__link:hover {
+    color: #fff;
+    background: rgba(255,255,255,.08);
+  }
+  .nav__chevron {
+    transition: transform var(--dur-base) var(--ease-out);
+  }
+
+  /* ── CTA button ── */
+  .nav__cta {
+    height: 40px;
+    padding: 0 18px;
+    font-size: 14px;
+    flex-shrink: 0;
+    border-radius: var(--radius-md);
+  }
+
+  /* ── Dropdown wrapper ── */
+  .nav__dropdown {
+    position: relative;
+  }
+  .nav__mega {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--blanco-0);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-3);
+    border: 1px solid var(--line-1);
+    padding: 16px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity var(--dur-base) var(--ease-out),
+                visibility var(--dur-base) var(--ease-out),
+                transform var(--dur-base) var(--ease-out);
+    transform: translateX(-50%) translateY(4px);
+  }
+  .nav__dropdown:hover .nav__mega,
+  .nav__link--trigger[aria-expanded="true"] + .nav__mega {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+  .nav__dropdown:hover .nav__chevron {
+    transform: rotate(180deg);
+  }
+
+  /* ── Mega grid: Productos ── */
+  .nav__mega--productos {
+    width: 520px;
+  }
+  .nav__mega-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+  }
+
+  /* ── Mega grid: Sectores ── */
+  .nav__mega--sectores {
+    width: 440px;
+  }
+  .nav__mega-grid--sectores {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* ── Mega item ── */
+  .nav__mega-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: background var(--dur-fast) var(--ease-out);
+  }
+  .nav__mega-item:hover {
+    background: var(--blanco-1);
+    color: var(--text-primary);
+  }
+  .nav__mega-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    background: var(--blanco-1);
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav__mega-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .nav__mega-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    background: var(--blanco-1);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--acero-600);
+  }
+  .nav__mega-name {
+    display: block;
+    font-size: 14px;
+    font-weight: var(--weight-semibold);
+    line-height: 1.2;
+  }
+  .nav__mega-desc {
+    display: block;
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.35;
+    margin-top: 2px;
+  }
+
+  /* ── Hamburger ── */
+  .nav__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+  }
+  .nav__burger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    border-radius: 1px;
+    transition: transform var(--dur-base) var(--ease-out),
+                opacity var(--dur-fast) var(--ease-out);
+  }
+  .nav__burger.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav__burger.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav__burger.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* ── Mobile overlay ── */
+  .nav-mobile {
+    display: none;
+    position: fixed;
+    inset: 0;
+    top: var(--nav-height);
+    z-index: 999;
+    background: var(--carbon-0);
+    overflow-y: auto;
+    padding: 24px 0 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--dur-base) var(--ease-out),
+                visibility var(--dur-base) var(--ease-out);
+  }
+  .nav-mobile.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav-mobile__inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding-inline: var(--container-pad);
+  }
+  .nav-mobile__section {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+  }
+  .nav-mobile__label {
+    font-size: 11px;
+    font-weight: var(--weight-semibold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--acero-300);
+    margin-bottom: 12px;
+  }
+  .nav-mobile__link {
+    display: block;
+    font-size: 16px;
+    font-weight: var(--weight-medium);
+    color: rgba(255,255,255,.85);
+    text-decoration: none;
+    padding: 10px 0;
+    transition: color var(--dur-fast) var(--ease-out);
+  }
+  .nav-mobile__link:hover {
+    color: #fff;
+  }
+  .nav-mobile__link--top {
+    font-size: 18px;
+    font-weight: var(--weight-semibold);
+    color: #fff;
+  }
+  .nav-mobile__cta {
+    width: 100%;
+    margin-top: 24px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 999px) {
+    .nav__links,
+    .nav__cta {
+      display: none;
+    }
+    .nav__burger {
+      display: flex;
+    }
+    .nav-mobile {
+      display: block;
+    }
+  }
+
+  /* Small brand lockup on narrow screens */
+  @media (max-width: 640px) {
+    .nav__rep { display: none; }
+    .nav__brand { gap: 8px; }
+    .nav__logo-enerterra { height: 22px; }
+    .nav__logo-ampd { height: 15px; }
+  }
+</style>

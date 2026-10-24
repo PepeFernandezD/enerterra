@@ -1,0 +1,1049 @@
+---
+import Base from '../layouts/Base.astro';
+import { PRODUCTO_CARDS } from '../data/productos';
+---
+
+<Base title="Energía limpia para tu faena">
+
+<!-- ═══════════════════════════════════════════════════════════
+     1. HERO
+     ═══════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero__bg">
+    <img src="/img/hero-enertainer-faena.jpg" alt="" loading="eager" />
+  </div>
+  <div class="wrap hero__inner">
+    <div class="hero__badge reveal">
+      Representante oficial de
+      <img src="/img/ampd-logo-white.svg" alt="Ampd Energy" class="hero__ampd-logo" />
+      en Chile
+    </div>
+    <h1 class="h-xl reveal">Energía limpia y confiable para tu faena</h1>
+    <p class="lead reveal">Reemplaza el generador diésel con sistemas de almacenamiento de energía en baterías. Más silencioso, sin emisiones, hasta 80&nbsp;% menos costo operativo.</p>
+    <div class="ctas reveal">
+      <a href="#cotizar" class="btn btn-primary">
+        Cotiza tu proyecto
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#productos" class="btn btn-outline">Ver productos</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     2. STATEMENT
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section" id="statement">
+  <div class="wrap statement">
+    <h2 class="h-lg reveal" style="max-width:26ch">Sistemas de baterías de clase mundial que reemplazan generadores diésel en faenas exigentes.</h2>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     3. PILARES / WHY AMPD
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section section-dark" id="ventajas">
+  <div class="wrap">
+    <p class="eyebrow reveal" style="color:var(--green)">Por qué Ampd</p>
+    <h2 class="h-md reveal" style="margin-top:16px">Ventajas que se notan desde el primer día</h2>
+
+    <div class="pilares-grid">
+
+      <!-- Card 1 -->
+      <div class="pilar-card reveal">
+        <div class="pilar-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Sin interrupciones</h3>
+        <p>Maximiza la eficiencia operativa reduciendo o eliminando el repostaje, al tiempo que disminuye la mantención.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="pilar-card reveal">
+        <div class="pilar-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10v3M6 6v11M10 3v18M14 8v8M18 5v14M22 10v3"/></svg>
+        </div>
+        <h3>30&times; más silencioso</h3>
+        <p>Casi treinta y dos veces más silencioso que un generador diésel. Permite trabajar en horarios sensibles.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="pilar-card reveal">
+        <div class="pilar-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22 12 2l10 20H2z"/><path d="M12 9v4M12 17h.01"/></svg>
+        </div>
+        <h3>Hasta &minus;90&nbsp;% CO&#8322;</h3>
+        <p>Reduce las emisiones de carbono de tu faena hasta en un 90&nbsp;% y crea un entorno de trabajo más saludable.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="pilar-card reveal">
+        <div class="pilar-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Hasta &minus;80&nbsp;% OPEX</h3>
+        <p>Reduce significativamente los costos de combustible y mantención con una solución portátil y sostenible.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     4. CIFRAS / STATS
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section section-dark cifras" id="cifras">
+  <div class="wrap">
+    <div class="cifras-row reveal">
+      <div class="cifra">
+        <span class="cifra__num spec">400+</span>
+        <span class="cifra__label">ESS desplegados</span>
+      </div>
+      <div class="cifra">
+        <span class="cifra__num spec">161.000</span>
+        <span class="cifra__label">toneladas de CO&#8322; evitadas</span>
+      </div>
+      <div class="cifra">
+        <span class="cifra__num spec">400+</span>
+        <span class="cifra__label">proyectos energizados</span>
+      </div>
+      <div class="cifra">
+        <span class="cifra__num spec">8</span>
+        <span class="cifra__label">regiones con presencia</span>
+      </div>
+    </div>
+    <div class="ctas reveal" style="justify-content:center;margin-top:48px">
+      <a href="#cotizar" class="btn btn-outline">
+        Habla con Enerterra
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     5. COSTO REAL
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section section-soft" id="costo-real">
+  <div class="wrap">
+    <div class="costo-layout">
+      <div class="costo-text">
+        <p class="eyebrow reveal" style="color:var(--green-text)">Costo real</p>
+        <h2 class="h-lg reveal" style="margin-top:16px">El diésel es más caro de lo que crees.</h2>
+        <p class="lead reveal" style="margin-top:20px;color:var(--gris-500)">Cuando sumas combustible, mantención, transporte, mermas y horas de personal, un generador diésel cuesta hasta 3&times; más de lo presupuestado.</p>
+      </div>
+      <div class="costo-table-wrap reveal">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th class="compare-table__bess">BESS Ampd</th>
+              <th class="compare-table__diesel">Generador diésel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Combustible</td>
+              <td class="compare-table__bess-val">Ninguno</td>
+              <td class="compare-table__diesel-val">50&ndash;120 L/h</td>
+            </tr>
+            <tr>
+              <td>Emisiones CO&#8322;</td>
+              <td class="compare-table__bess-val">Cero locales</td>
+              <td class="compare-table__diesel-val">130&ndash;300 kg/h</td>
+            </tr>
+            <tr>
+              <td>Ruido</td>
+              <td class="compare-table__bess-val">&lt;&nbsp;65 dB</td>
+              <td class="compare-table__diesel-val">85&ndash;100+ dB</td>
+            </tr>
+            <tr>
+              <td>Mantención</td>
+              <td class="compare-table__bess-val">1&ndash;2/año</td>
+              <td class="compare-table__diesel-val">Semanal</td>
+            </tr>
+            <tr>
+              <td>Disponibilidad</td>
+              <td class="compare-table__bess-val">&gt;99&nbsp;%</td>
+              <td class="compare-table__diesel-val">~90&nbsp;%</td>
+            </tr>
+            <tr>
+              <td>Vida útil</td>
+              <td class="compare-table__bess-val">10 años</td>
+              <td class="compare-table__diesel-val">3&ndash;5 años</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     6. SECTORES
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section section-dark" id="sectores">
+  <div class="wrap">
+    <h2 class="h-md reveal">Sectores que ya confían en Ampd</h2>
+    <div class="sectores-grid">
+
+      <a href="#" class="sector-card reveal">
+        <img src="/img/sector-mineria.jpg" alt="Minería" loading="lazy" />
+        <div class="sector-card__scrim"></div>
+        <div class="sector-card__arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="sector-card__body">
+          <h3>Minería</h3>
+          <p>Energía sin emisiones para operaciones subterráneas y a cielo abierto.</p>
+        </div>
+      </a>
+
+      <a href="#" class="sector-card reveal">
+        <img src="/img/sector-construccion.jpg" alt="Construcción" loading="lazy" />
+        <div class="sector-card__scrim"></div>
+        <div class="sector-card__arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="sector-card__body">
+          <h3>Construcción</h3>
+          <p>Equipos de obra silenciosos y sin diésel, ideales para zonas urbanas.</p>
+        </div>
+      </a>
+
+      <a href="#" class="sector-card reveal">
+        <img src="/img/sector-puertos.jpg" alt="Puertos" loading="lazy" />
+        <div class="sector-card__scrim"></div>
+        <div class="sector-card__arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="sector-card__body">
+          <h3>Puertos</h3>
+          <p>Alimenta grúas y operaciones portuarias sin contaminar la zona costera.</p>
+        </div>
+      </a>
+
+      <a href="#" class="sector-card reveal">
+        <img src="/img/sector-industria.jpg" alt="Industria" loading="lazy" />
+        <div class="sector-card__scrim"></div>
+        <div class="sector-card__arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="sector-card__body">
+          <h3>Industria</h3>
+          <p>Soluciones de respaldo y peak-shaving para plantas industriales.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     7. PRODUCTOS
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section" id="productos">
+  <div class="wrap">
+    <div class="productos-header">
+      <div>
+        <p class="eyebrow reveal" style="color:var(--green-text)">Nuestros productos</p>
+        <h2 class="h-md reveal" style="margin-top:16px">Un sistema de almacenamiento para cada faena.</h2>
+      </div>
+      <a href="/productos" class="btn btn-outline reveal" style="align-self:end">
+        Ver fichas de producto
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="productos-list">
+      {PRODUCTO_CARDS.map((p) => (
+        <a href={`/productos/${p.slug}`} class="producto-row reveal">
+          <div class="producto-row__img">
+            <img src={p.img} alt={p.nombre} loading="lazy" />
+          </div>
+          <div class="producto-row__info">
+            <div class="producto-row__name">
+              <h3>{p.nombre}</h3>
+              {p.tag && <span class="producto-row__tag">{p.tag}</span>}
+            </div>
+            <p class="producto-row__desc">
+              {p.slug === 'ampd-200' && 'Sistema NextGen de formato intermedio. Refrigeración líquida, IP55, controlador solar integrado opcional.'}
+              {p.slug === 'ampd-400' && 'Buque insignia de la gama NextGen. Máxima potencia, refrigeración líquida, IP55 y paralelo con generadores.'}
+              {p.slug === 'enertainer' && 'El sistema original, en operación desde 2019. Más de 1.500.000 horas sin incidentes en industria pesada.'}
+              {p.slug === 'ampd-silo' && 'Compacto, transportable y escalable. Conecta varias unidades en paralelo para mayor potencia y capacidad.'}
+              {p.slug === 'software' && 'Estándar en todas las unidades. Monitoreo remoto, analítica, reporte de emisiones y programación cloud.'}
+            </p>
+          </div>
+          <div class="producto-row__spec">
+            <span class="spec producto-row__spec-num">{p.spec}</span>
+            <span class="producto-row__spec-cont">{p.specCont}</span>
+          </div>
+          <div class="producto-row__arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     8. DETALLE ENERTAINER
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section" id="enertainer">
+  <div class="wrap detalle-layout">
+    <div class="detalle-img reveal">
+      <img src="/img/producto-enertainer.jpg" alt="Enertainer en faena" loading="lazy" />
+    </div>
+    <div class="detalle-body">
+      <p class="eyebrow reveal" style="color:var(--green-text)">Producto destacado</p>
+      <h2 class="h-lg reveal" style="margin-top:16px">Enertainer: más de 1.500.000 horas sin incidentes</h2>
+      <p class="lead reveal" style="margin-top:20px;color:var(--gris-500)">Nuestro sistema avanzado de almacenamiento de energía de generación original, que sigue entregando energía limpia y confiable a las industrias pesadas del mundo desde 2019. Disponible en múltiples configuraciones, está diseñado sin concesiones para entornos duros, dinámicos y con poco espacio.</p>
+      <div class="ctas reveal" style="margin-top:32px">
+        <a href="/productos/enertainer" class="btn btn-outline">
+          Ver ficha completa
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     9. PILOTO 60 DIAS
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section section-soft" id="piloto">
+  <div class="wrap piloto">
+    <p class="eyebrow reveal" style="color:var(--green-text)">Piloto 60 días</p>
+    <h2 class="h-lg reveal" style="margin-top:16px;max-width:22ch">Prueba un Ampd en tu faena. Sin compromiso.</h2>
+    <p class="lead reveal" style="margin-top:20px;color:var(--gris-500)">Te instalamos una unidad por 60 días. Medimos tu consumo real, calculamos el ahorro y te devolvemos una propuesta a la medida.</p>
+    <div class="ctas reveal" style="margin-top:36px">
+      <a href="#cotizar" class="btn btn-primary">
+        Cotiza tu proyecto
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#cotizar" class="btn btn-outline">Habla con un ingeniero</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     10. SUSTENTABILIDAD
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sustentabilidad" id="sustentabilidad">
+  <div class="sustentabilidad__bg">
+    <img src="/img/sustentabilidad-faena.jpg" alt="" loading="lazy" />
+  </div>
+  <div class="sustentabilidad__scrim"></div>
+  <div class="wrap sustentabilidad__inner">
+    <p class="eyebrow reveal" style="color:var(--green-text)">Sustentabilidad</p>
+    <h2 class="h-lg reveal" style="margin-top:16px;max-width:24ch">Energía sin emisiones para la industria del futuro</h2>
+    <p class="lead reveal" style="margin-top:20px;color:var(--gris-500);max-width:52ch">Chile avanza hacia una economía baja en carbono. Con la regulación cada vez más estricta y los compromisos de descarbonización, reemplazar el diésel en faenas no es solo una decisión ecológica: es un imperativo de negocio.</p>
+    <div class="ctas reveal" style="margin-top:36px">
+      <a href="#cotizar" class="btn btn-outline">
+        Conoce el impacto
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     11. CTA FINAL
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section section-dark" id="cta-final">
+  <div class="wrap cta-final">
+    <h2 class="h-lg reveal" style="max-width:24ch">¿Listo para energizar tu próximo proyecto?</h2>
+    <p class="lead reveal" style="margin-top:20px;color:var(--acero-300)">Tu especialista local puede entregarte un desglose completo de costos, ahorro de combustible y CO&#8322; evitado para tu faena.</p>
+    <div class="ctas reveal" style="margin-top:36px">
+      <a href="#cotizar" class="btn btn-primary">
+        Cotiza tu proyecto
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#cotizar" class="btn btn-outline">Habla con un ingeniero</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     12. FORM / COTIZAR
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section" id="cotizar">
+  <div class="wrap">
+    <div class="form-layout">
+      <div class="form-side">
+        <p class="eyebrow reveal" style="color:var(--green-text)">Cotiza tu proyecto</p>
+        <h2 class="h-md reveal" style="margin-top:16px">Cuéntanos de tu faena</h2>
+        <form action="#" method="POST" class="form reveal">
+          <div class="form__field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required autocomplete="name" />
+          </div>
+          <div class="form__field">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" required autocomplete="organization" />
+          </div>
+          <div class="form__field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" />
+          </div>
+          <div class="form__field">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" autocomplete="tel" />
+          </div>
+          <div class="form__field form__field--full">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Enviar
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+      </div>
+      <div class="contact-info reveal">
+        <h3>Contacto directo</h3>
+        <dl class="contact-info__list">
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:contacto@enerterra.cl">contacto@enerterra.cl</a></dd>
+          </div>
+          <div>
+            <dt>Teléfono</dt>
+            <dd><a href="tel:+56912345678">+56 9 1234 5678</a></dd>
+          </div>
+          <div>
+            <dt>Oficina</dt>
+            <dd>Santiago, Chile</dd>
+          </div>
+        </dl>
+        <div class="contact-info__badge">
+          <img src="/img/ampd-logo.png" alt="Ampd Energy" />
+          <span>Representante oficial en Chile</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Base>
+
+<style>
+/* ─────────────────────────────────────────────────────────────
+   1. HERO
+   ───────────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--carbon);
+  color: var(--white);
+}
+.hero__bg {
+  position: absolute;
+  inset: 0;
+}
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 13, 16, .55) 0%,
+    rgba(11, 13, 16, .70) 60%,
+    rgba(11, 13, 16, .85) 100%
+  );
+}
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  padding-block: 160px 100px;
+  display: grid;
+  gap: 24px;
+  max-width: var(--container-max);
+}
+.hero__inner h1 { max-width: 14ch; }
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  width: fit-content;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, .06);
+}
+.hero__ampd-logo {
+  height: 18px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   2. STATEMENT
+   ───────────────────────────────────────────────────────────── */
+.statement { text-align: center; }
+.statement h2 { margin-inline: auto; }
+
+/* ─────────────────────────────────────────────────────────────
+   3. PILARES
+   ───────────────────────────────────────────────────────────── */
+.pilares-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--grid-gap);
+  margin-top: 48px;
+}
+.pilar-card {
+  background: #161A1F;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+.pilar-card__icon {
+  width: 44px;
+  height: 44px;
+}
+.pilar-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+.pilar-card h3 {
+  font-size: var(--text-h3);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-heading);
+}
+.pilar-card p {
+  color: var(--acero-300);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   4. CIFRAS
+   ───────────────────────────────────────────────────────────── */
+.cifras-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+}
+.cifra {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-block: 20px;
+}
+.cifra + .cifra {
+  border-left: 1px solid var(--line-d);
+}
+.cifra__num {
+  color: var(--green);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+}
+.cifra__label {
+  color: var(--acero-300);
+  font-size: var(--text-body-sm);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   5. COSTO REAL
+   ───────────────────────────────────────────────────────────── */
+.costo-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-body);
+}
+.compare-table th {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: var(--text-overline);
+  letter-spacing: var(--tracking-overline);
+  text-transform: uppercase;
+  font-weight: var(--weight-semibold);
+  border-bottom: 2px solid var(--line-2);
+}
+.compare-table__bess { color: var(--compare-bess); }
+.compare-table__diesel { color: var(--compare-diesel); }
+.compare-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line-1);
+}
+.compare-table td:first-child {
+  font-weight: var(--weight-medium);
+  color: var(--gris-500);
+}
+.compare-table__bess-val {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--compare-bess);
+  font-weight: var(--weight-medium);
+}
+.compare-table__diesel-val {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--compare-diesel);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   6. SECTORES
+   ───────────────────────────────────────────────────────────── */
+.sectores-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--grid-gap);
+  margin-top: 48px;
+}
+.sector-card {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: block;
+  color: var(--white);
+  text-decoration: none;
+}
+.sector-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+.sector-card:hover img {
+  transform: scale(1.04);
+}
+.sector-card__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 13, 16, 0) 40%,
+    rgba(11, 13, 16, .75) 100%
+  );
+  pointer-events: none;
+}
+.sector-card__arrow {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, .12);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s var(--ease);
+}
+.sector-card:hover .sector-card__arrow {
+  background: var(--green);
+}
+.sector-card__arrow svg {
+  width: 18px;
+  height: 18px;
+  color: var(--white);
+}
+.sector-card:hover .sector-card__arrow svg {
+  color: var(--carbon);
+}
+.sector-card__body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+}
+.sector-card__body h3 {
+  font-size: var(--text-h3);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-heading);
+}
+.sector-card__body p {
+  margin-top: 4px;
+  font-size: var(--text-body-sm);
+  color: rgba(255, 255, 255, .75);
+  line-height: var(--leading-body);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   7. PRODUCTOS
+   ───────────────────────────────────────────────────────────── */
+.productos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+.productos-list {
+  border-top: 1px solid var(--line-1);
+}
+.producto-row {
+  display: grid;
+  grid-template-columns: 120px 1fr auto 40px;
+  gap: 24px;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line-1);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s var(--ease);
+}
+.producto-row:hover {
+  background: var(--blanco-1);
+}
+.producto-row__img {
+  width: 120px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  background: var(--blanco-1);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.producto-row__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+.producto-row__info {
+  display: grid;
+  gap: 6px;
+}
+.producto-row__name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.producto-row__name h3 {
+  font-size: var(--text-h3);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-heading);
+}
+.producto-row__tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--green-alpha-12);
+  color: var(--green-text);
+}
+.producto-row__desc {
+  color: var(--gris-400);
+  font-size: var(--text-body-sm);
+  line-height: var(--leading-body);
+  max-width: 52ch;
+}
+.producto-row__spec {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.producto-row__spec-num {
+  font-size: var(--text-spec);
+  white-space: nowrap;
+}
+.producto-row__spec-cont {
+  font-size: var(--text-body-sm);
+  color: var(--gris-400);
+  white-space: nowrap;
+}
+.producto-row__arrow {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  color: var(--gris-300);
+  transition: color 0.2s var(--ease);
+}
+.producto-row:hover .producto-row__arrow {
+  color: var(--green);
+}
+.producto-row__arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   8. DETALLE ENERTAINER
+   ───────────────────────────────────────────────────────────── */
+.detalle-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.detalle-img img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   9. PILOTO
+   ───────────────────────────────────────────────────────────── */
+.piloto {
+  text-align: center;
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   10. SUSTENTABILIDAD
+   ───────────────────────────────────────────────────────────── */
+.sustentabilidad {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: end;
+  overflow: hidden;
+}
+.sustentabilidad__bg {
+  position: absolute;
+  inset: 0;
+}
+.sustentabilidad__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sustentabilidad__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, .92) 65%,
+    rgba(255, 255, 255, .98) 100%
+  );
+  pointer-events: none;
+}
+.sustentabilidad__inner {
+  position: relative;
+  z-index: 1;
+  padding-block: 200px var(--section-y);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   11. CTA FINAL
+   ───────────────────────────────────────────────────────────── */
+.cta-final {
+  text-align: center;
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   12. FORM / COTIZAR
+   ───────────────────────────────────────────────────────────── */
+.form-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 64px;
+  align-items: start;
+}
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 32px;
+}
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.form__field--full {
+  grid-column: 1 / -1;
+}
+.form__field label {
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-medium);
+  color: var(--gris-500);
+}
+.form__field input,
+.form__field textarea {
+  padding: 12px 16px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: var(--text-body);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  transition: border-color var(--dur-fast) var(--ease);
+  outline: none;
+}
+.form__field input:focus,
+.form__field textarea:focus {
+  border-color: var(--green);
+  box-shadow: var(--shadow-green);
+}
+.form__field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.form .btn {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-top: 8px;
+}
+
+.contact-info {
+  padding: 32px;
+  background: var(--blanco-1);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line-1);
+}
+.contact-info h3 {
+  font-size: var(--text-h3);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-heading);
+  margin-bottom: 24px;
+}
+.contact-info__list {
+  margin: 0;
+  display: grid;
+  gap: 20px;
+}
+.contact-info__list dt {
+  font-size: var(--text-body-sm);
+  color: var(--gris-400);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-overline);
+  margin-bottom: 4px;
+}
+.contact-info__list dd {
+  margin: 0;
+  font-size: var(--text-body);
+}
+.contact-info__list dd a {
+  color: var(--text-primary);
+}
+.contact-info__list dd a:hover {
+  color: var(--green-text);
+}
+.contact-info__badge {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--text-body-sm);
+  color: var(--gris-400);
+}
+.contact-info__badge img {
+  height: 28px;
+  width: auto;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   RESPONSIVE
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 1000px) {
+  .costo-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .detalle-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .form-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .productos-header {
+    flex-direction: column;
+    align-items: start;
+  }
+  .productos-header .btn {
+    align-self: start !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .pilares-grid {
+    grid-template-columns: 1fr;
+  }
+  .sectores-grid {
+    grid-template-columns: 1fr;
+  }
+  .cifras-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cifra:nth-child(3) {
+    border-left: none;
+  }
+  .cifra:nth-child(n+3) {
+    border-top: 1px solid var(--line-d);
+  }
+  .producto-row {
+    grid-template-columns: 80px 1fr 40px;
+    gap: 16px;
+  }
+  .producto-row__spec {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero__inner {
+    padding-block: 120px 72px;
+  }
+  .cifras-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .form {
+    grid-template-columns: 1fr;
+  }
+  .producto-row {
+    grid-template-columns: 72px 1fr 32px;
+    gap: 12px;
+    padding: 16px 0;
+  }
+  .producto-row__img {
+    width: 72px;
+    height: 72px;
+  }
+  .producto-row__name h3 {
+    font-size: var(--text-h4);
+  }
+  .producto-row__desc {
+    display: none;
+  }
+  .sustentabilidad {
+    min-height: 60vh;
+  }
+}
+</style>

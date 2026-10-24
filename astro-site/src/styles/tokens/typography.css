@@ -1,0 +1,46 @@
+:root{
+--font-sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+--font-mono:"Geist Mono","SFMono-Regular",Menlo,Consolas,monospace;
+--font-display:var(--font-sans);
+--font-body:var(--font-sans);
+--font-spec:var(--font-mono);
+
+/* Display — Archivo, wide (wdth 105), tight tracking */
+--text-display-xl:clamp(56px,6vw,88px);
+--text-display:clamp(44px,4.6vw,64px);
+--text-h1:clamp(36px,3.4vw,48px);
+--text-h2:clamp(28px,2.6vw,36px);
+--text-h3:24px;
+--text-h4:20px;
+--text-body-lg:18px;
+--text-body:16px;
+--text-body-sm:14px;
+--text-caption:12px;
+--text-overline:12px;
+/* Spec numbers — Geist Mono */
+--text-spec-xl:48px;
+--text-spec-lg:32px;
+--text-spec:20px;
+--text-spec-sm:14px;
+
+--leading-display:1.0;
+--leading-heading:1.1;
+--leading-body:1.55;
+--leading-tight:1.25;
+
+--tracking-display:-0.025em;
+--tracking-heading:-0.015em;
+--tracking-body:0;
+--tracking-overline:0.12em;
+--tracking-spec:-0.01em;
+
+--weight-light:300;
+--weight-regular:400;
+--weight-medium:500;
+--weight-semibold:600;
+--weight-bold:700;
+
+--width-display:105; /* @kind other */
+--width-body:100; /* @kind other */
+--width-condensed:88; /* @kind other */
+}

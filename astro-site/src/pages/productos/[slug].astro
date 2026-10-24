@@ -1,0 +1,1029 @@
+---
+import Base from '../../layouts/Base.astro';
+import { PRODUCTOS, PRODUCTOS_ORDEN, BENEFICIOS } from '../../data/productos';
+import type { Producto } from '../../data/productos';
+
+export function getStaticPaths() {
+  return Object.keys(PRODUCTOS).map((slug) => ({
+    params: { slug },
+    props: { producto: PRODUCTOS[slug] },
+  }));
+}
+
+interface Props { producto: Producto }
+const { producto: p } = Astro.props;
+---
+
+<Base title={p.nombre} description={p.intro} og={p.hero}>
+
+<!-- 1 PRODUCT SWITCHER BAR -->
+<nav class="switch">
+  <div class="wrap">
+    {PRODUCTOS_ORDEN.map((k) => (
+      <a href={`/productos/${k}`} class={k === p.slug ? 'on' : ''}>
+        {PRODUCTOS[k].nombre}{PRODUCTOS[k].tag ? ` \u00B7 ${PRODUCTOS[k].tag}` : ''}
+      </a>
+    ))}
+  </div>
+</nav>
+
+<!-- 2 HERO -->
+<section class="phero section-dark">
+  <div class="wrap phero-grid">
+    <div class="phero-copy">
+      <span class="eyebrow reveal" style="color:var(--green)">{p.eyebrow}</span>
+      <h1 class="h-xl reveal">
+        {p.h1}
+        {p.tag && <span class="tag">{p.tag}</span>}
+      </h1>
+      <p class="lead reveal" style="color:var(--acero-300)">{p.intro}</p>
+      <div class="ctas reveal">
+        <a href="/contacto" class="btn btn-primary">
+          Cotiza tu proyecto
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#mas" class="btn btn-outline">Saber m&aacute;s</a>
+      </div>
+    </div>
+    <div class:list={['phero-pic', 'reveal', { contain: p.heroFit === 'contain' }]}>
+      <img src={p.hero} alt={p.nombre} fetchpriority="high" />
+    </div>
+  </div>
+</section>
+
+<!-- 3 STATEMENT -->
+{p.statement && (
+  <section class="pstatement section" id="mas">
+    <div class="wrap">
+      <h2 class="h-lg reveal">{p.statement}</h2>
+    </div>
+  </section>
+)}
+
+<!-- 4 STATS -->
+{p.stats && (
+  <section class="pstats section section-dark">
+    <div class="wrap">
+      <h2 class="h-md reveal">{p.stats.titulo}</h2>
+      <div class="pstats-grid">
+        {p.stats.items.map(([num, label]) => (
+          <div class="pstat reveal">
+            <b>{num}</b>
+            <span>{label}</span>
+          </div>
+        ))}
+      </div>
+      <div class="ctas reveal" style="margin-top:40px">
+        <a href="/contacto" class="btn btn-outline">
+          {p.stats.cta}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- 5 FEATURES -->
+{p.features && (
+  <section class="pfeat section section-soft">
+    <div class="wrap">
+      <span class="eyebrow reveal" style="color:var(--green-text)">Caracter&iacute;sticas del producto</span>
+      <h2 class="h-lg reveal" style="margin:16px 0 40px">{p.features.titulo}</h2>
+      <div class="pfeat-grid">
+        {p.features.items.map(([title, desc]) => (
+          <div class="card reveal">
+            <h3>{title}</h3>
+            <p>{desc}</p>
+          </div>
+        ))}
+      </div>
+      {p.features.nota && <p class="pfeat-nota">{p.features.nota}</p>}
+      {p.brochure && (
+        <div class="ctas reveal" style="margin-top:40px">
+          <a href={p.brochure} target="_blank" rel="noopener" class="btn btn-outline">
+            Descargar brochure
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          </a>
+        </div>
+      )}
+    </div>
+  </section>
+)}
+
+<!-- 6 BENEFICIOS -->
+{p.beneficios && (
+  <section class="pbene section">
+    <div class="wrap">
+      <div class="pbene-grid">
+        {BENEFICIOS.map(([title, desc]) => (
+          <div class="pbene-cell reveal">
+            <h3>{title}</h3>
+            <p>{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- 7 DETALLE -->
+{p.detalle && (
+  <section class="pdet section section-soft">
+    <div class="wrap pdet-grid">
+      <div class="pdet-copy">
+        <h2 class="h-lg reveal">{p.detalle.titulo}</h2>
+        <p class="reveal">{p.detalle.texto}</p>
+        {p.brochure && (
+          <div class="ctas reveal">
+            <a href={p.brochure} target="_blank" rel="noopener" class="btn btn-outline">
+              Descargar brochure
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            </a>
+          </div>
+        )}
+      </div>
+      <div class="pdet-pic reveal">
+        <img class="out" src={p.detalle.img} alt={p.nombre} />
+        {p.detalle.interior && (
+          <Fragment>
+            <img class="in" src={p.detalle.interior} alt={`${p.nombre} interior`} />
+            <span class="pdet-hint">{p.detalle.hint}</span>
+          </Fragment>
+        )}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- 8 HIBRIDO -->
+{p.hibrido && (
+  <Fragment>
+    <section class="phibrido section section-dark" id="hibrido">
+      <div class="wrap">
+        <span class="eyebrow reveal" style="color:var(--green)">Modelo h&iacute;brido</span>
+        <h2 class="h-lg reveal" style="margin-top:16px;max-width:22ch">Generador + Enertainer: complementa o reemplaza parte del uso del grupo electr&oacute;geno.</h2>
+        <p class="lead reveal" style="color:var(--acero-300);margin-top:16px">No siempre hay que sacar el generador el d&iacute;a uno. En modo h&iacute;brido, el Enertainer absorbe los peaks y estabiliza la energ&iacute;a; el generador trabaja solo en su rango eficiente.</p>
+
+        <div class="pflow">
+          <div class="pflow-node reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="20" height="10" rx="1"/><path d="M6 9V6h6v3M16 13h3M5 19v2M19 19v2M6 13h4"/></svg>
+            <b>Generador di&eacute;sel</b>
+            <span>Opera en su rango eficiente</span>
+          </div>
+          <div class="pflow-link reveal">
+            <svg viewBox="0 0 40 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h32M30 2l4 4-4 4"/><path d="M38 14H6M10 10l-4 4 4 4" stroke-dasharray="3 3"/></svg>
+            <em>Carga estable</em>
+          </div>
+          <div class="pflow-node reveal">
+            <img src="/img/producto-enertainer-lista.png" alt="Enertainer" />
+            <b>Enertainer</b>
+            <span>Absorbe peaks y estabiliza</span>
+          </div>
+          <div class="pflow-link reveal">
+            <svg viewBox="0 0 40 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h32M30 2l4 4-4 4"/><path d="M38 14H6M10 10l-4 4 4 4" stroke-dasharray="3 3"/></svg>
+            <em>Respuesta instant&aacute;nea</em>
+          </div>
+          <div class="pflow-node reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V8l6-4v17M12 21V4l6 3v14M9 12h.01M9 16h.01M15 12h.01M15 16h.01"/></svg>
+            <b>Carga variable de faena</b>
+            <span>Gr&uacute;as, bombas, iluminaci&oacute;n, campamento</span>
+          </div>
+        </div>
+
+        <div class="phibpts">
+          <div class="reveal"><b>01</b>El generador opera en su rango eficiente: menos horas, menos litros por kWh.</div>
+          <div class="reveal"><b>02</b>El Enertainer absorbe peaks y estabiliza la energ&iacute;a, sin sobredimensionar el generador.</div>
+          <div class="reveal"><b>03</b>Se reduce di&eacute;sel, ruido y mantenci&oacute;n desde la primera semana.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASO ECONOMICO -->
+    <section class="pcaso section section-soft" id="caso">
+      <div class="wrap">
+        <span class="eyebrow reveal" style="color:var(--green-text)">Caso econ&oacute;mico</span>
+        <h2 class="h-lg reveal" style="margin-top:16px;max-width:22ch">Generador de 500 kVA en modo h&iacute;brido</h2>
+        <p class="lead reveal" style="color:var(--gris-500);margin-top:16px">Ejemplo referencial para una faena con demanda temporal. Los n&uacute;meros finales salen de medir tu consumo real.</p>
+        <div class="pcaso-grid">
+          <div class="pcaso-col reveal">
+            <h3><i>01</i>Escenario actual</h3>
+            <div class="pcaso-row"><span>Horas de operaci&oacute;n</span><b>12<small>h/d&iacute;a</small></b></div>
+            <div class="pcaso-row"><span>D&iacute;as operativos</span><b>26<small>d&iacute;as/mes</small></b></div>
+            <div class="pcaso-row"><span>Consumo del generador</span><b>75<small>L/h</small></b></div>
+            <div class="pcaso-row"><span>Di&eacute;sel mensual</span><b>23.400<small>L/mes</small></b></div>
+          </div>
+          <div class="pcaso-col hi reveal">
+            <h3><i>02</i>Con Enertainer</h3>
+            <div class="pcaso-row"><span>Reducci&oacute;n supuesta de consumo</span><b>40<small>%</small></b></div>
+            <div class="pcaso-big"><b>9.360</b><span>litros de di&eacute;sel ahorrados al mes</span></div>
+          </div>
+          <div class="pcaso-col hi reveal">
+            <h3><i>03</i>Impacto econ&oacute;mico</h3>
+            <div class="pcaso-row"><span>Di&eacute;sel puesto en faena</span><b>CLP 1.250<small>/L</small></b></div>
+            <div class="pcaso-big"><b><small>CLP</small>11,7<small>MM</small></b><span>ahorro bruto estimado al mes</span></div>
+          </div>
+        </div>
+        <p class="pcaso-legal reveal">Estimaci&oacute;n referencial de Enerterra. No incluye ahorro en mantenci&oacute;n, transporte de combustible ni horas de generador; tampoco el costo del arriendo del Enertainer. Cada faena se dimensiona con datos reales de carga.</p>
+      </div>
+    </section>
+  </Fragment>
+)}
+
+<!-- 9 SOFTWARE -->
+{p.software && (
+  <section class="psw section">
+    <div class="wrap psw-grid">
+      <div class="psw-copy">
+        <h2 class="h-lg reveal">Impulsado por software: Ampd Pulse</h2>
+        <p class="reveal">Ampd Pulse es un portal en l&iacute;nea todo en uno que se conecta directamente a todos los ESS de Ampd. Entrega un nivel profundo de transparencia de datos sobre la operaci&oacute;n de tu Ampd y de los equipos conectados, en cualquier momento y lugar.</p>
+        <div class="ctas reveal">
+          <a href="/productos/software" class="btn btn-outline">
+            Saber m&aacute;s
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="psw-pic reveal">
+        <img src="/img/productos/pulse-screens.avif" alt="Vistas de pantalla de Ampd Pulse" loading="lazy" />
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- 10 PULSE -->
+{p.pulse && (
+  <section class="plist section">
+    <div class="wrap">
+      <span class="eyebrow reveal" style="color:var(--green-text)">{p.pulse.eyebrow}</span>
+      <h2 class="h-lg reveal" style="margin-top:16px;max-width:26ch">{p.pulse.titulo}</h2>
+      <div class="plist-grid">
+        {p.pulse.items.map(([title, desc]) => (
+          <div class="card reveal">
+            <h3>{title}</h3>
+            <p>{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- 11 TECNICO -->
+{p.tecnico && (
+  <section class="plist section section-soft">
+    <div class="wrap">
+      <span class="eyebrow reveal" style="color:var(--green-text)">Ampd Pulse</span>
+      <h2 class="h-lg reveal" style="margin-top:16px">{p.tecnico.titulo}</h2>
+      <div class="ctas reveal" style="margin-top:20px">
+        <a href="https://platform.ampd.energy/" target="_blank" rel="noopener" class="btn btn-outline">
+          Acceso a la plataforma
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="plist-grid">
+        {p.tecnico.items.slice(0, 3).map(([title, desc]) => (
+          <div class="card reveal">
+            <h3>{title}</h3>
+            <p>{desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="plist-two">
+        <img class="reveal" src={p.tecnico.img} alt="" loading="lazy" />
+        <div class="plist-grid" style="margin-top:0">
+          {p.tecnico.items.slice(3).map(([title, desc]) => (
+            <div class="card reveal">
+              <h3>{title}</h3>
+              <p>{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- 12 INDUSTRIAS -->
+{p.industrias && (
+  <section class="pind section section-dark">
+    <div class="wrap pind-inner">
+      <div>
+        <h2 class="h-md reveal">Los productos Ampd son perfectos para alimentar muchas industrias</h2>
+        <p class="lead reveal" style="color:var(--acero-300);margin-top:12px;max-width:48ch">Encuentra tu industria y descubre c&oacute;mo un Ampd puede reducir tu OPEX, tus emisiones y las interrupciones en faena.</p>
+      </div>
+      <a href="/#sectores" class="btn btn-outline reveal">
+        Industrias
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+)}
+
+<!-- 13 ASSURANCE -->
+{p.assurance && (
+  <section class="passurance section">
+    <div class="wrap">
+      <span class="eyebrow reveal">La garant&iacute;a Ampd</span>
+      <h2 class="h-lg reveal" style="max-width:28ch;margin-top:16px">No solo entregamos energ&iacute;a: entregamos tranquilidad mediante est&aacute;ndares de calidad rigurosos y componentes de clase mundial.</h2>
+      <div class="passurance-grid">
+        {p.assurance.map(([title, desc, icon], i) => (
+          <div class="card reveal">
+            <img class="passurance-icon" src={icon} alt="" />
+            <span class="eyebrow" style="color:var(--gris-400)">Paso {i + 1}</span>
+            <h3>{title}</h3>
+            <p>{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- 14 APLICACIONES -->
+{p.aplicaciones && (
+  <section class="papp section">
+    <div class="wrap">
+      <h2 class="h-lg reveal">{p.aplicaciones.titulo}</h2>
+      <p class="reveal" style="color:var(--gris-500);max-width:70ch;margin-top:16px">{p.aplicaciones.texto}</p>
+      <div class="papp-two">
+        <div class="papp-cards">
+          {p.aplicaciones.items.map(([title, desc]) => (
+            <div class="card reveal">
+              <h3>{title}</h3>
+              <p>{desc}</p>
+            </div>
+          ))}
+          <a href="/#sectores" class="btn btn-outline reveal" style="width:max-content">
+            Ver todas las industrias
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <img class="reveal" src={p.aplicaciones.img} alt="" loading="lazy" />
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- 15 CTA FINAL -->
+<section class="pcta section section-dark">
+  <div class="wrap pcta-inner">
+    <div>
+      <h2 class="h-lg reveal">&#191;Listo para energizar tu pr&oacute;ximo proyecto con un Ampd?</h2>
+      <p class="lead reveal" style="color:var(--acero-400);margin-top:16px;max-width:44ch">Tu especialista local puede entregarte un desglose completo de costos, ahorro de combustible y CO&#8322; evitado para tu faena.</p>
+    </div>
+    <div class="ctas reveal" style="justify-content:flex-end">
+      <a href="/contacto" class="btn btn-primary">
+        Cotiza tu proyecto
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+</Base>
+
+<style>
+/* ══════════════════════════════════════════════
+   PRODUCT SWITCHER
+   ══════════════════════════════════════════════ */
+.switch {
+  background: var(--carbon);
+  border-bottom: 1px solid var(--line-d);
+  color: #fff;
+}
+.switch .wrap {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.switch .wrap::-webkit-scrollbar { display: none; }
+.switch a {
+  padding: 16px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--acero-300);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.switch a:hover { color: #fff; }
+.switch a.on {
+  color: #fff;
+  border-bottom-color: var(--green);
+}
+
+/* ══════════════════════════════════════════════
+   HERO
+   ══════════════════════════════════════════════ */
+.phero { padding: clamp(56px, 7vw, 96px) 0; }
+.phero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: center;
+}
+.phero-copy {
+  display: grid;
+  gap: 24px;
+}
+.tag {
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--green);
+  border: 1px solid var(--green);
+  border-radius: 4px;
+  padding: 4px 9px;
+  margin-left: 12px;
+  vertical-align: middle;
+}
+.phero-pic {
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--carbon-2);
+}
+.phero-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.phero-pic.contain {
+  background: #fff;
+}
+.phero-pic.contain img {
+  object-fit: contain;
+  padding: 8%;
+}
+
+/* ══════════════════════════════════════════════
+   STATEMENT
+   ══════════════════════════════════════════════ */
+.pstatement .h-lg {
+  max-width: 26ch;
+  color: var(--carbon);
+}
+
+/* ══════════════════════════════════════════════
+   STATS
+   ══════════════════════════════════════════════ */
+.pstats h2 { margin-bottom: 40px; }
+.pstats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line-d);
+  border-top: 1px solid var(--line-d);
+  border-bottom: 1px solid var(--line-d);
+}
+.pstat {
+  background: var(--carbon);
+  padding: 32px 28px 32px 0;
+}
+.pstat + .pstat { padding-left: 28px; }
+.pstat b {
+  display: block;
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  font-size: clamp(40px, 4.5vw, 64px);
+  letter-spacing: -.03em;
+  line-height: 1;
+  color: var(--green);
+}
+.pstat span {
+  display: block;
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--acero-300);
+}
+
+/* ══════════════════════════════════════════════
+   FEATURES
+   ══════════════════════════════════════════════ */
+.pfeat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.pfeat-nota {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--gris-400);
+}
+
+/* ══════════════════════════════════════════════
+   BENEFICIOS
+   ══════════════════════════════════════════════ */
+.pbene-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line-l);
+  border: 1px solid var(--line-l);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.pbene-cell {
+  background: #fff;
+  padding: 28px 24px;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  min-height: 220px;
+}
+.pbene-cell h3 {
+  font-size: 13px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--green-text);
+}
+.pbene-cell p {
+  font-size: 15px;
+  color: var(--gris-500);
+}
+
+/* ══════════════════════════════════════════════
+   DETALLE
+   ══════════════════════════════════════════════ */
+.pdet-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: center;
+}
+.pdet-copy {
+  display: grid;
+  gap: 24px;
+}
+.pdet-copy p {
+  color: var(--gris-500);
+  font-size: 17px;
+}
+.pdet-pic {
+  position: relative;
+  aspect-ratio: 1;
+  background: #fff;
+  border: 1px solid var(--line-l);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 8%;
+}
+.pdet-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity .4s var(--ease);
+}
+.pdet-pic img.in {
+  position: absolute;
+  inset: 8%;
+  width: 84%;
+  height: 84%;
+  opacity: 0;
+}
+.pdet-pic:hover img.in { opacity: 1; }
+.pdet-pic:hover img.out { opacity: 0; }
+.pdet-hint {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--gris-400);
+}
+
+/* ══════════════════════════════════════════════
+   HIBRIDO
+   ══════════════════════════════════════════════ */
+.phibrido .h-lg { max-width: 22ch; }
+.pflow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 16px;
+  align-items: stretch;
+  margin-top: 56px;
+}
+.pflow-node {
+  border: 1px solid var(--line-d);
+  border-radius: 8px;
+  padding: 28px 24px;
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+  align-content: center;
+  text-align: center;
+  background: var(--carbon-2);
+}
+.pflow-node svg {
+  width: 44px;
+  height: 44px;
+  stroke: var(--green);
+}
+.pflow-node img {
+  height: 110px;
+  width: auto;
+  object-fit: contain;
+}
+.pflow-node b {
+  font-size: 18px;
+  font-weight: 600;
+}
+.pflow-node span {
+  font-size: 13px;
+  color: var(--acero-400);
+}
+.pflow-link {
+  align-self: center;
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+  color: var(--green);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  min-width: 110px;
+}
+.pflow-link svg {
+  width: 36px;
+  height: 20px;
+}
+.pflow-link em {
+  font-style: normal;
+  color: var(--acero-400);
+}
+.phibpts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line-d);
+  border-top: 1px solid var(--line-d);
+  border-bottom: 1px solid var(--line-d);
+  margin-top: 40px;
+}
+.phibpts div {
+  background: var(--carbon);
+  padding: 24px 24px 24px 0;
+  font-size: 17px;
+}
+.phibpts div + div { padding-left: 24px; }
+.phibpts b {
+  display: block;
+  color: var(--green);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .08em;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* ══════════════════════════════════════════════
+   CASO ECONOMICO
+   ══════════════════════════════════════════════ */
+.pcaso-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+.pcaso-col {
+  background: var(--white);
+  border: 1px solid var(--line-l);
+  border-radius: 8px;
+  padding: 28px;
+  display: grid;
+  gap: 0;
+  align-content: start;
+}
+.pcaso-col h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line-l);
+  margin-bottom: 6px;
+}
+.pcaso-col h3 i {
+  font-style: normal;
+  font-family: var(--mono);
+  font-size: 13px;
+  background: var(--green);
+  color: var(--carbon);
+  border-radius: 4px;
+  padding: 3px 7px;
+  font-weight: 600;
+}
+.pcaso-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--line-l);
+}
+.pcaso-row:last-child { border-bottom: 0; }
+.pcaso-row span {
+  font-size: 15px;
+  color: var(--gris-500);
+}
+.pcaso-row b {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  font-size: clamp(22px, 2vw, 30px);
+  letter-spacing: -.02em;
+  white-space: nowrap;
+}
+.pcaso-row b small {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--gris-400);
+  font-weight: 500;
+  margin-left: 6px;
+}
+.pcaso-col.hi .pcaso-row b { color: var(--green-text); }
+.pcaso-big {
+  padding: 22px 0 6px;
+  text-align: center;
+}
+.pcaso-big b {
+  display: block;
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  font-size: clamp(44px, 4.5vw, 72px);
+  letter-spacing: -.04em;
+  line-height: 1;
+  color: var(--green-text);
+  white-space: nowrap;
+}
+.pcaso-big b small {
+  font-family: var(--sans);
+  font-size: .34em;
+  font-weight: 500;
+  color: var(--gris-400);
+  margin: 0 6px;
+  letter-spacing: 0;
+  vertical-align: baseline;
+}
+.pcaso-big span {
+  display: block;
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--gris-500);
+}
+.pcaso-legal {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--gris-400);
+  max-width: 80ch;
+}
+
+/* ══════════════════════════════════════════════
+   SOFTWARE CROSS-SELL
+   ══════════════════════════════════════════════ */
+.psw-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: center;
+}
+.psw-copy {
+  display: grid;
+  gap: 22px;
+}
+.psw-copy p {
+  color: var(--gris-500);
+  font-size: 17px;
+}
+.psw-pic {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line-l);
+}
+.psw-pic img {
+  width: 100%;
+  height: auto;
+}
+
+/* ══════════════════════════════════════════════
+   PULSE + TECNICO (list sections)
+   ══════════════════════════════════════════════ */
+.plist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+.plist-two {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: center;
+  margin-top: 48px;
+}
+.plist-two img {
+  border-radius: var(--radius-lg);
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.plist-two .plist-grid {
+  grid-template-columns: 1fr;
+}
+
+/* ══════════════════════════════════════════════
+   INDUSTRIAS
+   ══════════════════════════════════════════════ */
+.pind-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.pind-inner h2 { max-width: 26ch; }
+
+/* ══════════════════════════════════════════════
+   ASSURANCE
+   ══════════════════════════════════════════════ */
+.passurance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+.passurance-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+
+/* ══════════════════════════════════════════════
+   APLICACIONES
+   ══════════════════════════════════════════════ */
+.papp-two {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: center;
+  margin-top: 48px;
+}
+.papp-cards {
+  display: grid;
+  gap: 16px;
+}
+.papp-two img {
+  border-radius: var(--radius-lg);
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* ══════════════════════════════════════════════
+   CTA FINAL
+   ══════════════════════════════════════════════ */
+.pcta-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+  gap: 40px;
+  align-items: center;
+}
+.pcta-inner h2 { max-width: 16ch; }
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════ */
+
+/* Tablet — 1000px */
+@media (max-width: 1000px) {
+  .pfeat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .pbene-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .plist-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .passurance-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Medium — 900px */
+@media (max-width: 900px) {
+  .phero-grid {
+    grid-template-columns: 1fr;
+  }
+  .phero-pic {
+    aspect-ratio: 4 / 3;
+  }
+  .pstats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .pstat,
+  .pstat + .pstat {
+    padding: 24px 0;
+  }
+  .pdet-grid {
+    grid-template-columns: 1fr;
+  }
+  .pflow {
+    grid-template-columns: 1fr;
+  }
+  .pflow-link svg {
+    transform: rotate(90deg);
+  }
+  .phibpts {
+    grid-template-columns: 1fr;
+  }
+  .phibpts div,
+  .phibpts div + div {
+    padding: 20px 0;
+  }
+  .pcaso-grid {
+    grid-template-columns: 1fr;
+  }
+  .psw-grid {
+    grid-template-columns: 1fr;
+  }
+  .plist-two {
+    grid-template-columns: 1fr;
+  }
+  .papp-two {
+    grid-template-columns: 1fr;
+  }
+  .pcta-inner {
+    grid-template-columns: 1fr;
+  }
+  .pcta-inner .ctas {
+    justify-content: flex-start;
+  }
+}
+
+/* Mobile — 640px */
+@media (max-width: 640px) {
+  .phero {
+    padding: 40px 0 56px;
+  }
+  .phero-copy {
+    gap: 18px;
+  }
+  .tag {
+    display: inline-block;
+    margin: 8px 0 0;
+  }
+  .switch {
+    overflow: hidden;
+  }
+  .switch .wrap {
+    max-width: 100vw;
+    -webkit-overflow-scrolling: touch;
+  }
+  .switch a {
+    padding: 14px 12px;
+    font-size: 13px;
+  }
+  .pstat b {
+    font-size: 40px;
+  }
+  .pfeat-grid {
+    grid-template-columns: 1fr;
+  }
+  .pbene-grid {
+    grid-template-columns: 1fr;
+  }
+  .plist-grid {
+    grid-template-columns: 1fr;
+  }
+  .passurance-grid {
+    grid-template-columns: 1fr;
+  }
+  .pflow-node img {
+    height: 80px;
+  }
+  .phibpts div {
+    font-size: 16px;
+  }
+  .pcaso-col {
+    padding: 22px;
+  }
+  .pcaso-big b {
+    font-size: 44px;
+  }
+  .pcta-inner .ctas .btn {
+    width: 100%;
+  }
+}
+</style>
