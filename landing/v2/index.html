@@ -140,8 +140,9 @@ img{display:block;max-width:100%}
 .productos{padding:clamp(96px,12vw,160px) 0}
 .prod-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:48px;flex-wrap:wrap}
 .prod-head .lead{color:var(--gris-500);margin-top:16px}
+.prod-inner{background:#f0f2f5;border-radius:16px;padding:clamp(28px,4vw,48px)}
 .prod-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-.prod-card{background:var(--blanco-1);border-radius:10px;overflow:hidden;display:grid;gap:0;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.prod-card{background:var(--blanco);border-radius:10px;overflow:hidden;display:grid;gap:0;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
 .prod-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(14,18,22,.1)}
 .prod-card .img{aspect-ratio:1;display:grid;place-items:center;padding:24px;background:var(--blanco)}
 .prod-card .img img{max-width:85%;max-height:85%;object-fit:contain}
@@ -153,41 +154,41 @@ img{display:block;max-width:100%}
 .prod-card .link svg{width:14px;height:14px;transition:transform .15s var(--ease)}
 .prod-card:hover .link svg{transform:translateX(4px)}
 @media (max-width:1000px){.prod-cards{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:640px){.prod-cards{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.prod-cards{grid-template-columns:1fr 1fr}.prod-inner{padding:20px}}
 @media (max-width:440px){.prod-cards{grid-template-columns:1fr}}
 
 /* ===== 5. ESS STATS + VIDEO ===== */
 .ess{padding:clamp(96px,12vw,160px) 0}
-.ess-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center}
-.ess-copy{display:grid;gap:24px}
-.ess-copy .h-md{max-width:20ch}
+.ess-inner{background:#f0f2f5;border-radius:16px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+.ess-copy{padding:clamp(36px,5vw,64px);display:grid;gap:24px;align-content:center}
+.ess-copy .h-md{max-width:20ch;color:var(--carbon)}
 .ess-copy .lead{color:var(--gris-500)}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
-.stat{padding:16px 0;border-top:1px solid var(--line-l)}
-.stat .num{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:clamp(28px,2.8vw,40px);font-weight:500;letter-spacing:-.03em;line-height:1;color:var(--green)}
-.stat .lbl{font-size:14px;color:var(--gris-500);margin-top:6px}
-.stat.wide{grid-column:1/-1}
-.video-wrap{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:16/9;background:#000;cursor:pointer;border:1px solid var(--line-l)}
+.ess-copy .eyebrow{color:var(--green-text)}
+.ess-copy .btn{text-transform:uppercase;letter-spacing:.06em;font-size:14px;height:48px;padding:0 22px}
+.video-wrap{position:relative;cursor:pointer;min-height:360px}
 .video-wrap img{width:100%;height:100%;object-fit:cover}
-.video-wrap .play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(14,18,22,.4);transition:background .2s var(--ease)}
-.video-wrap:hover .play{background:rgba(14,18,22,.25)}
+.video-wrap .play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(14,18,22,.3);transition:background .2s var(--ease)}
+.video-wrap:hover .play{background:rgba(14,18,22,.15)}
 .play-btn{width:72px;height:72px;border-radius:50%;background:var(--green);display:grid;place-items:center;transition:transform .2s var(--ease)}
 .video-wrap:hover .play-btn{transform:scale(1.08)}
 .play-btn svg{width:28px;height:28px;fill:var(--carbon);margin-left:3px}
-@media (max-width:900px){.ess-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:560px){.stats{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){.ess-inner{grid-template-columns:1fr}.video-wrap{min-height:280px}}
 
 /* ===== 6. PROCESS ===== */
 .process{padding:clamp(96px,12vw,160px) 0}
-.process .h-md{max-width:28ch;margin-top:16px}
-.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
-.step{padding:clamp(28px,3vw,40px) clamp(20px,2vw,32px);display:grid;gap:16px;align-content:start}
-.step .icon{width:56px;height:56px;border-radius:10px;overflow:hidden}
-.step .icon img{width:100%;height:100%;object-fit:cover}
-.step .label{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--green-text);font-weight:500}
-.step h3{font-size:clamp(18px,1.6vw,22px);font-weight:600;letter-spacing:-.01em;line-height:1.15}
-.step p{font-size:15px;color:var(--gris-500);line-height:1.55}
-@media (max-width:900px){.steps-grid{grid-template-columns:1fr 1fr}}
+.process-head{text-align:center;margin-bottom:clamp(40px,5vw,64px)}
+.process-head .eyebrow{color:var(--green);justify-content:center}
+.process-head .h-md{max-width:28ch;margin:16px auto 0;color:#fff}
+.steps-inner{background:#f0f2f5;border-radius:16px;overflow:hidden}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.step{padding:clamp(32px,3.5vw,48px) clamp(20px,2.5vw,36px);display:grid;gap:16px;align-content:start;text-align:center;border-right:1px solid rgba(0,0,0,.06)}
+.step:last-child{border-right:none}
+.step .icon{width:80px;height:80px;margin:0 auto 8px}
+.step .icon img{width:100%;height:100%;object-fit:contain}
+.step .label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--green-text);font-weight:600}
+.step h3{font-size:clamp(18px,1.6vw,22px);font-weight:700;letter-spacing:-.01em;line-height:1.15;color:var(--carbon)}
+.step p{font-size:14px;color:var(--gris-500);line-height:1.55}
+@media (max-width:900px){.steps-grid{grid-template-columns:1fr 1fr}.step{border-right:none;border-bottom:1px solid rgba(0,0,0,.06)}.step:last-child{border-bottom:none}}
 @media (max-width:560px){.steps-grid{grid-template-columns:1fr}}
 
 /* ===== 7. TESTIMONIALS ===== */
@@ -405,16 +406,17 @@ footer a:hover{color:var(--blanco)}
 </section>
 
 <!-- ===== 4. PRODUCTS ===== -->
-<section class="productos light" id="productos">
+<section class="productos dark" id="productos">
   <div class="wrap">
     <div class="prod-head">
       <div>
-        <span class="eyebrow reveal" style="color:var(--green-text)">nuestros productos</span>
-        <h2 class="h-md reveal" style="margin-top:16px">Nuestros productos</h2>
-        <p class="lead reveal" style="color:var(--gris-500)">Mejore la fiabilidad, reduzca las emisiones en obra, mejore las condiciones de trabajo y consiga importantes ahorros operativos y financieros. Todo ello con el sistema de almacenamiento de energía en baterías conectado más avanzado, diseñado específicamente para entornos exigentes.</p>
+        <span class="eyebrow reveal" style="color:var(--green)">nuestros productos</span>
+        <h2 class="h-md reveal" style="margin-top:16px;color:#fff">Nuestros productos</h2>
+        <p class="lead reveal" style="color:var(--acero-300)">Mejore la fiabilidad, reduzca las emisiones en obra, mejore las condiciones de trabajo y consiga importantes ahorros operativos y financieros. Todo ello con el sistema de almacenamiento de energía en baterías conectado más avanzado, diseñado específicamente para entornos exigentes.</p>
       </div>
       <a href="productos/ampd-400.html" class="btn btn-outline reveal">Más información</a>
     </div>
+    <div class="prod-inner">
     <div class="prod-cards">
       <a href="productos/ampd-200.html" class="prod-card reveal">
         <div class="img"><img src="../img/producto-ampd-200.png" alt="Ampd 200" loading="lazy"></div>
@@ -457,25 +459,19 @@ footer a:hover{color:var(--blanco)}
         </div>
       </a>
     </div>
+    </div><!-- /prod-inner -->
   </div>
 </section>
 
 <!-- ===== 5. ESS STATS + VIDEO ===== -->
-<section class="ess light" id="ess">
+<section class="ess dark" id="ess">
   <div class="wrap">
-    <div class="ess-grid">
+    <div class="ess-inner">
       <div class="ess-copy">
         <span class="eyebrow reveal" style="color:var(--green-text)">Sistemas de almacenamiento de energía</span>
         <h2 class="h-md reveal" style="margin-top:12px">El ESS diseñado para los sitios de trabajo más exigentes</h2>
         <p class="lead reveal">Cambie la fuente de energía de su sitio a una opción moderna, más limpia y silenciosa, diseñada específicamente para los entornos más exigentes.</p>
-        <div class="stats">
-          <div class="stat reveal"><div class="num">400</div><div class="lbl">Dispositivos ESS en todo el mundo</div></div>
-          <div class="stat reveal"><div class="num">161k</div><div class="lbl">Toneladas de CO&#8322; evitadas</div></div>
-          <div class="stat reveal"><div class="num">400+</div><div class="lbl">Proyectos energizados</div></div>
-          <div class="stat reveal"><div class="num">8</div><div class="lbl">Regiones con presencia</div></div>
-          <div class="stat wide reveal"><div class="num">10+</div><div class="lbl">Socios globales</div></div>
-        </div>
-        <a href="#productos" class="btn btn-primary reveal">Más información<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#productos" class="btn btn-primary reveal">Más información</a>
       </div>
       <div class="video-wrap reveal" onclick="window.open('https://www.youtube.com/watch?v=2pemy5FPHiI','_blank')" role="link" aria-label="Ver video en YouTube" tabindex="0">
         <img src="https://img.youtube.com/vi/2pemy5FPHiI/maxresdefault.jpg" alt="Video Ampd Energy" loading="lazy">
@@ -486,11 +482,14 @@ footer a:hover{color:var(--blanco)}
 </section>
 
 <!-- ===== 6. PROCESS ===== -->
-<section class="process light" id="proceso">
+<section class="process dark" id="proceso">
   <div class="wrap">
-    <span class="eyebrow reveal" style="color:var(--green-text)">nuestro proceso</span>
-    <h2 class="h-md reveal" style="margin-top:16px">Sin diésel, sin ruido, sin riesgos y sin complicaciones. Así de fácil.</h2>
-    <div class="steps-grid" style="margin-top:56px">
+    <div class="process-head">
+      <span class="eyebrow reveal">nuestro proceso</span>
+      <h2 class="h-md reveal">Sin Diésel, Sin Ruido, Sin Riesgos Y Sin Complicaciones. Así De Fácil.</h2>
+    </div>
+    <div class="steps-inner">
+    <div class="steps-grid">
       <div class="step reveal">
         <div class="icon"><img src="../assets/icons/process-01-talk.avif" alt="Paso 1" loading="lazy"></div>
         <span class="label">Paso 1</span>
@@ -516,6 +515,7 @@ footer a:hover{color:var(--blanco)}
         <p>Nuestro equipo de implementación colaborará con el equipo de su obra para garantizar una instalación fluida y sin complicaciones, proporcionándoles los conocimientos necesarios para poner todo en marcha.</p>
       </div>
     </div>
+    </div><!-- /steps-inner -->
   </div>
 </section>
 
