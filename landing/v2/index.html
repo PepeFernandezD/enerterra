@@ -48,7 +48,7 @@ img{display:block;max-width:100%}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
 /* ===== NAV ===== */
-.nav{position:absolute;top:0;left:0;right:0;z-index:20;height:80px;display:flex;align-items:center;color:var(--blanco)}
+.nav{position:sticky;top:0;left:0;right:0;z-index:20;height:80px;display:flex;align-items:center;color:var(--blanco);background:var(--carbon);border-bottom:1px solid var(--line-d)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%;gap:32px}
 .nav .nav-links{margin-left:auto}
 .brand{display:inline-flex;align-items:center;gap:14px;font-weight:700;letter-spacing:-.02em;font-size:20px;line-height:1}
@@ -94,32 +94,35 @@ img{display:block;max-width:100%}
 .menu .all{grid-column:1/-1;border-top:1px solid var(--line-l);margin-top:6px;padding-top:12px;display:flex;justify-content:flex-start;gap:8px;font-size:13px;font-weight:600;color:var(--green-text)}
 
 /* ===== 1. HERO ===== */
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;color:var(--blanco);background:var(--carbon)}
-.hero .wrap{padding-top:120px;padding-bottom:80px;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center;width:100%}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center}
+.hero .wrap{padding-top:80px;padding-bottom:80px;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center;width:100%}
 .hero-copy{display:grid;gap:24px}
 .hero-img{border-radius:14px;overflow:hidden;aspect-ratio:4/3}
 .hero-img img{width:100%;height:100%;object-fit:cover}
-.badge{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 12px;border:1px solid var(--green);border-radius:4px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--blanco);width:max-content;background:rgba(14,18,22,.4)}
+.badge{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 12px;border:1px solid var(--green);border-radius:4px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--carbon);width:max-content;background:var(--green-12)}
 .badge img{height:18px;width:auto;display:inline-block;position:relative;top:2px}
 .hero .h-xl{max-width:14ch;font-size:clamp(40px,5vw,64px)}
-.hero .lead{color:var(--acero-300)}
-.hero .sub{font-size:clamp(20px,2.2vw,28px);font-weight:500;color:var(--acero-300);letter-spacing:-.01em;line-height:1.25}
+.hero .lead{color:var(--gris-500)}
+.hero .sub{font-size:clamp(20px,2.2vw,28px);font-weight:500;color:var(--gris-500);letter-spacing:-.01em;line-height:1.25}
 .ctas{display:flex;gap:12px;flex-wrap:wrap}
 @media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero-img{max-width:540px}}
 @media (max-width:640px){.ctas .btn{width:100%}}
 
 /* ===== 2. CLIENT LOGOS ===== */
-.logos{padding:48px 0;border-top:1px solid var(--line-l);border-bottom:1px solid var(--line-l)}
-.logos .wrap{display:flex;align-items:center;gap:clamp(28px,4vw,56px);overflow:hidden;flex-wrap:nowrap}
+.logos{padding:48px 0;border-top:1px solid var(--line-l);border-bottom:1px solid var(--line-l);overflow:hidden}
+.logos .wrap{overflow:visible}
+.logos-track{display:flex;align-items:center;gap:clamp(28px,4vw,56px);width:max-content;animation:marquee 30s linear infinite}
+.logos:hover .logos-track{animation-play-state:paused}
 .logos img{height:36px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.5;transition:opacity .3s var(--ease),filter .3s var(--ease);flex:none}
 .logos img:hover{filter:grayscale(0);opacity:1}
-@media (max-width:640px){.logos img{height:28px}.logos .wrap{gap:20px}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (max-width:640px){.logos img{height:28px}.logos-track{gap:20px}}
 
 /* ===== 3. WHY AMPD ===== */
 .why{padding:clamp(96px,12vw,160px) 0}
 .why-intro{margin-bottom:clamp(48px,6vw,72px)}
 .why-intro .h-lg{max-width:20ch}
-.why-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center;padding:clamp(40px,5vw,72px) 0;border-bottom:1px solid var(--line-d)}
+.why-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center;padding:clamp(40px,5vw,72px) 0;border-bottom:1px solid var(--line-l)}
 .why-row:first-of-type{padding-top:0}
 .why-row:last-of-type{border-bottom:none;padding-bottom:0}
 .why-row.flip .why-img{order:2}
@@ -128,11 +131,11 @@ img{display:block;max-width:100%}
 .why-img img{width:100%;height:100%;object-fit:cover}
 .why-text{display:grid;gap:16px}
 .why-text h3{font-size:clamp(24px,2.6vw,36px);letter-spacing:-.02em;font-weight:600;line-height:1.1}
-.why-text p{color:var(--acero-300);font-size:clamp(16px,1.2vw,18px);line-height:1.6;max-width:48ch}
-.why-compact{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-d);border-top:1px solid var(--line-d);margin-top:0;padding-top:0}
-.why-card{background:var(--carbon);padding:clamp(28px,3vw,48px);display:grid;gap:12px;align-content:start}
-.why-card h3{font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;font-weight:600;line-height:1.1}
-.why-card p{color:var(--acero-300);font-size:15px;line-height:1.6}
+.why-text p{color:var(--gris-500);font-size:clamp(16px,1.2vw,18px);line-height:1.6;max-width:48ch}
+.why-compact{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-l);border-top:1px solid var(--line-l);margin-top:0;padding-top:0}
+.why-card{background:var(--blanco-1);padding:clamp(28px,3vw,48px);display:grid;gap:12px;align-content:start}
+.why-card h3{font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;font-weight:600;line-height:1.1;color:var(--carbon)}
+.why-card p{color:var(--gris-500);font-size:15px;line-height:1.6}
 @media (max-width:900px){.why-row{grid-template-columns:1fr}.why-row.flip .why-img,.why-row.flip .why-text{order:unset}.why-compact{grid-template-columns:1fr}}
 
 /* ===== 4. PRODUCTS ===== */
@@ -160,13 +163,13 @@ img{display:block;max-width:100%}
 .ess-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center}
 .ess-copy{display:grid;gap:24px}
 .ess-copy .h-md{max-width:20ch}
-.ess-copy .lead{color:var(--acero-300)}
+.ess-copy .lead{color:var(--gris-500)}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
-.stat{padding:16px 0;border-top:1px solid var(--line-d)}
+.stat{padding:16px 0;border-top:1px solid var(--line-l)}
 .stat .num{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:clamp(28px,2.8vw,40px);font-weight:500;letter-spacing:-.03em;line-height:1;color:var(--green)}
-.stat .lbl{font-size:14px;color:var(--acero-300);margin-top:6px}
+.stat .lbl{font-size:14px;color:var(--gris-500);margin-top:6px}
 .stat.wide{grid-column:1/-1}
-.video-wrap{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:16/9;background:#000;cursor:pointer}
+.video-wrap{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:16/9;background:#000;cursor:pointer;border:1px solid var(--line-l)}
 .video-wrap img{width:100%;height:100%;object-fit:cover}
 .video-wrap .play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(14,18,22,.4);transition:background .2s var(--ease)}
 .video-wrap:hover .play{background:rgba(14,18,22,.25)}
@@ -179,8 +182,8 @@ img{display:block;max-width:100%}
 /* ===== 6. PROCESS ===== */
 .process{padding:clamp(96px,12vw,160px) 0}
 .process .h-md{max-width:28ch;text-align:center;margin:0 auto 56px}
-.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-l);border-top:1px solid var(--line-l);border-bottom:1px solid var(--line-l)}
-.step{background:var(--blanco);padding:clamp(28px,3vw,40px) clamp(20px,2vw,32px);display:grid;gap:16px;align-content:start}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.step{padding:clamp(28px,3vw,40px) clamp(20px,2vw,32px);display:grid;gap:16px;align-content:start}
 .step .icon{width:56px;height:56px;border-radius:10px;overflow:hidden}
 .step .icon img{width:100%;height:100%;object-fit:cover}
 .step .label{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--green-text);font-weight:500}
@@ -214,11 +217,11 @@ img{display:block;max-width:100%}
 .final-cta-img img{width:100%;height:100%;object-fit:cover}
 .final-cta-copy{display:grid;gap:20px}
 .final-cta .h-md{max-width:22ch}
-.final-cta .lead{color:var(--acero-300)}
+.final-cta .lead{color:var(--gris-500)}
 @media (max-width:900px){.final-cta .wrap{grid-template-columns:1fr}.final-cta-img{display:none}}
 
 /* ===== 9. FOOTER ===== */
-footer{padding:56px 0 40px;border-top:1px solid var(--line-d);color:var(--acero-400);font-size:14px}
+footer.dark{padding:56px 0 40px;border-top:1px solid var(--line-d);color:var(--acero-400);font-size:14px;background:#2d2d36}
 .foot-top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:40px;border-bottom:1px solid var(--line-d);margin-bottom:40px;flex-wrap:wrap}
 .foot-top img{height:28px;width:auto}
 .foot-top .links{display:flex;gap:20px;font-size:14px;font-weight:600}
@@ -244,7 +247,7 @@ footer a:hover{color:var(--blanco)}
 /* ===== MOBILE ===== */
 @media (max-width:640px){
 .hero{min-height:auto}
-.hero .wrap{padding-top:112px;padding-bottom:56px;gap:28px}
+.hero .wrap{padding-top:56px;padding-bottom:56px;gap:28px}
 .hero-copy{gap:18px}
 .hero .h-xl{max-width:100%;font-size:clamp(36px,10.5vw,44px);line-height:1.02;overflow-wrap:anywhere}
 .hero .lead{font-size:17px}
@@ -303,10 +306,10 @@ footer a:hover{color:var(--blanco)}
 </div>
 
 <!-- ===== 1. HERO ===== -->
-<section class="hero dark" id="top">
+<section class="hero light" id="top">
   <div class="wrap">
     <div class="hero-copy">
-      <span class="badge reveal">Representante oficial de <img src="../img/ampd-logo-white.svg" alt="Ampd Energy"> en Chile</span>
+      <span class="badge reveal">Representante oficial de <img src="../img/ampd-logo.png" alt="Ampd Energy"> en Chile</span>
       <h1 class="h-xl reveal">Mejore la energía de su sitio</h1>
       <h2 class="sub reveal">El futuro de la energía móvil para industrias pesadas</h2>
       <p class="lead reveal">Mejore la fiabilidad, reduzca las emisiones de la obra, mejore las condiciones de trabajo y consiga importantes ahorros operativos y financieros. Todo ello con el sistema de almacenamiento de energía en baterías conectado más avanzado, diseñado específicamente para entornos exigentes.</p>
@@ -324,23 +327,38 @@ footer a:hover{color:var(--blanco)}
 <!-- ===== 2. CLIENT LOGOS ===== -->
 <section class="logos light">
   <div class="wrap">
-    <img src="../assets/clients/holcim.png" alt="Holcim" loading="lazy">
-    <img src="../assets/clients/vinci.png" alt="Vinci" loading="lazy">
-    <img src="../assets/clients/acc.avif" alt="ACC" loading="lazy">
-    <img src="../assets/clients/sisk.avif" alt="Sisk" loading="lazy">
-    <img src="../assets/clients/adco.avif" alt="ADCO" loading="lazy">
-    <img src="../assets/clients/built.png" alt="Built" loading="lazy">
-    <img src="../assets/clients/careys.avif" alt="Careys" loading="lazy">
-    <img src="../assets/clients/domis.avif" alt="Domis" loading="lazy">
-    <img src="../assets/clients/lovell.avif" alt="Lovell" loading="lazy">
-    <img src="../assets/clients/wolffkran.avif" alt="Wolffkran" loading="lazy">
-    <img src="../assets/clients/cdl.avif" alt="CDL" loading="lazy">
-    <img src="../assets/clients/hutchinson.png" alt="Hutchinson" loading="lazy">
+    <div class="logos-track">
+      <img src="../assets/clients/holcim.png" alt="Holcim" loading="lazy">
+      <img src="../assets/clients/vinci.png" alt="Vinci" loading="lazy">
+      <img src="../assets/clients/acc.avif" alt="ACC" loading="lazy">
+      <img src="../assets/clients/sisk.avif" alt="Sisk" loading="lazy">
+      <img src="../assets/clients/adco.avif" alt="ADCO" loading="lazy">
+      <img src="../assets/clients/built.png" alt="Built" loading="lazy">
+      <img src="../assets/clients/careys.avif" alt="Careys" loading="lazy">
+      <img src="../assets/clients/domis.avif" alt="Domis" loading="lazy">
+      <img src="../assets/clients/lovell.avif" alt="Lovell" loading="lazy">
+      <img src="../assets/clients/wolffkran.avif" alt="Wolffkran" loading="lazy">
+      <img src="../assets/clients/cdl.avif" alt="CDL" loading="lazy">
+      <img src="../assets/clients/hutchinson.png" alt="Hutchinson" loading="lazy">
+      <!-- Duplicate set for seamless loop -->
+      <img src="../assets/clients/holcim.png" alt="Holcim" loading="lazy">
+      <img src="../assets/clients/vinci.png" alt="Vinci" loading="lazy">
+      <img src="../assets/clients/acc.avif" alt="ACC" loading="lazy">
+      <img src="../assets/clients/sisk.avif" alt="Sisk" loading="lazy">
+      <img src="../assets/clients/adco.avif" alt="ADCO" loading="lazy">
+      <img src="../assets/clients/built.png" alt="Built" loading="lazy">
+      <img src="../assets/clients/careys.avif" alt="Careys" loading="lazy">
+      <img src="../assets/clients/domis.avif" alt="Domis" loading="lazy">
+      <img src="../assets/clients/lovell.avif" alt="Lovell" loading="lazy">
+      <img src="../assets/clients/wolffkran.avif" alt="Wolffkran" loading="lazy">
+      <img src="../assets/clients/cdl.avif" alt="CDL" loading="lazy">
+      <img src="../assets/clients/hutchinson.png" alt="Hutchinson" loading="lazy">
+    </div>
   </div>
 </section>
 
 <!-- ===== 3. WHY AMPD ===== -->
-<section class="why dark" id="why">
+<section class="why light" id="why">
   <div class="wrap">
     <div class="why-intro reveal">
       <h2 class="h-lg">¿Necesita una fuente de energía segura y altamente fiable?</h2>
@@ -456,11 +474,11 @@ footer a:hover{color:var(--blanco)}
 </section>
 
 <!-- ===== 5. ESS STATS + VIDEO ===== -->
-<section class="ess dark" id="ess">
+<section class="ess light" id="ess">
   <div class="wrap">
     <div class="ess-grid">
       <div class="ess-copy">
-        <span class="eyebrow reveal" style="color:var(--green)">Sistemas de almacenamiento de energía</span>
+        <span class="eyebrow reveal" style="color:var(--green-text)">Sistemas de almacenamiento de energía</span>
         <h2 class="h-md reveal" style="margin-top:12px">El ESS diseñado para los sitios de trabajo más exigentes</h2>
         <p class="lead reveal">Cambie la fuente de energía de su sitio a una opción moderna, más limpia y silenciosa, diseñada específicamente para los entornos más exigentes.</p>
         <div class="stats">
@@ -549,7 +567,7 @@ footer a:hover{color:var(--blanco)}
 </section>
 
 <!-- ===== 8. CTA FINAL ===== -->
-<section class="final-cta dark" id="contacto">
+<section class="final-cta light" id="contacto">
   <div class="wrap">
     <div class="final-cta-img reveal">
       <img src="../assets/site/solution-cta.jpg" alt="Solución energética Ampd en terreno" loading="lazy">
@@ -557,7 +575,7 @@ footer a:hover{color:var(--blanco)}
     <div class="final-cta-copy">
       <h2 class="h-md reveal">¿Listo para impulsar su próximo proyecto con Ampd?</h2>
       <p class="lead reveal">Su especialista local puede ofrecerle un desglose completo de costes, ahorro de combustible y CO&#8322; que deben evitarse en su sitio.</p>
-      <a href="mailto:contacto@enerterra.cl" class="btn btn-primary reveal">Contáctenos<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="mailto:contacto@enerterra.cl" class="btn btn-primary reveal">contáctanos<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
 </section>
