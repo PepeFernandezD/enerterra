@@ -1,0 +1,456 @@
+{
+  "source": "ampd.energy (páginas de producto, industrias, software) + brochures oficiales (NextGen Products, Product & Company 12/24, Brochure 2026). Extraído 2026-09-09. Specs sujetas a cambio: validar con Ampd antes de publicar.",
+  "products": [
+    {
+      "key": "ampd-400",
+      "name": "Ampd 400",
+      "family": "NextGen · Sistema de almacenamiento de energía",
+      "tagline_en": "The Future of Mobile Power - Ampd 400",
+      "positioning": "Buque insignia de la gama NextGen. Rediseñado desde cero para dar máxima flexibilidad y libertad energética a las industrias más exigentes.",
+      "specs": {
+        "salida_peak": "585 kW / 595 kVA",
+        "salida_continua": "386 kW / 428 kVA",
+        "capacidad": "hasta 430 kWh",
+        "quimica": "LFP (litio-ferrofosfato), celdas CATL",
+        "ciclos": "9.000 ciclos al 100 % DoD",
+        "refrigeracion": "Líquida · hasta +55 °C ambiente",
+        "proteccion": "IP55 · sin intercambio de aire interno-externo",
+        "solar": "Controlador MPPT DC directo 60 kW integrado (opcional)",
+        "paralelo": "Hasta 4 unidades en paralelo · paralelo universal con cualquier generador (marca, tamaño o controlador)",
+        "seguridad_electrica": "Arc-flash categoría 1 · corriente de fuga ultra baja",
+        "certificacion": "IEC y UL por SGS",
+        "garantia": "5 años en partes · stock regional · servicio local",
+        "software": "Ampd Pulse (Enernet) · OTA · Schedule Designer"
+      },
+      "benefits": [
+        "Ahorro operativo significativo al minimizar diésel",
+        "Reduce o elimina reabastecimiento y baja frecuencia de mantención",
+        "Respuesta instantánea a cambios de carga → permite generadores más pequeños",
+        "Hasta −90 % CO₂",
+        "Cero emisiones directas de NOx, PM y SO₂",
+        "Arquitectura modular con redundancia integrada"
+      ],
+      "images": [
+        "assets/products/ampd-400/render-iso.png",
+        "assets/products/ampd-400/render-iso-front.png",
+        "assets/products/ampd-400/web-hero.avif",
+        "assets/products/ampd-400/field-site.jpg",
+        "assets/products/ampd-400/field-detail.jpg",
+        "assets/products/ampd-400/field-warehouse.jpg",
+        "assets/products/ampd-400/field-tunneling.jpg"
+      ],
+      "brochure": "assets/docs/ampd-nextgen-brochure.pdf",
+      "url": "https://www.ampd.energy/products/ampd-400"
+    },
+    {
+      "key": "ampd-200",
+      "name": "Ampd 200",
+      "family": "NextGen · Sistema de almacenamiento de energía",
+      "tagline_en": "The Future of Mobile Power - Ampd 200",
+      "positioning": "Modelo NextGen intermedio con la misma plataforma, seguridad y software del Ampd 400.",
+      "specs": {
+        "salida_peak": "292 kW / 297 kVA",
+        "salida_continua": "193 kW / 214 kVA",
+        "capacidad": "hasta 215 kWh",
+        "quimica": "LFP (litio-ferrofosfato), celdas CATL",
+        "ciclos": "9.000 ciclos al 100 % DoD",
+        "refrigeracion": "Líquida · hasta +55 °C ambiente",
+        "proteccion": "IP55 · sin intercambio de aire interno-externo",
+        "solar": "Controlador MPPT DC directo 60 kW integrado (opcional)",
+        "paralelo": "Hasta 4 unidades en paralelo · paralelo universal con generadores",
+        "seguridad_electrica": "Arc-flash categoría 1 · corriente de fuga ultra baja",
+        "certificacion": "IEC y UL por SGS",
+        "garantia": "5 años en partes · stock regional · servicio local",
+        "software": "Ampd Pulse (Enernet) · OTA · Schedule Designer"
+      },
+      "benefits": [
+        "Mismos beneficios NextGen que el Ampd 400 en formato intermedio",
+        "Ideal para obras urbanas, plantas y campamentos medianos"
+      ],
+      "images": [
+        "assets/products/ampd-200/render-iso.png",
+        "assets/products/ampd-200/render-iso-back.png",
+        "assets/products/ampd-200/web-hero.avif",
+        "assets/products/ampd-200/field-yard.jpg"
+      ],
+      "brochure": "assets/docs/ampd-nextgen-brochure.pdf",
+      "url": "https://www.ampd.energy/products/ampd-200"
+    },
+    {
+      "key": "enertainer",
+      "name": "Enertainer",
+      "family": "Sistema de almacenamiento de energía (legado, desde 2019)",
+      "tagline_en": "The world's first ESS for challenging environments",
+      "positioning": "El primer BESS de alta potencia diseñado para industria pesada. En operación desde 2019 con más de 1.500.000 horas sin incidentes. Ideal para proyectos con mayor salida AC.",
+      "specs": {
+        "salida_peak": "470 kW / 525 kVA (L+)",
+        "salida_continua": "427 kW / 437 kVA (L+)",
+        "variantes": "S+: 187 kW / 187 kVA nominal (225 kW / 225 kVA overload) · M+: 213 kW / 313 kVA nominal (235 kW / 375 kVA overload) · L+: 427 kW / 437 kVA nominal (470 kW / 525 kVA overload)",
+        "frecuencia": "50/60 Hz",
+        "peso": "S+ 7,7 t · M+ 7,8 t · L+ 9,6 t",
+        "dimensiones": "3,2 L × 2,4 A × 2,6 m H (10,5 × 8 × 8,5 ft)",
+        "temperatura": "−20 a +45 °C ambiente",
+        "proteccion": "IP45",
+        "vida_util": "10 años de operación esperada",
+        "mantencion": "1–2 inspecciones al año",
+        "dc": "Cada string de baterías entrega hasta 330 A DC · HVAC para temperatura estable",
+        "seguridad": "Sensores de inundación e hidrógeno · botón E-Stop · supresión de incendios integrada · UPS interno · BMS · 8 ventiladores de extracción · HMI táctil",
+        "certificacion": "Probado a UL9540A",
+        "instalacion": "Plug-and-play · reemplazo directo de generadores grandes · operativo en menos de 2 horas"
+      },
+      "benefits": [
+        "400+ Enertainers · 300+ proyectos · 100.000+ t CO₂ evitadas · 1.000+ años de uptime acumulado",
+        "Casi 32x más silencioso que un generador diésel",
+        "Sin emisiones directas de CO, CO₂, NOx, PM ni SO₂",
+        "Sin partes móviles: órdenes de magnitud más seguro",
+        "Recarga automática y casi sin mantención"
+      ],
+      "images": [
+        "assets/products/enertainer/render-front.png",
+        "assets/products/enertainer/render-iso-lg.png",
+        "assets/products/enertainer/render-side-a.png",
+        "assets/products/enertainer/render-side-b.png",
+        "assets/products/enertainer/render-interior.png",
+        "assets/products/enertainer/web-hero.jpg",
+        "assets/products/enertainer/field-site.jpg",
+        "assets/products/enertainer/field-technician.jpg"
+      ],
+      "brochure": "assets/docs/ampd-product-company-brochure.pdf",
+      "url": "https://www.ampd.energy/products/enertainer"
+    },
+    {
+      "key": "ampd-silo",
+      "name": "Ampd Silo",
+      "family": "Sistema de almacenamiento compacto y escalable (segunda generación, 2024)",
+      "tagline_en": "Ampd Silo - Compact & Scalable ESS",
+      "positioning": "Solución flexible, escalable y móvil. Varias unidades en paralelo comparten y distribuyen la carga para mayor potencia y capacidad.",
+      "specs": {
+        "salida_peak": "Silo S: 57,5 kW / 57,5 kVA · Silo M: 115 kW / 115 kVA",
+        "salida_continua": "Silo S: 50 kW / 50 kVA · Silo M: 100 kW / 100 kVA",
+        "frecuencia": "50/60 Hz",
+        "peso": "S 2,5 t · M 4 t",
+        "dimensiones": "S: 2,3 L × 1,7 A × 1,8 m H · M: 3,1 L × 1,7 A × 1,8 m H",
+        "transporte": "Grúa horquilla o grúa pequeña",
+        "climatizacion": "HVAC 600 W frío / 500 W calor",
+        "seguridad": "Sensores de inundación e hidrógeno · E-Stop · HMI táctil con alarmas por SMS/email · BMS",
+        "integracion": "Red, generador y solar FV",
+        "paralelo": "Múltiples unidades en paralelo con reparto de carga",
+        "experiencia": "200+ proyectos de construcción"
+      },
+      "benefits": [
+        "Compacto y transportable",
+        "Escalable en paralelo",
+        "Robusto para clima extremo",
+        "Ideal para campamentos, oficinas de faena y equipos livianos"
+      ],
+      "images": [
+        "assets/products/ampd-silo/render-front.png",
+        "assets/products/ampd-silo/render-side.png",
+        "assets/products/ampd-silo/render-open.png",
+        "assets/products/ampd-silo/render-front-lg.png",
+        "assets/products/ampd-silo/web-hero.avif"
+      ],
+      "brochure": "assets/docs/ampd-product-company-brochure.pdf",
+      "url": "https://www.ampd.energy/products/ampd-silo"
+    },
+    {
+      "key": "software",
+      "name": "Ampd Pulse (Enernet)",
+      "family": "Software · estándar en todas las unidades",
+      "tagline_en": "Real-Time Performance Intelligence",
+      "positioning": "Portal web y app móvil (iOS/Android) que conecta directo con cada unidad Ampd: datos, ahorro y CO₂ en tiempo real, desde cualquier lugar.",
+      "specs": {
+        "monitoreo": "24/7 remoto · SOC 0–100 %, temperatura de celdas · potencia, corriente y voltaje entrada/salida · alertas",
+        "ahorro": "Motor de cálculo de energía, combustible y carbono vs. diésel",
+        "reportes": "Mensuales descargables (operación, energía, carbono, confiabilidad) · PDF, CSV, JSON · API REST",
+        "programacion": "Schedule Designer · programación remota en la nube",
+        "servicio": "Service Dashboard para monitoreo proactivo de activos",
+        "seguridad": "Monitoreo E-Stop · detección de inundación, fuego y gas · alertas por email, SMS y push",
+        "datos": "GDPR y CCPA · registro de auditoría · control de acceso por rol",
+        "actualizaciones": "OTA sin interrumpir la operación",
+        "acceso": "Web + app móvil multilenguaje"
+      },
+      "benefits": [
+        "Visibilidad total de la flota",
+        "Documentación de ahorro para clientes y reportes de sustentabilidad",
+        "Decisiones basadas en datos"
+      ],
+      "images": [
+        "assets/products/software/ampd-pulse-devices.jpg",
+        "assets/products/software/ampd-pulse-screens.avif",
+        "assets/products/software/enernet-app.avif"
+      ],
+      "brochure": "assets/docs/ampd-brochure-2026.pdf",
+      "url": "https://www.ampd.energy/products/software"
+    }
+  ],
+  "company": {
+    "fundacion": "2014 (Hong Kong). Pivote a BESS para construcción en 2018; primer Enertainer desplegado en 2019.",
+    "mision_en": "Delivering high-performance power for heavy industries with zero compromises.",
+    "cifras": [
+      "400 ESS en el mundo",
+      "161.000 t CO₂ evitadas",
+      "400+ proyectos",
+      "8 regiones",
+      "10+ partners globales",
+      "1.500.000+ horas de operación sin incidentes"
+    ],
+    "presencia": [
+      "USA",
+      "UK",
+      "Europa",
+      "Hong Kong",
+      "Singapur",
+      "Taiwán",
+      "Indonesia",
+      "Arabia Saudita",
+      "EAU",
+      "Australia"
+    ],
+    "expansion_2026": [
+      "Brasil",
+      "Argentina",
+      "Chile",
+      "México",
+      "Colombia"
+    ],
+    "oficinas": [
+      "Sídney",
+      "Hong Kong",
+      "Singapur",
+      "Londres",
+      "Lewes DE (USA)"
+    ],
+    "partner_network": [
+      "Disponibilidad de producto",
+      "Expertise local",
+      "Soporte en terreno",
+      "Servicio localizado"
+    ],
+    "liderazgo": [
+      {
+        "nombre": "Brandon Ng",
+        "cargo": "Co-founder & Chair",
+        "foto": "assets/team/brandon-ng.jpg"
+      },
+      {
+        "nombre": "Anthony Stewart",
+        "cargo": "CEO",
+        "foto": "assets/team/anthony-stewart.jpg"
+      },
+      {
+        "nombre": "Chrystin Matuszek",
+        "cargo": "CCO",
+        "foto": "assets/team/chrystin-matuszek.jpg"
+      },
+      {
+        "nombre": "Andrzej Skoskiewicz",
+        "cargo": "COO",
+        "foto": "assets/team/andrzej-skoskiewicz.avif"
+      }
+    ],
+    "premios": [
+      "Norrsken Impact/100 2023",
+      "The Earthshot Prize 2022 finalist",
+      "Hong Kong Green Innovations Awards",
+      "CLP 2022",
+      "AEE International Award 2022",
+      "Social Impact Award 2021",
+      "Hong Kong ICT Awards 2021",
+      "The Meaningful Business 100 2020"
+    ],
+    "cifras_about": [
+      "400+ ESS en el mundo",
+      "196k t CO₂ evitadas",
+      "400+ proyectos",
+      "8 regiones",
+      "10+ partners globales",
+      "10+ etnias · 13 nacionalidades · 18 idiomas"
+    ],
+    "ods": [
+      "ODS 7 Energía asequible y no contaminante",
+      "ODS 9 Industria, innovación e infraestructura",
+      "ODS 11 Ciudades y comunidades sostenibles"
+    ]
+  },
+  "why_bess_vs_diesel": [
+    "~85–90 % menos CO₂",
+    "Sin CO, NOx ni PM: mejor calidad del aire en faena",
+    "Sin riesgo de derrames de diésel · probado a UL9540A",
+    "Hasta 32x más silencioso: horarios de operación sin restricción",
+    "10–30 % menor costo total de operación (hasta 80 % en OPEX según sitio)",
+    "O&M remota en una sola plataforma",
+    "Mínimo downtime: sin reabastecimiento, redundancia integrada"
+  ],
+  "what_it_powers": [
+    "Grúa torre",
+    "Compresor de aire",
+    "Dobladora de barras",
+    "Bomba de hormigón",
+    "Desarenador",
+    "Estación de lechada",
+    "Montacargas de materiales",
+    "Ascensor de obra doble",
+    "Oficina de faena",
+    "Bomba de agua",
+    "Soldadora para pilotes H"
+  ],
+  "industries": {
+    "mineria": {
+      "aplicaciones": [
+        "Chancadoras y molinos",
+        "Correas y ventiladores",
+        "Bombas de drenaje",
+        "Vehículos eléctricos",
+        "Campamentos",
+        "Talleres remotos",
+        "Oficinas de faena"
+      ],
+      "casos_ejemplo": [
+        {
+          "caso": "Jumbo de perforación",
+          "payback": "1,5 años (0,9 con ITC USA)",
+          "co2": "−66 %"
+        },
+        {
+          "caso": "Bomba sumergible",
+          "payback": "7 meses",
+          "co2": "−94 %"
+        },
+        {
+          "caso": "Planta de hormigón",
+          "payback": "2,2 años",
+          "co2": "−50 %"
+        },
+        {
+          "caso": "Construcción de edificios",
+          "payback": "1 año",
+          "co2": "−72 %"
+        }
+      ],
+      "argumento": "Generador + BESS opera en su ventana de eficiencia o solo pocas horas al día; payback ≈ 2 años con garantía de 5."
+    },
+    "construccion": [
+      "Herramientas y equipos",
+      "Bombas y drenaje",
+      "Ascensores",
+      "Respaldo de emergencia"
+    ],
+    "microtuneleria": [
+      "Motores de tuneladora",
+      "Power packs hidráulicos",
+      "Control e instrumentación",
+      "Separación y tratamiento de lodos"
+    ],
+    "infraestructura": [
+      "Grúas torre y ascensores",
+      "Proyectos ferroviarios y viales",
+      "Hormigón",
+      "Bombas y ventilación"
+    ],
+    "puertos": {
+      "aplicaciones": [
+        "Shore power",
+        "Grúas",
+        "Contenedores reefer",
+        "Vehículos eléctricos",
+        "Iluminación",
+        "Respaldo de emergencia"
+      ],
+      "argumento": "Alternativa a generadores sobredimensionados en ralentí que queman combustible, elevan mantención y generan emisiones innecesarias.",
+      "imagenes": [
+        "assets/industries/ports-hero.avif",
+        "assets/industries/ports-challenge.avif",
+        "assets/industries/ports-solution.avif",
+        "assets/industries/ports-shore-power.avif",
+        "assets/industries/ports-cranes.avif",
+        "assets/industries/ports-reefers.jpg",
+        "assets/industries/ports-ev.avif",
+        "assets/industries/ports-lighting.avif"
+      ]
+    },
+    "hormigon": [
+      "Mezcladora",
+      "Correa",
+      "Bombas y motores",
+      "Respaldo"
+    ],
+    "oil_gas": [
+      "Equipos de perforación",
+      "Compresores y bombas",
+      "Mantención de sitio",
+      "Embarcaciones de apoyo"
+    ],
+    "eventos": [
+      "Audiovisual e iluminación",
+      "Pantallas LED",
+      "Energía de escenario",
+      "Sonido"
+    ],
+    "resumen_web": {
+      "construccion": "Problemas comunes de energía por dependencia del diésel causan retrasos y sobrecostos.",
+      "mineria": "Los generadores sufren en entornos con peaks; la minería tiene más picos, sobrecargas y volatilidad de lo que se cree.",
+      "infraestructura": "Túneles, obras ferroviarias y montajes demandan potencia muy variable, inadecuada para diésel.",
+      "hormigon": "Reduce ineficiencia, desperdicio de combustible y desgaste por cargas erráticas.",
+      "oil_gas": "Perfil de potencia altamente volátil; generador + Ampd es la solución óptima.",
+      "microtuneleria": "Precisión absoluta y soporte a picos de alto torque.",
+      "eventos": "Ampd como buffer silencioso del generador: sin ruido, vibración ni humos.",
+      "puertos": "Alternativa a generadores sobredimensionados en ralentí."
+    }
+  },
+  "process": [
+    {
+      "paso": 1,
+      "titulo_en": "Let's Talk Today",
+      "texto": "Cuéntanos tu sitio, los equipos a alimentar y si prefieres compra o arriendo."
+    },
+    {
+      "paso": 2,
+      "titulo_en": "Digging Into It",
+      "texto": "Ventas e ingeniería profundizan en requisitos y restricciones con un levantamiento detallado."
+    },
+    {
+      "paso": 3,
+      "titulo_en": "Recommendations",
+      "texto": "Propuesta con productos, plan de despliegue, opciones de post-venta y precio transparente."
+    },
+    {
+      "paso": 4,
+      "titulo_en": "Plug In",
+      "texto": "Instalación sin fricción junto a tu equipo y capacitación en terreno."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote_en": "The Enertainer worked perfectly from the very beginning. Not only did we vastly reduce our CO2 emissions–a key focus for Gammon–but we did so with a lower OPEX. Even though this was the first time we deployed this technology, the performance data reporting system of the Enertainer gave us confidence.",
+      "author": "Andy Wong",
+      "role": "Head of Digital G, Gammon Construction"
+    },
+    {
+      "quote_en": "Deploying the Ampd Energy Enertainers at Olympia has been a game-changer in reducing carbon and maximising power reliability and availability at the site. Each Enertainer has removed a 500 kVA generator and all its associated emissions, noise, space, and cost.",
+      "author": "Ian Fleming",
+      "role": "Product Leader, Select Site Solutions"
+    },
+    {
+      "quote_en": "No product offers similar features as Ampd, which provides the reliability and stability that the construction industry needs.",
+      "author": "Ke-Vin Lim",
+      "role": "Head of Group Innovation, CDL"
+    },
+    {
+      "quote_en": "Over the past few years, Ampd has consistently demonstrated highly reliable performance and met the project team's needs.",
+      "author": "Ir Dr Stewart Wan",
+      "role": "Head of Innovation, Gammon | GM, Digital G"
+    },
+    {
+      "quote_en": "All in all, the Ampd ESS has had a massive impact in a positive way, particularly for the environment.",
+      "author": "Darrell Cullen",
+      "role": "Senior Project Manager, McGoff Construction"
+    },
+    {
+      "quote_en": "By introducing an Ampd unit to replace 2 diesel generators, we were able to achieve reliable electricity supply for 24 hours/7 days operation without worrying about any overheating issues. On top of that, we achieved operational cost savings and more than halved our carbon emissions.",
+      "author": "Roy Khoo",
+      "role": "Director, Kimly Construction"
+    }
+  ],
+  "case_studies_count": "45+ casos publicados: UK, USA, LatAm, EAU, Indonesia, Taiwán, Singapur, Hong Kong, Australia (incl. 6 en español)"
+}

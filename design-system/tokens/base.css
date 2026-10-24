@@ -1,0 +1,7 @@
+/* Minimal resets so specimens and kits inherit the light base. */
+:root{color-scheme:light}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg-page);color:var(--text-primary);font-family:var(--font-body);font-size:var(--text-body);line-height:var(--leading-body)}
+a{color:var(--text-link);text-decoration:none;transition:color var(--dur-fast) var(--ease-out)}
+a:hover{color:var(--text-link-hover)}
+::selection{background:var(--green-alpha-24);color:var(--carbon-0)}
