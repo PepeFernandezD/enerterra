@@ -120,23 +120,21 @@ img{display:block;max-width:100%}
 
 /* ===== 3. WHY AMPD ===== */
 .why{padding:clamp(96px,12vw,160px) 0}
-.why-intro{margin-bottom:clamp(48px,6vw,72px)}
-.why-intro .h-lg{max-width:20ch}
-.why-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center;padding:clamp(40px,5vw,72px) 0;border-bottom:1px solid var(--line-l)}
-.why-row:first-of-type{padding-top:0}
-.why-row:last-of-type{border-bottom:none;padding-bottom:0}
-.why-row.flip .why-img{order:2}
-.why-row.flip .why-text{order:1}
-.why-img{border-radius:10px;overflow:hidden;aspect-ratio:4/3}
-.why-img img{width:100%;height:100%;object-fit:cover}
-.why-text{display:grid;gap:16px}
-.why-text h3{font-size:clamp(24px,2.6vw,36px);letter-spacing:-.02em;font-weight:600;line-height:1.1}
-.why-text p{color:var(--gris-500);font-size:clamp(16px,1.2vw,18px);line-height:1.6;max-width:48ch}
-.why-compact{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-l);border-top:1px solid var(--line-l);margin-top:0;padding-top:0}
-.why-card{background:var(--blanco-1);padding:clamp(28px,3vw,48px);display:grid;gap:12px;align-content:start}
-.why-card h3{font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;font-weight:600;line-height:1.1;color:var(--carbon)}
-.why-card p{color:var(--gris-500);font-size:15px;line-height:1.6}
-@media (max-width:900px){.why-row{grid-template-columns:1fr}.why-row.flip .why-img,.why-row.flip .why-text{order:unset}.why-compact{grid-template-columns:1fr}}
+.why-head{text-align:center;margin-bottom:clamp(48px,6vw,72px)}
+.why-head .eyebrow{color:var(--green);justify-content:center}
+.why-head .h-lg{max-width:22ch;margin:16px auto 0}
+.why-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.why-card{background:var(--carbon-2);border:1px solid var(--line-d);border-radius:12px;padding:clamp(24px,2.5vw,36px);display:grid;gap:16px;align-content:start;text-align:center}
+.why-card .illus{height:160px;display:grid;place-items:center;margin-bottom:8px}
+.why-card .illus img{max-width:100%;max-height:100%;object-fit:contain}
+.why-card h3{font-size:clamp(18px,1.6vw,22px);font-weight:600;letter-spacing:-.01em;line-height:1.2}
+.why-card p{color:var(--acero-300);font-size:15px;line-height:1.55}
+.why-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}
+.why-stat{border-top:3px solid var(--green);padding-top:20px;text-align:center}
+.why-stat .big{font-family:var(--mono);font-size:clamp(16px,1.4vw,20px);font-weight:600;color:var(--green);letter-spacing:.02em;text-transform:uppercase}
+.why-stat .sub{font-size:13px;color:var(--acero-300);text-transform:uppercase;letter-spacing:.06em;margin-top:6px;line-height:1.35}
+@media(max-width:1000px){.why-cards{grid-template-columns:1fr 1fr}.why-stats{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.why-cards{grid-template-columns:1fr}.why-stats{grid-template-columns:1fr}.why-card .illus{height:120px}}
 
 /* ===== 4. PRODUCTS ===== */
 .productos{padding:clamp(96px,12vw,160px) 0}
@@ -358,60 +356,52 @@ footer a:hover{color:var(--blanco)}
 </section>
 
 <!-- ===== 3. WHY AMPD ===== -->
-<section class="why light" id="why">
+<section class="why dark" id="why">
   <div class="wrap">
-    <div class="why-intro reveal">
-      <h2 class="h-lg">¿Necesita una fuente de energía segura y altamente fiable?</h2>
+    <div class="why-head reveal">
+      <span class="eyebrow">Por qué Ampd?</span>
+      <h2 class="h-lg">¿Necesita Una Fuente De Energía Segura Y Altamente Fiable?</h2>
     </div>
-    <!-- Row 1 -->
-    <div class="why-row reveal">
-      <div class="why-img"><img src="../assets/site/why-1.avif" alt="Maximice la eficiencia operativa" loading="lazy"></div>
-      <div class="why-text">
-        <h3>Sin interrupciones innecesarias para los trabajadores</h3>
+    <div class="why-cards">
+      <div class="why-card reveal">
+        <div class="illus"><img src="../assets/site/why-1.avif" alt="Grandes ahorros" loading="lazy"></div>
+        <h3>Grandes Ahorros Para Su Obra</h3>
+        <p>Con una solución de energía portátil y sostenible de Ampd, puede reducir significativamente las emisiones de CO₂ y los costes de combustible de su obra.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="illus"><img src="../assets/site/why-2.avif" alt="Sin interrupciones" loading="lazy"></div>
+        <h3>Sin Interrupciones Innecesarias Para Los Trabajadores</h3>
         <p>Maximice la eficiencia operativa reduciendo o eliminando el repostaje, al tiempo que disminuye la frecuencia de mantenimiento y reduce el tiempo de inactividad no planificado.</p>
       </div>
-    </div>
-    <!-- Row 2 (flipped) -->
-    <div class="why-row flip reveal">
-      <div class="why-img"><img src="../assets/site/why-2.avif" alt="30 veces más silencioso" loading="lazy"></div>
-      <div class="why-text">
-        <h3>30 veces más silencioso que un generador diésel</h3>
-        <p>Elimine la contaminación acústica y permita trabajar en horarios sensibles al ruido sin restricciones.</p>
-      </div>
-    </div>
-    <!-- Row 3 -->
-    <div class="why-row reveal">
-      <div class="why-img"><img src="../assets/site/why-3.avif" alt="Mejore las condiciones de trabajo" loading="lazy"></div>
-      <div class="why-text">
-        <h3>Mejore las condiciones de trabajo</h3>
+      <div class="why-card reveal">
+        <div class="illus"><img src="../assets/site/why-3.avif" alt="Mejore condiciones" loading="lazy"></div>
+        <h3>Mejore Las Condiciones De Trabajo</h3>
         <p>Reduzca el riesgo de incendio, los peligros de manipulación de combustible (como derrames) y los humos nocivos para crear un entorno de trabajo más seguro para el personal.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="illus"><img src="../assets/site/why-4.avif" alt="Condiciones extremas" loading="lazy"></div>
+        <h3>Diseñados Para Condiciones Extremas</h3>
+        <p>Fabricados bajo los más altos estándares de seguridad eléctrica, los ESS de Ampd están completamente sellados y cuentan con una carcasa sin intercambio de aire, lo que garantiza un rendimiento fiable incluso en los entornos más duros y polvorientos.</p>
       </div>
     </div>
     <!-- Row 4 (flipped) -->
-    <div class="why-row flip reveal">
-      <div class="why-img"><img src="../assets/site/why-4.avif" alt="Reducción de emisiones" loading="lazy"></div>
-      <div class="why-text">
-        <h3>Hasta un 90 % de reducción en emisiones de CO&#8322;</h3>
-        <p>Reduzca las emisiones de carbono de su obra y cree un entorno de trabajo más saludable sin emisiones directas de NOx, partículas y SO&#8322;.</p>
-      </div>
     </div>
-    <!-- Compact cards for remaining items -->
-    <div class="why-compact">
-      <div class="why-card reveal">
-        <h3>Diseñados para condiciones extremas</h3>
-        <p>Fabricados bajo los más altos estándares de seguridad eléctrica, los ESS de Ampd están completamente sellados y cuentan con una carcasa sin intercambio de aire, lo que garantiza un rendimiento fiable incluso en los entornos más duros y polvorientos.</p>
+    <div class="why-stats">
+      <div class="why-stat reveal">
+        <div class="big">Hasta un 80% de reducción</div>
+        <div class="sub">en costes operativos</div>
       </div>
-      <div class="why-card reveal">
-        <h3>Grandes ahorros para su obra</h3>
-        <p>Con una solución de energía portátil y sostenible de Ampd, puede reducir significativamente las emisiones de CO&#8322; y los costes de combustible de su obra.</p>
+      <div class="why-stat reveal">
+        <div class="big">30 veces</div>
+        <div class="sub">más silencioso que un generador diésel</div>
       </div>
-      <div class="why-card reveal">
-        <h3>Hasta un 80 % de reducción en costes operativos</h3>
-        <p>Minimice los gastos de combustible, mantenimiento y logística con una solución de energía que opera de manera más eficiente y con menores costes que los generadores diésel tradicionales.</p>
+      <div class="why-stat reveal">
+        <div class="big">Hasta un 90% de reducción</div>
+        <div class="sub">en emisiones de CO₂</div>
       </div>
-      <div class="why-card reveal">
-        <h3>Cero contaminantes atmosféricos locales</h3>
-        <p>Sin emisiones directas de CO, NOx, partículas ni SO&#8322; en su sitio de trabajo. Un entorno más limpio y saludable para todos.</p>
+      <div class="why-stat reveal">
+        <div class="big">Cero</div>
+        <div class="sub">contaminantes atmosféricos locales</div>
       </div>
     </div>
   </div>
