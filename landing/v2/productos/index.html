@@ -81,7 +81,7 @@ section{padding:clamp(48px,5vw,72px) 0}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
 .hero .copy{display:grid;gap:24px}.hero .eyebrow{color:var(--green-text)}.hero .lead{color:var(--gris-500)}
 .hero .tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--green);border:1px solid var(--green);border-radius:4px;padding:4px 9px;margin-left:12px;vertical-align:middle}
-.hero .pic{aspect-ratio:1;border-radius:10px;overflow:hidden;background:var(--blanco-1)}.hero .pic img{width:100%;height:100%;object-fit:cover}.hero .pic.contain{background:#fff}.hero .pic.contain img{object-fit:contain;padding:8%}
+.hero .pic{aspect-ratio:1;border-radius:10px;overflow:hidden;background:var(--blanco-1)}.hero .pic img{width:100%;height:100%;object-fit:cover}.hero .pic.contain{background:#fff;aspect-ratio:auto;padding:clamp(24px,4vw,48px)}.hero .pic.contain img{object-fit:contain;width:100%;height:auto}
 @media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero .pic{aspect-ratio:4/3}}
 
 /* ── CARD CONTAINERS ── */
@@ -398,7 +398,7 @@ footer a:hover{color:var(--blanco)}
       '<span class="eyebrow reveal" style="color:var(--green)">Caracter&iacute;sticas del producto</span>'+
       '<h2 class="h-lg reveal" style="margin-bottom:32px">'+e(p.features.titulo)+'</h2>'+
       '<div class="feat-inner" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,64px);align-items:stretch">'+
-      '<div class="feat-img reveal" style="border-radius:10px;overflow:hidden"><img src="'+p.hero+'" alt="'+e(p.nombre)+'" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy"></div>'+
+      '<div class="feat-img reveal" style="border-radius:10px;overflow:hidden;background:#fff;display:grid;place-items:center"><img src="'+p.hero+'" alt="'+e(p.nombre)+'" style="width:100%;height:100%;object-fit:contain;display:block;padding:'+(p.heroFit==='contain'?'24px':'0')+'" loading="lazy"></div>'+
       '<dl class="spec-list">'+
       p.features.items.map(function(f){
         return '<div class="spec-row reveal"><dt>'+e(f[0])+'</dt><dd>'+e(f[1])+'</dd></div>';
