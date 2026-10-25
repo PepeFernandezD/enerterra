@@ -129,7 +129,7 @@ window.PRODUCTOS = {
     nombre: "Software", eyebrow: "Inteligencia de desempeño en tiempo real",
     h1: "El software Ampd es estándar en todas las unidades",
     intro: "Acceso a un stack de software líder en su clase que simplifica drásticamente la planificación previa al despliegue, la operación y mantención, la gestión de flota y el reporte de datos.",
-    hero: "../../assets/products/software/ampd-pulse-devices.jpg", heroFit: "contain",
+    hero: "../../assets/products/software/enernet-app-white.jpg", heroFit: "contain",
     features: {
       titulo: "Lo que obtienes de fábrica con una unidad Ampd:",
       items: [
