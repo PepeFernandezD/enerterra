@@ -15,7 +15,7 @@ body{margin:0;font-family:var(--sans);color:var(--carbon);background:var(--blanc
 h1,h2,h3,h4,p{margin:0;text-wrap:pretty}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 
 /* ── UTILITY ── */
-.dark{background:var(--carbon);color:var(--blanco)}.light{background:var(--blanco);color:var(--carbon)}.soft{background:var(--blanco-1)}
+.dark{background:#2d2d36;color:var(--blanco)}.light{background:var(--blanco);color:var(--carbon)}.soft{background:var(--blanco-1)}
 .wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
 .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;display:inline-flex;align-items:center;gap:10px}.eyebrow::before{content:"";width:22px;height:1px;background:currentColor}
 .h-xl{font-size:clamp(38px,5.6vw,76px);line-height:1;letter-spacing:-.03em;font-weight:600;font-variation-settings:"wdth" 105}
@@ -30,10 +30,10 @@ h1,h2,h3,h4,p{margin:0;text-wrap:pretty}a{color:inherit;text-decoration:none}img
 .ctas{display:flex;gap:12px;flex-wrap:wrap}@media(max-width:640px){.ctas .btn{width:100%}}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
-section{padding:clamp(80px,10vw,140px) 0}
+section{padding:clamp(48px,5vw,72px) 0}
 
 /* ── NAV ── */
-.nav{position:sticky;top:0;z-index:20;height:80px;display:flex;align-items:center;background:var(--carbon);color:#fff;border-bottom:1px solid var(--line-d)}
+.nav{position:sticky;top:0;z-index:20;height:80px;display:flex;align-items:center;background:#2d2d36;color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%;gap:32px}
 .brand{display:inline-flex;align-items:center;gap:14px;line-height:1}
 .brand img.et{height:26px;width:auto}
@@ -84,6 +84,10 @@ section{padding:clamp(80px,10vw,140px) 0}
 .hero .pic{aspect-ratio:1;border-radius:10px;overflow:hidden;background:var(--blanco-1)}.hero .pic img{width:100%;height:100%;object-fit:cover}.hero .pic.contain{background:#fff}.hero .pic.contain img{object-fit:contain;padding:8%}
 @media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero .pic{aspect-ratio:4/3}}
 
+/* ── CARD CONTAINERS ── */
+.feat-inner,.assurance-inner,.bene-inner,.sw-inner{background:#f0f2f5;border-radius:16px;padding:clamp(28px,4vw,48px);color:var(--carbon)}
+.feat-inner .btn-outline,.assurance-inner .btn-outline,.bene-inner .btn-outline,.sw-inner .btn-outline{border-color:var(--line-l);color:var(--carbon)}.feat-inner .btn-outline:hover,.sw-inner .btn-outline:hover{border-color:var(--carbon);background:rgba(14,18,22,.04)}
+
 /* ── STATEMENT ── */
 .statement .h-lg{max-width:26ch;color:var(--carbon)}
 
@@ -97,7 +101,7 @@ section{padding:clamp(80px,10vw,140px) 0}
 @media(max-width:900px){.stats .grid{grid-template-columns:1fr 1fr}.stat,.stat+.stat{padding:24px 0}}
 
 /* ── FEATURES ── */
-.feat .eyebrow{color:var(--green-text)}.feat h2{margin:16px 0 40px}
+.feat h2{margin:16px 0 40px}
 .feat .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .card{background:#fff;border:1px solid var(--line-l);border-radius:10px;padding:28px;display:grid;gap:10px;align-content:start}
 .card h3{font-size:22px;letter-spacing:-.015em;font-weight:600;line-height:1.15}.card p{color:var(--gris-500);font-size:16px;white-space:pre-line}
@@ -115,19 +119,18 @@ section{padding:clamp(80px,10vw,140px) 0}
 @media(max-width:640px){.spec-row{grid-template-columns:1fr;gap:4px}}
 
 /* ── SOFTWARE ── */
-.sw .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,80px);align-items:center}
 .sw .copy{display:grid;gap:22px}.sw .copy p{color:var(--gris-500);font-size:17px}
 .sw .pic{border-radius:10px;overflow:hidden;background:#fff;border:1px solid var(--line-l)}.sw .pic img{width:100%;height:auto}
-@media(max-width:900px){.sw .wrap{grid-template-columns:1fr}}
+@media(max-width:900px){.sw-inner>div{grid-template-columns:1fr !important}}
 
 /* ── INDUSTRIAS ── */
 .ind .wrap{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
-.ind h2{max-width:26ch}.ind p{color:var(--gris-500);margin-top:12px;max-width:48ch;font-size:clamp(17px,1.4vw,21px)}
+.ind h2{max-width:26ch}.ind p{color:var(--acero-300);margin-top:12px;max-width:48ch;font-size:clamp(17px,1.4vw,21px)}
 
 /* ── ASSURANCE ── */
 .assurance .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .assurance .step{background:#fff;border:1px solid var(--line-l);border-radius:10px;padding:28px;display:grid;gap:12px;align-content:start}
-.assurance .step img{width:56px;height:56px;object-fit:contain;margin-bottom:4px}
+.assurance .step img{width:96px;height:96px;object-fit:contain;margin-bottom:4px}
 .assurance .step .num{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--gris-400)}
 .assurance .step h3{font-size:22px;letter-spacing:-.015em;font-weight:600;line-height:1.15}
 .assurance .step p{color:var(--gris-500);font-size:16px}
@@ -158,10 +161,15 @@ section{padding:clamp(80px,10vw,140px) 0}
 @media(max-width:1000px){.list .grid{grid-template-columns:1fr 1fr}.list .two{grid-template-columns:1fr}}@media(max-width:600px){.list .grid{grid-template-columns:1fr}}
 
 /* ── CTA FINAL ── */
-.cta-final .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
-.cta-final .cta-img{border-radius:10px;overflow:hidden;aspect-ratio:4/3}.cta-final .cta-img img{width:100%;height:100%;object-fit:cover}
-.cta-final h2{max-width:16ch}.cta-final p{color:var(--gris-500);margin-top:16px;font-size:clamp(17px,1.4vw,21px);max-width:44ch}
-@media(max-width:900px){.cta-final .wrap{grid-template-columns:1fr}.cta-final .cta-img{display:none}}
+.cta-final-inner{display:grid;grid-template-columns:45fr 55fr;border-radius:16px;overflow:hidden;min-height:420px}
+.cta-final-img img{width:100%;height:100%;object-fit:cover;display:block}
+.cta-final-panel{background:var(--green);padding:clamp(40px,5vw,72px);display:grid;gap:24px;align-content:center}
+.cta-final-panel .eyebrow{color:rgba(255,255,255,.85);font-size:11px}
+.cta-final-panel .eyebrow::before{background:rgba(255,255,255,.6)}
+.cta-final-panel .h-md{color:var(--blanco);max-width:26ch;font-size:clamp(24px,2.8vw,36px)}
+.btn-cta-outline{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:6px;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;border:2px solid rgba(255,255,255,.7);color:var(--blanco);background:transparent;cursor:pointer;transition:background .15s var(--ease),border-color .15s var(--ease);font-family:inherit;white-space:nowrap}
+.btn-cta-outline:hover{background:rgba(255,255,255,.12);border-color:var(--blanco)}
+@media(max-width:900px){.cta-final-inner{grid-template-columns:1fr}.cta-final-img{min-height:240px}.cta-final-panel{padding:clamp(32px,5vw,56px)}}
 
 /* ── FOOTER ── */
 footer.dark{padding:56px 0 40px;border-top:1px solid var(--line-d);color:var(--acero-400);font-size:14px;background:#2d2d36}
@@ -193,7 +201,7 @@ footer a:hover{color:var(--blanco)}
   .hero .tag{display:inline-block;margin:8px 0 0}
   .stat b{font-size:40px}
   .card{padding:22px}.card h3{font-size:19px}
-  .cta-final .ctas .btn{width:100%}
+  .cta-final-panel .btn-cta-outline{width:100%}
 }
 </style>
 </head>
@@ -386,9 +394,10 @@ footer a:hover{color:var(--blanco)}
 
   /* ── 5. FEATURES ── */
   if(p.features){
-    h.push('<section class="feat light"><div class="wrap">'+
-      '<span class="eyebrow reveal">Caracter&iacute;sticas del producto</span>'+
-      '<h2 class="h-lg reveal">'+e(p.features.titulo)+'</h2>'+
+    h.push('<section class="feat dark"><div class="wrap">'+
+      '<span class="eyebrow reveal" style="color:var(--green)">Caracter&iacute;sticas del producto</span>'+
+      '<h2 class="h-lg reveal" style="margin-bottom:32px">'+e(p.features.titulo)+'</h2>'+
+      '<div class="feat-inner">'+
       '<dl class="spec-list">'+
       p.features.items.map(function(f){
         return '<div class="spec-row reveal"><dt>'+e(f[0])+'</dt><dd>'+e(f[1])+'</dd></div>';
@@ -396,22 +405,23 @@ footer a:hover{color:var(--blanco)}
       '</dl>'+
       (p.features.nota?'<p class="nota">'+e(p.features.nota)+'</p>':'')+
       (p.brochure?'<div class="ctas reveal" style="margin-top:40px"><a href="'+p.brochure+'" target="_blank" rel="noopener" class="btn btn-outline">DESCARGAR FOLLETO'+dl+'</a></div>':'')+
-      '</div></section>');
+      '</div></div></section>');
   }
 
   /* ── 6. SOFTWARE ── */
   if(p.software===true){
-    h.push('<section class="sw light"><div class="wrap">'+
-      '<div class="copy"><h2 class="h-lg reveal">Impulsado por software: Ampd Pulse</h2>'+
+    h.push('<section class="sw dark"><div class="wrap">'+
+      '<div class="sw-inner"><div style="display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,80px);align-items:center">'+
+      '<div class="copy"><h2 class="h-lg reveal" style="color:var(--carbon)">Impulsado por software: Ampd Pulse</h2>'+
       '<p class="reveal">Ampd Pulse es un portal en l&iacute;nea todo en uno que se conecta directamente a todos los ESS de Ampd. Entrega un nivel profundo de transparencia de datos sobre la operaci&oacute;n de tu Ampd y de los equipos conectados, en cualquier momento y lugar.</p>'+
       '<div class="ctas reveal"><a href="?p=software" class="btn btn-outline">m&aacute;s informaci&oacute;n'+arrow+'</a></div></div>'+
       '<div class="pic reveal"><img src="../../assets/products/software/ampd-pulse-screens.avif" alt="Vistas de pantalla de Ampd Pulse" loading="lazy"></div>'+
-      '</div></section>');
+      '</div></div></div></section>');
   }
 
   /* ── 7. INDUSTRIAS ── */
   if(p.industrias){
-    h.push('<section class="ind light"><div class="wrap"><div>'+
+    h.push('<section class="ind dark"><div class="wrap"><div>'+
       '<h2 class="h-md reveal">Los productos Ampd son ideales para impulsar una gran variedad de sectores</h2>'+
       '<p class="reveal">Encuentre su sector y descubra c&oacute;mo Ampd puede reducir sus gastos operativos, emisiones e interrupciones.</p>'+
       '</div><a href="../index.html#sectores" class="btn btn-outline reveal">Industrias'+arrow+'</a></div></section>');
@@ -419,21 +429,22 @@ footer a:hover{color:var(--blanco)}
 
   /* ── 8. ASSURANCE (NextGen only) ── */
   if(p.assurance){
-    h.push('<section class="assurance light"><div class="wrap">'+
-      '<span class="eyebrow reveal" style="color:var(--green-text)">La garant&iacute;a Ampd</span>'+
-      '<h2 class="h-lg reveal" style="margin-top:16px;max-width:28ch">No solo entregamos energ&iacute;a: entregamos tranquilidad mediante est&aacute;ndares de calidad rigurosos y componentes de clase mundial.</h2>'+
-      '<div class="grid" style="margin-top:48px">'+
+    h.push('<section class="assurance dark"><div class="wrap">'+
+      '<span class="eyebrow reveal" style="color:var(--green)">La garant&iacute;a Ampd</span>'+
+      '<h2 class="h-lg reveal" style="margin-top:16px;margin-bottom:32px;max-width:28ch">No solo entregamos energ&iacute;a: entregamos tranquilidad mediante est&aacute;ndares de calidad rigurosos y componentes de clase mundial.</h2>'+
+      '<div class="assurance-inner"><div class="grid">'+
       p.assurance.map(function(a,i){
         return '<div class="step reveal"><img src="'+a[2]+'" alt=""><span class="num">Paso '+(i+1)+'</span><h3>'+e(a[0])+'</h3><p>'+e(a[1])+'</p></div>';
       }).join('')+
-      '</div></div></section>');
+      '</div></div></div></section>');
   }
 
   /* ── Beneficios (Enertainer, Silo) ── */
   if(p.beneficios){
-    h.push('<section class="bene light"><div class="wrap"><div class="grid">'+
+    h.push('<section class="bene dark"><div class="wrap">'+
+      '<div class="bene-inner"><div class="grid">'+
       BEN.map(function(b){return '<div class="b reveal"><h3>'+e(b[0])+'</h3><p>'+e(b[1])+'</p></div>'}).join('')+
-      '</div></div></section>');
+      '</div></div></div></section>');
   }
 
   /* ── Detalle (Enertainer, Silo) ── */
@@ -479,10 +490,13 @@ footer a:hover{color:var(--blanco)}
 
   /* ── 9. CTA FINAL ── */
   h.push('<section class="cta-final light"><div class="wrap">'+
-    '<div class="cta-img reveal"><img src="../../assets/site/solution-cta.jpg" alt="Soluci&oacute;n energ&eacute;tica Ampd en terreno" loading="lazy"></div>'+
-    '<div><h2 class="h-lg reveal">&iquest;Listo para impulsar su pr&oacute;ximo proyecto con Ampd?</h2>'+
-    '<p class="reveal">Su especialista local puede entregarle un desglose completo de costos, ahorro de combustible y CO&#x2082; evitado para su faena.</p>'+
-    '<div class="ctas reveal" style="margin-top:28px"><a href="../index.html#cotizar" class="btn btn-primary">cont&aacute;ctenos'+arrow+'</a></div></div></div></section>');
+    '<div class="cta-final-inner reveal">'+
+    '<div class="cta-final-img"><img src="../../assets/site/solution-cta.jpg" alt="" loading="lazy"></div>'+
+    '<div class="cta-final-panel">'+
+    '<span class="eyebrow">Listo para impulsar su pr&oacute;ximo proyecto con Ampd?</span>'+
+    '<h2 class="h-md">Su especialista local puede ofrecerle un desglose completo de costes, ahorro de combustible y CO&#x2082; que deben evitarse en su sitio.</h2>'+
+    '<a href="../index.html#contacto" class="btn-cta-outline">Cont&aacute;ctanos</a>'+
+    '</div></div></div></section>');
 
   /* ── Render ── */
   document.getElementById('main').innerHTML=h.join('');
