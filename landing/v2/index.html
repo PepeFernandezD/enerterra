@@ -189,48 +189,31 @@ img{display:block;max-width:100%}
 @media (max-width:900px){.steps-grid{grid-template-columns:1fr 1fr}.step{border-right:none;border-bottom:1px solid rgba(0,0,0,.06)}.step:last-child{border-bottom:none}}
 @media (max-width:560px){.steps-grid{grid-template-columns:1fr}}
 
-/* ===== 6b. LIVE FLEET IMPACT ===== */
-.fleet{padding:clamp(48px,5vw,72px) 0}
-.fleet-head{text-align:center;margin-bottom:clamp(32px,4vw,48px)}
-.fleet-head .eyebrow{color:var(--green);justify-content:center}
-.fleet-head .eyebrow::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--green);animation:fleetPulse 2s ease-in-out infinite}
-@keyframes fleetPulse{0%,100%{opacity:1}50%{opacity:.4}}
-.fleet-head .h-lg{margin:16px auto 0;max-width:22ch}
-.fleet-head .h-lg .green{color:var(--green)}
-.fleet-head .lead{color:var(--gris-500);margin:16px auto 0;text-align:center}
-.fleet-chart-card{background:var(--blanco-1);border-radius:16px;padding:clamp(24px,3vw,36px);margin-bottom:24px}
-.fleet-chart-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:20px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--gris-500)}
-.fleet-chart-header .range{color:var(--green-text);letter-spacing:.02em}
-.fleet-chart-svg{width:100%;height:180px;display:block}
-.fleet-chart-footer{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:12px;color:var(--gris-400);font-weight:500}
-.fleet-energy-card{background:var(--blanco-1);border-radius:16px;padding:clamp(24px,3vw,36px);text-align:center}
-.fleet-energy-card .big{font-size:clamp(36px,4vw,56px);font-weight:700;letter-spacing:-.02em;color:var(--carbon);line-height:1}
-.fleet-energy-card .sub{font-size:clamp(14px,1.2vw,17px);color:var(--gris-500);margin-top:8px}
-.fleet-updated{text-align:center;margin-top:16px;font-size:13px;color:var(--green-text);font-weight:600}
-
 /* ===== 7. TESTIMONIALS ===== */
 .testimonials{padding:clamp(48px,5vw,72px) 0}
 .test-head{text-align:center;margin-bottom:clamp(40px,5vw,56px)}
 .test-head .eyebrow{color:var(--green);justify-content:center}
 .test-head .h-md{margin:16px auto 0;max-width:28ch}
-.test-grid{display:grid;grid-template-columns:1fr 1.2fr 1fr;grid-template-rows:auto auto;gap:20px;align-items:start}
-.test-col{display:grid;gap:20px;align-content:start}
-.test-col-center{grid-row:1/3;position:relative}
-.test-quote{background:var(--blanco-1);border-radius:12px;padding:clamp(24px,2.5vw,32px);text-align:center}
-.test-quote blockquote{margin:0;font-style:italic;font-size:clamp(14px,1.1vw,16px);line-height:1.6;color:var(--gris-500);quotes:none}
-.test-quote blockquote::before{content:"\201C";display:block;font-size:42px;line-height:.7;color:var(--green);font-weight:700;margin-bottom:8px}
-.test-quote .name{font-weight:700;font-size:18px;margin-top:20px;color:var(--carbon)}
-.test-quote .role{font-size:14px;color:var(--green-text);font-weight:500;margin-top:4px}
-.test-photo{border-radius:12px;overflow:hidden}
-.test-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.test-col-center .test-photo{height:100%;min-height:500px}
-.test-overlay-card{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);width:calc(100% - 40px);background:rgba(14,18,22,.9);color:var(--blanco);border-radius:12px;padding:clamp(20px,2vw,28px);text-align:center;z-index:2}
+.test-grid{display:grid;grid-template-columns:1fr 1.3fr 1fr;grid-template-rows:1fr 1fr;gap:20px}
+/* Columna central: span 2 rows */
+.test-center{grid-column:2;grid-row:1/3;position:relative;border-radius:12px;overflow:hidden}
+.test-center img{width:100%;height:100%;object-fit:cover;display:block}
+.test-overlay-card{position:absolute;bottom:20px;left:20px;right:20px;background:rgba(14,18,22,.9);color:var(--blanco);border-radius:12px;padding:clamp(20px,2vw,28px);text-align:center;z-index:2}
 .test-overlay-card blockquote{margin:0;font-style:italic;font-size:clamp(13px,1vw,15px);line-height:1.55;color:var(--acero-300);quotes:none}
 .test-overlay-card blockquote::before{content:"\201C";display:block;font-size:36px;line-height:.7;color:var(--green);font-weight:700;margin-bottom:6px}
 .test-overlay-card .name{font-weight:700;font-size:16px;margin-top:14px;color:var(--blanco)}
 .test-overlay-card .role{font-size:13px;color:var(--green);font-weight:500;margin-top:3px}
-@media(max-width:900px){.test-grid{grid-template-columns:1fr}.test-col-center{grid-row:auto}.test-col-center .test-photo{min-height:320px}.test-overlay-card{position:relative;bottom:auto;left:auto;transform:none;width:100%;margin-top:-40px}}
-@media(max-width:640px){.test-col-center .test-photo{min-height:240px}}
+/* Quote cards */
+.test-quote{background:var(--blanco-1);border-radius:12px;padding:clamp(24px,2.5vw,32px);text-align:center;display:flex;flex-direction:column;justify-content:center}
+.test-quote blockquote{margin:0;font-style:italic;font-size:clamp(14px,1.1vw,16px);line-height:1.6;color:var(--gris-500);quotes:none}
+.test-quote blockquote::before{content:"\201C";display:block;font-size:42px;line-height:.7;color:var(--green);font-weight:700;margin-bottom:8px}
+.test-quote .name{font-weight:700;font-size:18px;margin-top:20px;color:var(--carbon)}
+.test-quote .role{font-size:14px;color:var(--green-text);font-weight:500;margin-top:4px}
+/* Side photos */
+.test-photo{border-radius:12px;overflow:hidden}
+.test-photo img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:900px){.test-grid{grid-template-columns:1fr;grid-template-rows:auto}.test-center{grid-column:auto;grid-row:auto;min-height:360px}.test-overlay-card{position:relative;bottom:auto;left:auto;right:auto;margin-top:-40px}}
+@media(max-width:640px){.test-center{min-height:260px}}
 
 /* ===== 8. CTA FINAL ===== */
 .final-cta{padding:clamp(48px,5vw,72px) 0}
@@ -517,43 +500,6 @@ footer a:hover{color:var(--blanco)}
   </div>
 </section>
 
-<!-- ===== 6b. LIVE FLEET IMPACT ===== -->
-<section class="fleet light" id="fleet">
-  <div class="wrap">
-    <div class="fleet-head reveal">
-      <span class="eyebrow">Live Fleet Impact</span>
-      <h2 class="h-lg">Delivering <span class="green">2.99 MW</span> of power right now.</h2>
-      <p class="lead">Clean, quiet energy supporting projects around the world, measured directly from Ampd systems.</p>
-    </div>
-    <div class="fleet-chart-card reveal">
-      <div class="fleet-chart-header">
-        <span>Global Output &middot; Last 60 Minutes</span>
-        <span class="range">2.66 MW&ndash;2.99 MW &middot; 2.85 MW avg</span>
-      </div>
-      <svg class="fleet-chart-svg" viewBox="0 0 800 180" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="fleetGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="var(--green)" stop-opacity=".18"/>
-            <stop offset="100%" stop-color="var(--green)" stop-opacity="0"/>
-          </linearGradient>
-        </defs>
-        <path d="M0 130 C60 125,100 115,160 105 C220 95,260 100,320 95 C380 90,420 88,480 85 C540 82,580 80,640 75 C680 70,720 60,760 45 C780 35,800 25,800 20" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-        <path d="M0 130 C60 125,100 115,160 105 C220 95,260 100,320 95 C380 90,420 88,480 85 C540 82,580 80,640 75 C680 70,720 60,760 45 C780 35,800 25,800 20 L800 180 L0 180 Z" fill="url(#fleetGrad)"/>
-        <circle cx="800" cy="20" r="5" fill="var(--green)"/>
-      </svg>
-      <div class="fleet-chart-footer">
-        <span>54 min ago</span>
-        <span>Five-minute snapshots</span>
-        <span>Latest</span>
-      </div>
-    </div>
-    <div class="fleet-energy-card reveal">
-      <div class="big">5.12 MWh</div>
-      <div class="sub">Estimated energy delivered today by AMPD systems</div>
-    </div>
-    <div class="fleet-updated reveal">Updated 2 minutes ago</div>
-  </div>
-</section>
 
 <!-- ===== 7. TESTIMONIALS ===== -->
 <section class="testimonials light" id="testimonials">
@@ -563,38 +509,34 @@ footer a:hover{color:var(--blanco)}
       <h2 class="h-md">Lo que dicen nuestros clientes</h2>
     </div>
     <div class="test-grid">
-      <!-- Column 1 -->
-      <div class="test-col">
-        <div class="test-quote reveal">
-          <blockquote>El Enertainer funcionó a la perfección desde el principio. No solo redujimos enormemente nuestras emisiones de CO2 —un objetivo clave para Gammon—, sino que lo hicimos con unos gastos operativos menores. Aunque era la primera vez que utilizábamos esta tecnología, el sistema de informes de datos de rendimiento del Enertainer nos dio mucha confianza. Estamos muy entusiasmados con la idea de utilizar esta tecnología en otras obras en el futuro.</blockquote>
-          <div class="name">Andy Wong</div>
-          <div class="role">Jefe de Digital G, Gammon Construction</div>
-        </div>
-        <div class="test-photo reveal">
-          <img src="../assets/products/enertainer/field-technician.jpg" alt="Técnico en terreno con Enertainer" loading="lazy" style="aspect-ratio:4/3">
-        </div>
+      <!-- Row 1 col 1: Quote Andy Wong -->
+      <div class="test-quote reveal">
+        <blockquote>El Enertainer funcionó a la perfección desde el principio. No solo redujimos enormemente nuestras emisiones de CO2 —un objetivo clave para Gammon—, sino que lo hicimos con unos gastos operativos menores. Aunque era la primera vez que utilizábamos esta tecnología, el sistema de informes de datos de rendimiento del Enertainer nos dio mucha confianza. Estamos muy entusiasmados con la idea de utilizar esta tecnología en otras obras en el futuro.</blockquote>
+        <div class="name">Andy Wong</div>
+        <div class="role">Jefe de Digital G, Gammon Construction</div>
       </div>
-      <!-- Column 2 (tall photo spanning 2 rows + overlay card) -->
-      <div class="test-col-center reveal">
-        <div class="test-photo">
-          <img src="../assets/products/ampd-silo/web-hero.avif" alt="Ampd Silo en terreno" loading="lazy">
-        </div>
+      <!-- Col 2: Tall photo spanning 2 rows + overlay -->
+      <div class="test-center reveal">
+        <img src="../assets/products/ampd-silo/web-hero.avif" alt="Ampd Silo en terreno" loading="lazy">
         <div class="test-overlay-card">
           <blockquote>Implementar los Enertainers de Ampd Energy en Olympia ha supuesto un antes y un después a la hora de reducir las emisiones de carbono y maximizar la fiabilidad y disponibilidad energética en la obra. Cada Enertainer ha sustituido a un generador de 500 kVA y todas sus emisiones, ruido, espacio y costes asociados. Por ello, representan un gran paso adelante en nuestra estrategia de superar los límites hacia una construcción más eficiente, baja en carbono, innovadora y rentable.</blockquote>
           <div class="name">Ian Fleming</div>
           <div class="role">Líder de Producto, Select Site Solutions</div>
         </div>
       </div>
-      <!-- Column 3 -->
-      <div class="test-col">
-        <div class="test-quote reveal">
-          <blockquote>No podemos hacerlo todo solos, por eso dedicamos mucho tiempo a construir un ecosistema de innovadores como Ampd para ayudarnos a alcanzar nuestros objetivos de sostenibilidad. Ningún producto ofrece características similares a las de Ampd, que proporciona la fiabilidad y estabilidad que necesita el sector de la construcción. Con una mayor concienciación, este esfuerzo de energía verde crecerá con el tiempo.</blockquote>
-          <div class="name">Ke-Vin Lim</div>
-          <div class="role">Jefe de Innovación de Grupo, CDL</div>
-        </div>
-        <div class="test-photo reveal">
-          <img src="../assets/products/ampd-400/field-site.jpg" alt="Ampd 400 en terreno" loading="lazy" style="aspect-ratio:4/3">
-        </div>
+      <!-- Row 1 col 3: Quote Ke-Vin Lim -->
+      <div class="test-quote reveal">
+        <blockquote>No podemos hacerlo todo solos, por eso dedicamos mucho tiempo a construir un ecosistema de innovadores como Ampd para ayudarnos a alcanzar nuestros objetivos de sostenibilidad. Ningún producto ofrece características similares a las de Ampd, que proporciona la fiabilidad y estabilidad que necesita el sector de la construcción. Con una mayor concienciación, este esfuerzo de energía verde crecerá con el tiempo.</blockquote>
+        <div class="name">Ke-Vin Lim</div>
+        <div class="role">Jefe de Innovación de Grupo, CDL</div>
+      </div>
+      <!-- Row 2 col 1: Photo left -->
+      <div class="test-photo reveal">
+        <img src="../assets/products/enertainer/field-technician.jpg" alt="Técnico en terreno" loading="lazy" style="aspect-ratio:4/3">
+      </div>
+      <!-- Row 2 col 3: Photo right -->
+      <div class="test-photo reveal" style="grid-column:3">
+        <img src="../assets/products/ampd-400/field-site.jpg" alt="Ampd 400 en terreno" loading="lazy" style="aspect-ratio:4/3">
       </div>
     </div>
   </div>
