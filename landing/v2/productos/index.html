@@ -397,15 +397,15 @@ footer a:hover{color:var(--blanco)}
     h.push('<section class="feat dark"><div class="wrap">'+
       '<span class="eyebrow reveal" style="color:var(--green)">Caracter&iacute;sticas del producto</span>'+
       '<h2 class="h-lg reveal" style="margin-bottom:32px">'+e(p.features.titulo)+'</h2>'+
-      '<div class="feat-inner" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,64px);align-items:center">'+
-      '<div class="feat-img reveal" style="border-radius:10px;overflow:hidden"><img src="'+p.hero+'" alt="'+e(p.nombre)+'" style="width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3" loading="lazy"></div>'+
+      '<div class="feat-inner" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,64px);align-items:stretch">'+
+      '<div class="feat-img reveal" style="border-radius:10px;overflow:hidden"><img src="'+p.hero+'" alt="'+e(p.nombre)+'" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy"></div>'+
       '<dl class="spec-list">'+
       p.features.items.map(function(f){
         return '<div class="spec-row reveal"><dt>'+e(f[0])+'</dt><dd>'+e(f[1])+'</dd></div>';
       }).join('')+
       '</dl>'+
-      (p.features.nota?'<p class="nota">'+e(p.features.nota)+'</p>':'')+
-      (p.brochure?'<div class="ctas reveal" style="margin-top:40px"><a href="'+p.brochure+'" target="_blank" rel="noopener" class="btn btn-outline">DESCARGAR FOLLETO'+dl+'</a></div>':'')+
+      (p.features.nota?'<p class="nota" style="margin-top:8px">'+e(p.features.nota)+'</p>':'')+
+      (p.brochure?'<div class="ctas reveal" style="margin-top:16px"><a href="'+p.brochure+'" target="_blank" rel="noopener" class="btn btn-outline">DESCARGAR FOLLETO'+dl+'</a></div>':'')+
       '</div></div></section>');
   }
 
