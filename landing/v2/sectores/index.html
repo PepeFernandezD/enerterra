@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sector · Enerterra Chile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..800&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root{--carbon:#0E1216;--carbon-2:#161B20;--blanco:#FFFFFF;--blanco-1:#F5F7F9;--green:#0CB494;--green-hover:#0F9E82;--green-active:#085C4B;--green-text:#0B7A64;--green-12:rgba(12,180,148,.12);--green-24:rgba(12,180,148,.24);--acero:#4F718A;--acero-300:#B6CBDA;--acero-400:#96B3C8;--acero-500:#7B9DB6;--gris-500:#4A545E;--gris-400:#6B7580;--line-d:rgba(255,255,255,.14);--line-l:rgba(14,18,22,.12);--sans:"Archivo","Helvetica Neue",Arial,sans-serif;--mono:"Geist Mono",Menlo,Consolas,monospace;--pad:clamp(20px,5vw,72px);--ease:cubic-bezier(.2,.7,.2,1)}
+
+/* ── RESET ── */
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{margin:0;font-family:var(--sans);color:var(--carbon);background:var(--blanco);line-height:1.5;font-size:17px}
+h1,h2,h3,h4,p{margin:0;text-wrap:pretty}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+
+/* ── UTILITY ── */
+.dark{background:#2d2d36;color:var(--blanco)}.light{background:var(--blanco);color:var(--carbon)}.soft{background:var(--blanco-1)}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;display:inline-flex;align-items:center;gap:10px}.eyebrow::before{content:"";width:22px;height:1px;background:currentColor}
+.h-xl{font-size:clamp(38px,5.6vw,76px);line-height:1;letter-spacing:-.03em;font-weight:600;font-variation-settings:"wdth" 105}
+.h-lg{font-size:clamp(30px,3.6vw,52px);line-height:1.08;letter-spacing:-.025em;font-weight:600}
+.h-md{font-size:clamp(26px,2.8vw,40px);line-height:1.1;letter-spacing:-.02em;font-weight:600}
+.lead{font-size:clamp(17px,1.4vw,21px);line-height:1.5;max-width:60ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 26px;border-radius:6px;font-weight:600;font-size:16px;border:1px solid transparent;cursor:pointer;transition:all .15s var(--ease);white-space:nowrap;font-family:inherit;text-transform:uppercase;letter-spacing:.06em;font-size:14px}
+.btn:active{transform:translateY(1px)}.btn:focus-visible{outline:none;box-shadow:0 0 0 2px var(--blanco),0 0 0 4px var(--green)}
+.btn-primary{background:var(--green);color:var(--carbon);border-color:var(--green)}.btn-primary:hover{background:var(--green-hover);border-color:var(--green-hover)}
+.btn-outline{background:transparent;color:currentColor}.dark .btn-outline{border-color:rgba(255,255,255,.5)}.dark .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.06)}.light .btn-outline,.soft .btn-outline{border-color:var(--line-l)}.light .btn-outline:hover,.soft .btn-outline:hover{border-color:var(--carbon);background:rgba(14,18,22,.04)}
+.btn svg{width:18px;height:18px;flex:none}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}@media(max-width:640px){.ctas .btn{width:100%}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+section{padding:clamp(48px,5vw,72px) 0}
+
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:20;height:80px;display:flex;align-items:center;background:#2d2d36;color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%;gap:32px}
+.brand{display:inline-flex;align-items:center;gap:14px;line-height:1}
+.brand img.et{height:26px;width:auto}
+.brand small{display:inline-flex;align-items:center;gap:10px;padding-left:12px;border-left:1px solid var(--line-d);font-weight:400;font-size:9px;letter-spacing:.1em;color:var(--acero-300);line-height:1.15;white-space:nowrap}
+.brand small img{height:18px;width:auto}
+.nav-links{display:flex;gap:28px;font-size:15px;font-weight:500;margin-left:auto}.nav-links a{opacity:.85}.nav-links a:hover,.nav-links a.on{opacity:1;color:var(--green)}
+@media(max-width:640px){.brand small span{display:none}.brand img.et{height:22px}}
+
+/* ── BURGER + MOBILE ── */
+.burger{display:none;width:44px;height:44px;border:1px solid rgba(255,255,255,.3);border-radius:6px;background:none;color:#fff;cursor:pointer;place-items:center}
+.burger svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.mob{position:fixed;inset:0;z-index:70;background:var(--carbon);color:#fff;overflow:auto;display:none;padding:0 var(--pad) 40px}
+.mob.open{display:block}
+.mob .top{height:80px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line-d)}
+.mob h5{margin:28px 0 8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--acero-400);font-weight:600}
+.mob a.row{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line-d)}
+.mob a.row .ic{width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,.06);display:grid;place-items:center;overflow:hidden}
+.mob a.row .ic img{max-width:80%;max-height:80%;object-fit:contain}.mob a.row .ic svg{width:22px;height:22px;stroke:var(--green);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.mob a.row b{display:block;font-size:17px;font-weight:600}.mob a.row span{display:block;font-size:13px;color:var(--acero-300);margin-top:2px}
+.mob a.plain{display:block;padding:14px 0;font-size:20px;font-weight:600;border-bottom:1px solid var(--line-d)}
+.mob .btn{width:100%;margin-top:28px}
+@media(max-width:1000px){.nav-links{display:none}.burger{display:grid}.nav .btn-primary{display:none}}
+
+/* ── MEGA MENU ── */
+.nav-links{position:relative}
+.nav-links .dd{position:relative}
+.nav-links .dd>a{display:inline-flex;align-items:center;gap:6px}
+.nav-links .dd>a svg{width:14px;height:14px;transition:transform .2s var(--ease)}
+.nav-links .dd.open>a svg{transform:rotate(180deg)}
+.menu{position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%) translateY(6px);min-width:560px;background:#fff;color:var(--carbon);border-radius:10px;box-shadow:0 24px 64px rgba(14,18,22,.22);padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:4px;opacity:0;pointer-events:none;transition:opacity .18s var(--ease),transform .18s var(--ease);z-index:30}
+.menu.wide{min-width:760px}
+.menu::before{content:"";position:absolute;top:-18px;left:0;right:0;height:18px}
+.dd.open .menu{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.menu a{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;padding:12px 14px;border-radius:8px;opacity:1}
+.menu a:hover{background:var(--blanco-1);color:var(--carbon)}
+.menu a .ic{width:44px;height:44px;border-radius:8px;background:var(--blanco-1);display:grid;place-items:center;overflow:hidden}
+.menu a .ic img{max-width:80%;max-height:80%;object-fit:contain}
+.menu a .ic svg{width:22px;height:22px;stroke:var(--green-text);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.menu a b{display:block;font-size:15px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
+.menu a span{display:block;font-size:12px;color:var(--gris-400);margin-top:2px;line-height:1.3}
+.menu .all{grid-column:1/-1;border-top:1px solid var(--line-l);margin-top:6px;padding-top:12px;display:flex;justify-content:flex-start;gap:8px;font-size:13px;font-weight:600;color:var(--green-text)}
+
+/* ── HERO ── */
+.hero{padding:clamp(56px,7vw,96px) 0}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.hero .copy{display:grid;gap:24px}.hero .eyebrow{color:var(--green-text)}.hero .lead{color:var(--gris-500)}
+.hero .pic{border-radius:10px;overflow:hidden;background:#eee}.hero .pic img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero .pic{max-width:640px}}
+
+/* ── STATEMENT (green banner) ── */
+.statement{background:var(--green);padding:clamp(48px,5vw,72px) 0}
+.statement .h-lg{max-width:36ch;color:#fff}
+
+/* ── CHALLENGE / SOLUTION ── */
+.challenge-inner{background:#f0f2f5;border-radius:16px;overflow:hidden;color:var(--carbon)}
+.challenge-grid{display:grid;grid-template-columns:1fr 1fr}
+.challenge-col{padding:clamp(32px,4vw,56px)}
+.challenge-col+.challenge-col{border-left:1px solid var(--line-l)}
+.challenge-col .label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--green-text);margin-bottom:16px;display:inline-flex;align-items:center;gap:10px}
+.challenge-col .label::before{content:"";width:22px;height:1px;background:var(--green-text)}
+.challenge-col h3{font-size:clamp(22px,2vw,28px);font-weight:700;letter-spacing:-.015em;line-height:1.15;margin-bottom:16px}
+.challenge-col p{color:var(--gris-500);font-size:16px;line-height:1.6}
+@media(max-width:900px){.challenge-grid{grid-template-columns:1fr}.challenge-col+.challenge-col{border-left:none;border-top:1px solid var(--line-l)}}
+
+/* ── BENEFIT BOXES ── */
+.benefit-boxes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.benefit-box{background:#f0f2f5;border-radius:16px;padding:clamp(28px,3vw,40px);display:grid;gap:12px;align-content:start}
+.benefit-box h3{font-size:clamp(18px,1.6vw,22px);font-weight:700;letter-spacing:-.01em;line-height:1.15;color:var(--carbon)}
+.benefit-box p{color:var(--gris-500);font-size:15px;line-height:1.6}
+@media(max-width:900px){.benefit-boxes{grid-template-columns:1fr}}
+
+/* ── ROI EXAMPLES ── */
+.roi-inner{background:#f0f2f5;border-radius:16px;padding:clamp(32px,4vw,56px);color:var(--carbon)}
+.roi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
+.roi-card{background:#fff;border:1px solid var(--line-l);border-radius:10px;padding:clamp(24px,2.5vw,32px);display:grid;gap:10px;align-content:start}
+.roi-card h4{font-size:clamp(16px,1.4vw,20px);font-weight:700;letter-spacing:-.01em;line-height:1.15;color:var(--carbon)}
+.roi-card .metric{font-size:14px;color:var(--gris-500);display:flex;align-items:center;gap:8px}
+.roi-card .metric b{color:var(--green-text);font-weight:700;font-size:16px}
+.roi-disclaimer{margin-top:20px;font-size:13px;color:var(--gris-400);font-style:italic}
+@media(max-width:1000px){.roi-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.roi-grid{grid-template-columns:1fr}}
+
+/* ── CTA FINAL ── */
+.cta-final-inner{display:grid;grid-template-columns:45fr 55fr;border-radius:16px;overflow:hidden;min-height:420px}
+.cta-final-img img{width:100%;height:100%;object-fit:cover;display:block}
+.cta-final-panel{background:var(--green);padding:clamp(40px,5vw,72px);display:grid;gap:24px;align-content:center}
+.cta-final-panel .eyebrow{color:rgba(255,255,255,.85);font-size:11px}
+.cta-final-panel .eyebrow::before{background:rgba(255,255,255,.6)}
+.cta-final-panel .h-md{color:var(--blanco);max-width:26ch;font-size:clamp(24px,2.8vw,36px)}
+.btn-cta-outline{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:6px;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;border:2px solid rgba(255,255,255,.7);color:var(--blanco);background:transparent;cursor:pointer;transition:background .15s var(--ease),border-color .15s var(--ease);font-family:inherit;white-space:nowrap}
+.btn-cta-outline:hover{background:rgba(255,255,255,.12);border-color:var(--blanco)}
+@media(max-width:900px){.cta-final-inner{grid-template-columns:1fr}.cta-final-img{min-height:240px}.cta-final-panel{padding:clamp(32px,5vw,56px)}}
+
+/* ── FOOTER ── */
+footer.dark{padding:56px 0 40px;border-top:1px solid var(--line-d);color:var(--acero-400);font-size:14px;background:#2d2d36}
+.foot-top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:40px;border-bottom:1px solid var(--line-d);margin-bottom:40px;flex-wrap:wrap}
+.foot-top img{height:28px;width:auto}
+.foot-top .links{display:flex;gap:20px;font-size:14px;font-weight:600}
+.foot-top .links a{text-transform:uppercase;letter-spacing:.06em}
+.foot-top .links a:hover{color:var(--blanco)}
+.foot-app{display:flex;align-items:center;gap:12px;margin-top:16px;flex-wrap:wrap}
+.foot-app img.qr{width:64px;height:64px;border-radius:6px}
+.foot-app img.badge-store{height:32px;width:auto}
+.foot-cols{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:40px}
+footer h4{margin:0 0 14px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--acero-500);font-weight:600}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a:hover{color:var(--blanco)}
+.foot-contact{margin-top:40px;padding-top:28px;border-top:1px solid var(--line-d);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+.foot-contact .info{display:flex;gap:24px;flex-wrap:wrap;font-size:14px}
+.foot-contact .info a{display:inline-flex;align-items:center;gap:8px}
+.foot-contact .info svg{width:16px;height:16px;stroke:var(--green);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.foot-social a{display:inline-flex;align-items:center;gap:8px}
+.foot-social svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.foot-bottom{margin-top:28px;padding-top:24px;border-top:1px solid var(--line-d);font-size:12px;color:var(--acero-500)}
+@media(max-width:820px){.foot-cols{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.foot-cols{grid-template-columns:1fr}.foot-contact{flex-direction:column;align-items:flex-start}}
+
+/* ── MOBILE 640 ── */
+@media(max-width:640px){
+  .hero{padding:40px 0 56px}.hero .copy{gap:18px}.h-xl{font-size:clamp(34px,9.5vw,40px)}
+  .cta-final-panel .btn-cta-outline{width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ 1. NAVBAR ═══════ -->
+<header class="nav">
+  <div class="wrap">
+    <a href="../index.html" class="brand">
+      <img class="et" src="../../img/enerterra-logo-white.png" alt="Enerterra">
+      <small><span>REPRESENTANTE<br>OFICIAL</span><img src="../../img/ampd-logo-white.svg" alt="Ampd Energy"></small>
+    </a>
+    <nav class="nav-links">
+      <div class="dd on">
+        <a class="on" href="#">Sectores<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="menu wide">
+          <a href="?s=construccion"><span class="ic"><svg viewBox="0 0 24 24"><path d="M2 18h20M4 18V10l8-6 8 6v8M9 18v-5h6v5"/></svg></span><div><b>Construcci&oacute;n</b><span>Energ&iacute;a m&aacute;s inteligente para la construcci&oacute;n</span></div></a>
+          <a href="?s=mineria"><span class="ic"><svg viewBox="0 0 24 24"><path d="M14.5 6.5 17 4l3 3-2.5 2.5M4 20l6.5-6.5M3 21l3-3M9 15l6-6"/></svg></span><div><b>Miner&iacute;a</b><span>Energ&iacute;a m&aacute;s limpia e inteligente para operaciones mineras</span></div></a>
+          <a href="?s=infraestructura"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 12h18M6 12V8M12 12V6M18 12V8M4 20h16"/></svg></span><div><b>Infraestructura</b><span>Energ&iacute;a eficiente para las obras que construyen el futuro</span></div></a>
+          <a href="?s=hormigon"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 9h18l-2 11H5L3 9ZM7 9V5h10v4"/></svg></span><div><b>Plantas de hormig&oacute;n</b><span>Energ&iacute;a confiable y limpia para plantas de hormig&oacute;n</span></div></a>
+          <a href="?s=oil-gas"><span class="ic"><svg viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span><div><b>Oil &amp; gas</b><span>Energ&iacute;a ininterrumpida para infraestructura cr&iacute;tica</span></div></a>
+          <a href="?s=microtuneles"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 20V12a8 8 0 0 1 16 0v8M4 20h16M9 20v-5a3 3 0 0 1 6 0v5"/></svg></span><div><b>Microtunel&iacute;a</b><span>Energ&iacute;a confiable y de bajas emisiones para microt&uacute;neles</span></div></a>
+          <a href="?s=eventos"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3.5 21 14 3M20.5 21 10 3M15.5 21 12 15l-3.5 6M2 21h20"/></svg></span><div><b>Eventos</b><span>Energ&iacute;a silenciosa y sustentable para eventos de clase mundial</span></div></a>
+          <a href="?s=puertos"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><path d="M12 22V8M5 12H2a10 10 0 0 0 20 0h-3"/></svg></span><div><b>Puertos</b><span>Mant&eacute;n en movimiento puertos y terminales</span></div></a>
+        </div>
+      </div>
+      <div class="dd">
+        <a href="../productos/?p=enertainer">Productos<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="menu">
+          <a href="../productos/?p=ampd-200"><span class="ic"><img src="../../img/producto-ampd-200.png" alt=""></span><div><b>Ampd 200</b><span>Sistema de almacenamiento NextGen</span></div></a>
+          <a href="../productos/?p=ampd-400"><span class="ic"><img src="../../img/producto-ampd-400.png" alt=""></span><div><b>Ampd 400</b><span>Sistema de almacenamiento NextGen</span></div></a>
+          <a href="../productos/?p=enertainer"><span class="ic"><img src="../../img/producto-enertainer-lista.png" alt=""></span><div><b>Enertainer</b><span>Sistema de almacenamiento de energ&iacute;a</span></div></a>
+          <a href="../productos/?p=ampd-silo"><span class="ic"><img src="../../img/producto-ampd-silo.png" alt=""></span><div><b>Ampd Silo</b><span>Sistema de almacenamiento de energ&iacute;a</span></div></a>
+          <a href="../productos/?p=software"><span class="ic"><svg viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><div><b>Software</b><span>Ampd Pulse - monitoreo y reportes</span></div></a>
+          <a href="../index.html#productos" class="all">Ver todos los productos &rarr;</a>
+        </div>
+      </div>
+    </nav>
+    <a href="../index.html#cotizar" class="btn btn-primary" style="height:44px;padding:0 18px;font-size:14px">Cotiza tu proyecto</a>
+    <button class="burger" id="burger" type="button" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<!-- MOBILE PANEL -->
+<div class="mob" id="mob" aria-label="Menu">
+  <div class="top">
+    <a href="../index.html" class="brand"><img class="et" src="../../img/enerterra-logo-white.png" alt="Enerterra"></a>
+    <button class="burger" id="mob-close" type="button" aria-label="Cerrar" style="display:grid"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div id="mob-body"></div>
+  <a href="../index.html#cotizar" class="btn btn-primary">Cotiza tu proyecto</a>
+</div>
+
+<!-- ═══════ MAIN CONTENT (dynamic) ═══════ -->
+<main id="main"></main>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="dark">
+  <div class="wrap">
+    <!-- Top -->
+    <div class="foot-top">
+      <div>
+        <img src="../../assets/brand/ampd-logo-full-color.png" alt="Ampd Energy">
+        <div class="foot-app">
+          <img class="qr" src="../../assets/site/app-qr.avif" alt="C&oacute;digo QR Ampd Pulse" loading="lazy">
+          <img class="badge-store" src="../../assets/site/badge-appstore.avif" alt="Descargar en App Store" loading="lazy">
+          <img class="badge-store" src="../../assets/site/badge-googleplay.avif" alt="Disponible en Google Play" loading="lazy">
+        </div>
+      </div>
+      <div class="links">
+        <a href="https://pulse.ampd.energy" target="_blank" rel="noopener">Iniciar sesi&oacute;n</a>
+        <a href="../index.html#cotizar">Solicitar presupuesto</a>
+      </div>
+    </div>
+    <!-- Columns -->
+    <div class="foot-cols">
+      <div>
+        <h4>Productos</h4>
+        <ul>
+          <li><a href="../productos/?p=ampd-200">Ampd 200</a></li>
+          <li><a href="../productos/?p=ampd-400">Ampd 400</a></li>
+          <li><a href="../productos/?p=enertainer">Enertainer</a></li>
+          <li><a href="../productos/?p=ampd-silo">Ampd Silo</a></li>
+          <li><a href="../productos/?p=software">Software Ampd Pulse</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Industrias</h4>
+        <ul>
+          <li><a href="?s=construccion">Construcci&oacute;n</a></li>
+          <li><a href="?s=mineria">Miner&iacute;a</a></li>
+          <li><a href="?s=infraestructura">Infraestructura</a></li>
+          <li><a href="?s=hormigon">Plantas de hormig&oacute;n</a></li>
+          <li><a href="?s=oil-gas">Oil &amp; gas</a></li>
+          <li><a href="?s=microtuneles">Microtunel&iacute;a</a></li>
+          <li><a href="?s=eventos">Eventos</a></li>
+          <li><a href="?s=puertos">Puertos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Soluciones</h4>
+        <ul>
+          <li><a href="../index.html#ess">Almacenamiento de energ&iacute;a</a></li>
+          <li><a href="../index.html#proceso">C&oacute;mo funciona</a></li>
+          <li><a href="../index.html#testimonials">Casos de &eacute;xito</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="../index.html#ess">Servicio</a></li>
+          <li><a href="../index.html#ess">Sobre nosotros</a></li>
+          <li><a href="../index.html#cotizar">Cont&aacute;ctanos</a></li>
+          <li><a href="../index.html#cotizar">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Contact -->
+    <div class="foot-contact">
+      <div class="info">
+        <span>Enerterra Chile SpA &middot; Santiago, Chile</span>
+        <a href="mailto:contacto@enerterra.cl"><svg viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>contacto@enerterra.cl</a>
+        <a href="tel:+56200000000"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+56 2 &middot;&middot;&middot;&middot; &middot;&middot;&middot;&middot;</a>
+      </div>
+      <div class="foot-social">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+      </div>
+    </div>
+    <!-- Bottom -->
+    <div class="foot-bottom">&copy; 2026 Enerterra Chile SpA. Representante oficial de Ampd Energy Ltd.</div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+(function(){
+  /* ── Mobile menu ── */
+  var b=document.getElementById('burger'),m=document.getElementById('mob'),c=document.getElementById('mob-close');
+  if(b&&m){
+    var src=document.querySelector('.nav-links');var dds=src.querySelectorAll('.dd');var html='';
+    dds.forEach(function(d){var lbl=d.querySelector('a').textContent.trim();html+='<h5>'+lbl+'</h5>';d.querySelectorAll('.menu a:not(.all)').forEach(function(a){html+='<a class="row" href="'+a.getAttribute('href')+'">'+a.innerHTML+'</a>'})});
+    src.querySelectorAll(':scope > a').forEach(function(a){html+='<a class="plain" href="'+a.getAttribute('href')+'">'+a.textContent+'</a>'});
+    document.getElementById('mob-body').innerHTML=html;
+    b.onclick=function(){m.classList.add('open');document.body.style.overflow='hidden'};
+    function close(){m.classList.remove('open');document.body.style.overflow=''}
+    c.onclick=close;m.addEventListener('click',function(e){if(e.target.closest('a'))close()});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  }
+
+  /* ── Mega menus ── */
+  var dds=document.querySelectorAll('.nav-links .dd');
+  function closeMenus(){dds.forEach(function(d){d.classList.remove('open')})}
+  dds.forEach(function(d){var t;d.addEventListener('mouseenter',function(){clearTimeout(t);closeMenus();d.classList.add('open')});d.addEventListener('mouseleave',function(){t=setTimeout(function(){d.classList.remove('open')},160)});d.querySelector('a').addEventListener('click',function(e){if(window.matchMedia('(hover:none)').matches){e.preventDefault();var o=d.classList.contains('open');closeMenus();if(!o)d.classList.add('open')}})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenus()});
+
+  /* ── Data + routing ── */
+  var S=window.SECTORES,ORDEN=window.SECTORES_ORDEN;
+  var key=new URLSearchParams(location.search).get('s');
+  if(!S[key])key='construccion';
+  var s=S[key];
+  document.title=s.nombre+' · Enerterra Chile';
+
+  /* ── Icons ── */
+  var arrow='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+  var esc=function(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;')};
+
+  /* ── Build sections ── */
+  var h=[];
+
+  /* ── 1. HERO ── */
+  h.push('<section class="hero light"><div class="wrap"><div class="copy">'+
+    '<span class="eyebrow reveal">'+esc(s.nombre)+'</span>'+
+    '<h1 class="h-xl reveal" style="font-size:clamp(36px,4.4vw,56px);font-variation-settings:\'wdth\' 100;letter-spacing:-.02em;line-height:1.1;max-width:20ch">'+esc(s.subtitulo)+'</h1>'+
+    '<p class="lead reveal">'+esc(s.intro)+'</p>'+
+    '<div class="ctas reveal">'+
+      '<a href="../index.html#cotizar" class="btn btn-primary">Contacto'+arrow+'</a>'+
+      '<a href="#desafio" class="btn btn-outline">M&aacute;s informaci&oacute;n</a>'+
+    '</div>'+
+    '</div><div class="pic reveal"><img src="'+s.hero+'" alt="'+esc(s.nombre)+'" fetchpriority="high"></div></div></section>');
+
+  /* ── 2. STATEMENT (green banner) ── */
+  if(s.desafio){
+    h.push('<section class="statement"><div class="wrap"><p class="h-lg reveal">'+esc(s.subtitulo)+': la respuesta al desaf&iacute;o energ&eacute;tico del sector.</p></div></section>');
+  }
+
+  /* ── 3. DESAFIO vs SOLUCION ── */
+  h.push('<section class="dark" id="desafio"><div class="wrap">'+
+    '<span class="eyebrow reveal" style="color:var(--green)">El desaf&iacute;o y la soluci&oacute;n</span>'+
+    '<h2 class="h-lg reveal" style="margin-top:16px;margin-bottom:32px;max-width:28ch">Entendemos los retos energ&eacute;ticos de '+esc(s.nombre.toLowerCase())+'</h2>'+
+    '<div class="challenge-inner">'+
+      '<div class="challenge-grid">'+
+        '<div class="challenge-col reveal">'+
+          '<span class="label">El desaf&iacute;o</span>'+
+          '<h3>'+esc(s.desafio.titulo)+'</h3>'+
+          '<p>'+esc(s.desafio.texto)+'</p>'+
+        '</div>'+
+        '<div class="challenge-col reveal">'+
+          '<span class="label">La soluci&oacute;n</span>'+
+          '<h3>'+esc(s.solucion.titulo)+'</h3>'+
+          '<p>'+esc(s.solucion.texto)+'</p>'+
+        '</div>'+
+      '</div>'+
+    '</div>');
+
+  /* ── 4. BENEFIT BOXES (still inside same dark section) ── */
+  if(s.beneficios&&s.beneficios.length){
+    h.push('<div class="benefit-boxes">'+
+      s.beneficios.map(function(b){
+        return '<div class="benefit-box reveal"><h3>'+esc(b[0])+'</h3><p>'+esc(b[1])+'</p></div>';
+      }).join('')+
+    '</div>');
+  }
+  h.push('</div></section>');
+
+  /* ── 5. ROI EXAMPLES ── */
+  if(s.casos&&s.casos.length){
+    h.push('<section class="dark"><div class="wrap">'+
+      '<span class="eyebrow reveal" style="color:var(--green)">Casos de uso</span>'+
+      '<h2 class="h-lg reveal" style="margin-top:16px;margin-bottom:8px">Retorno de inversi&oacute;n por aplicaci&oacute;n</h2>'+
+      '<div class="roi-inner">'+
+        '<p class="reveal" style="color:var(--gris-500);font-size:17px;max-width:60ch">Estos son ejemplos representativos del rendimiento financiero y ambiental que nuestros ESS han demostrado en aplicaciones reales del sector.</p>'+
+        '<div class="roi-grid">'+
+          s.casos.map(function(c){
+            return '<div class="roi-card reveal">'+
+              '<h4>'+esc(c.nombre)+'</h4>'+
+              '<div class="metric">Per&iacute;odo de ROI: <b>'+esc(c.roi)+'</b></div>'+
+              '<div class="metric">Reducci&oacute;n CO&#x2082;: <b>'+esc(c.co2)+'</b></div>'+
+            '</div>';
+          }).join('')+
+        '</div>'+
+        '<p class="roi-disclaimer reveal">* Los valores mostrados son estimaciones basadas en casos reales y pueden variar seg&uacute;n las condiciones espec&iacute;ficas de cada proyecto.</p>'+
+      '</div>'+
+    '</div></section>');
+  }
+
+  /* ── 6. CTA FINAL ── */
+  h.push('<section class="cta-final light"><div class="wrap">'+
+    '<div class="cta-final-inner reveal">'+
+    '<div class="cta-final-img"><img src="../../assets/site/solution-cta.jpg" alt="" loading="lazy"></div>'+
+    '<div class="cta-final-panel">'+
+    '<span class="eyebrow">Listo para impulsar su pr&oacute;ximo proyecto con Ampd?</span>'+
+    '<h2 class="h-md">Su especialista local puede ofrecerle un desglose completo de costes, ahorro de combustible y CO&#x2082; que deben evitarse en su sitio.</h2>'+
+    '<a href="../index.html#contacto" class="btn-cta-outline">Cont&aacute;ctanos</a>'+
+    '</div></div></div></section>');
+
+  /* ── Render ── */
+  document.getElementById('main').innerHTML=h.join('');
+
+  /* ── Reveal observer ── */
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%4)*60+'ms';io.observe(el)});
+})();
+</script>
+</body>
+</html>
