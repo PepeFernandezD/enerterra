@@ -189,33 +189,63 @@ img{display:block;max-width:100%}
 @media (max-width:900px){.steps-grid{grid-template-columns:1fr 1fr}.step{border-right:none;border-bottom:1px solid rgba(0,0,0,.06)}.step:last-child{border-bottom:none}}
 @media (max-width:560px){.steps-grid{grid-template-columns:1fr}}
 
+/* ===== 6b. LIVE FLEET IMPACT ===== */
+.fleet{padding:clamp(48px,5vw,72px) 0}
+.fleet-head{text-align:center;margin-bottom:clamp(32px,4vw,48px)}
+.fleet-head .eyebrow{color:var(--green);justify-content:center}
+.fleet-head .eyebrow::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--green);animation:fleetPulse 2s ease-in-out infinite}
+@keyframes fleetPulse{0%,100%{opacity:1}50%{opacity:.4}}
+.fleet-head .h-lg{margin:16px auto 0;max-width:22ch}
+.fleet-head .h-lg .green{color:var(--green)}
+.fleet-head .lead{color:var(--gris-500);margin:16px auto 0;text-align:center}
+.fleet-chart-card{background:var(--blanco-1);border-radius:16px;padding:clamp(24px,3vw,36px);margin-bottom:24px}
+.fleet-chart-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:20px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--gris-500)}
+.fleet-chart-header .range{color:var(--green-text);letter-spacing:.02em}
+.fleet-chart-svg{width:100%;height:180px;display:block}
+.fleet-chart-footer{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:12px;color:var(--gris-400);font-weight:500}
+.fleet-energy-card{background:var(--blanco-1);border-radius:16px;padding:clamp(24px,3vw,36px);text-align:center}
+.fleet-energy-card .big{font-size:clamp(36px,4vw,56px);font-weight:700;letter-spacing:-.02em;color:var(--carbon);line-height:1}
+.fleet-energy-card .sub{font-size:clamp(14px,1.2vw,17px);color:var(--gris-500);margin-top:8px}
+.fleet-updated{text-align:center;margin-top:16px;font-size:13px;color:var(--green-text);font-weight:600}
+
 /* ===== 7. TESTIMONIALS ===== */
-.testimonials{position:relative;overflow:hidden}
-.test-track{display:flex;width:300%;transition:transform .6s var(--ease)}
-.test-slide{position:relative;width:100%;min-height:clamp(420px,50vw,600px);display:flex;align-items:center;color:var(--blanco);isolation:isolate;flex:none}
-.test-slide img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
-.test-slide::after{content:"";position:absolute;inset:0;background:rgba(14,18,22,.72);z-index:-1}
-.test-slide .wrap{padding-top:clamp(80px,10vw,120px);padding-bottom:clamp(80px,10vw,120px);display:grid;gap:24px;max-width:880px}
-.test-slide blockquote{margin:0;font-size:clamp(22px,2.6vw,34px);line-height:1.25;letter-spacing:-.02em;font-weight:500;quotes:none}
-.test-slide blockquote::before{content:"\201C";display:block;font-size:clamp(48px,5vw,72px);line-height:.8;color:var(--green);font-weight:700;margin-bottom:12px}
-.test-slide cite{font-style:normal;font-size:16px;color:var(--acero-300)}
-.test-slide cite strong{color:var(--blanco);font-weight:600}
-.test-nav{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:5}
-.test-dot{width:40px;height:4px;border-radius:2px;background:rgba(255,255,255,.3);border:none;cursor:pointer;padding:0;overflow:hidden;position:relative}
-.test-dot.active{background:rgba(255,255,255,.2)}
-.test-dot .bar{position:absolute;inset:0;background:var(--green);transform-origin:left;transform:scaleX(0)}
-.test-dot.active .bar{animation:testProg 10s linear forwards}
-@keyframes testProg{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.testimonials{padding:clamp(48px,5vw,72px) 0}
+.test-head{text-align:center;margin-bottom:clamp(40px,5vw,56px)}
+.test-head .eyebrow{color:var(--green);justify-content:center}
+.test-head .h-md{margin:16px auto 0;max-width:28ch}
+.test-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;align-items:start}
+.test-quote{background:var(--blanco-1);border-radius:12px;padding:clamp(24px,2.5vw,32px);text-align:center}
+.test-quote blockquote{margin:0;font-style:italic;font-size:clamp(14px,1.1vw,16px);line-height:1.6;color:var(--gris-500);quotes:none}
+.test-quote blockquote::before{content:"\201C";display:block;font-size:42px;line-height:.7;color:var(--green);font-weight:700;margin-bottom:8px}
+.test-quote .name{font-weight:700;font-size:18px;margin-top:20px;color:var(--carbon)}
+.test-quote .role{font-size:14px;color:var(--green-text);font-weight:500;margin-top:4px}
+.test-photo{border-radius:12px;overflow:hidden}
+.test-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.test-photo.tall{grid-row:span 2;min-height:480px}
+.test-overlay{position:relative}
+.test-overlay-card{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);background:rgba(14,18,22,.92);color:var(--blanco);border-radius:12px;padding:clamp(20px,2vw,28px);text-align:center;z-index:2}
+.test-overlay-card blockquote{margin:0;font-style:italic;font-size:clamp(13px,1vw,15px);line-height:1.55;color:var(--acero-300);quotes:none}
+.test-overlay-card blockquote::before{content:"\201C";display:block;font-size:36px;line-height:.7;color:var(--green);font-weight:700;margin-bottom:6px}
+.test-overlay-card .name{font-weight:700;font-size:16px;margin-top:14px;color:var(--blanco)}
+.test-overlay-card .role{font-size:13px;color:var(--green);font-weight:500;margin-top:3px}
+.test-col{display:grid;gap:20px;align-content:start}
+.test-col-center{display:grid;gap:20px;align-content:start}
+@media(max-width:900px){.test-grid{grid-template-columns:1fr}.test-photo.tall{min-height:320px;grid-row:auto}.test-overlay-card{position:relative;bottom:auto;left:auto;transform:none;width:100%;border-radius:12px}}
+@media(max-width:640px){.test-photo.tall{min-height:240px}}
 
 /* ===== 8. CTA FINAL ===== */
 .final-cta{padding:clamp(48px,5vw,72px) 0}
-.final-cta .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center}
-.final-cta-img{border-radius:10px;overflow:hidden;aspect-ratio:4/3}
-.final-cta-img img{width:100%;height:100%;object-fit:cover}
-.final-cta-copy{display:grid;gap:20px}
-.final-cta .h-md{max-width:22ch}
-.final-cta .lead{color:var(--gris-500)}
-@media (max-width:900px){.final-cta .wrap{grid-template-columns:1fr}.final-cta-img{display:none}}
+.final-cta-inner{display:grid;grid-template-columns:45fr 55fr;border-radius:16px;overflow:hidden;min-height:420px}
+.final-cta-img{position:relative}
+.final-cta-img img{width:100%;height:100%;object-fit:cover;display:block}
+.final-cta-panel{background:var(--green);padding:clamp(40px,5vw,72px);display:grid;gap:24px;align-content:center}
+.final-cta-panel .eyebrow{color:rgba(255,255,255,.85);font-size:11px}
+.final-cta-panel .eyebrow::before{background:rgba(255,255,255,.6)}
+.final-cta-panel .h-md{color:var(--blanco);max-width:26ch;font-size:clamp(24px,2.8vw,36px)}
+.final-cta-panel .btn-cta-outline{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:6px;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;border:2px solid rgba(255,255,255,.7);color:var(--blanco);background:transparent;cursor:pointer;transition:background .15s var(--ease),border-color .15s var(--ease);font-family:inherit;white-space:nowrap}
+.final-cta-panel .btn-cta-outline:hover{background:rgba(255,255,255,.12);border-color:var(--blanco)}
+.final-cta-panel .btn-cta-outline:active{background:rgba(255,255,255,.2)}
+@media (max-width:900px){.final-cta-inner{grid-template-columns:1fr}.final-cta-img{min-height:240px}.final-cta-panel{padding:clamp(32px,5vw,56px)}}
 
 /* ===== 9. FOOTER ===== */
 footer.dark{padding:56px 0 40px;border-top:1px solid var(--line-d);color:var(--acero-400);font-size:14px;background:#2d2d36}
@@ -488,55 +518,102 @@ footer a:hover{color:var(--blanco)}
   </div>
 </section>
 
+<!-- ===== 6b. LIVE FLEET IMPACT ===== -->
+<section class="fleet light" id="fleet">
+  <div class="wrap">
+    <div class="fleet-head reveal">
+      <span class="eyebrow">Live Fleet Impact</span>
+      <h2 class="h-lg">Delivering <span class="green">2.99 MW</span> of power right now.</h2>
+      <p class="lead">Clean, quiet energy supporting projects around the world, measured directly from Ampd systems.</p>
+    </div>
+    <div class="fleet-chart-card reveal">
+      <div class="fleet-chart-header">
+        <span>Global Output &middot; Last 60 Minutes</span>
+        <span class="range">2.66 MW&ndash;2.99 MW &middot; 2.85 MW avg</span>
+      </div>
+      <svg class="fleet-chart-svg" viewBox="0 0 800 180" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="fleetGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--green)" stop-opacity=".18"/>
+            <stop offset="100%" stop-color="var(--green)" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path d="M0 140 C40 135,80 120,120 110 C160 100,200 95,240 90 C280 85,320 80,360 72 C400 65,440 60,480 55 C520 50,560 48,600 42 C640 38,680 32,720 28 C760 24,780 20,800 16" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <path d="M0 140 C40 135,80 120,120 110 C160 100,200 95,240 90 C280 85,320 80,360 72 C400 65,440 60,480 55 C520 50,560 48,600 42 C640 38,680 32,720 28 C760 24,780 20,800 16 L800 180 L0 180 Z" fill="url(#fleetGrad)"/>
+      </svg>
+      <div class="fleet-chart-footer">
+        <span>54 min ago</span>
+        <span>Five-minute snapshots</span>
+        <span>Latest</span>
+      </div>
+    </div>
+    <div class="fleet-energy-card reveal">
+      <div class="big">5.12 MWh</div>
+      <div class="sub">Estimated energy delivered today by AMPD systems</div>
+    </div>
+    <div class="fleet-updated reveal">Updated 2 minutes ago</div>
+  </div>
+</section>
+
 <!-- ===== 7. TESTIMONIALS ===== -->
-<section class="testimonials" id="testimonials">
-  <div class="test-header" style="text-align:center;padding:clamp(48px,6vw,80px) var(--pad) 0">
-    <span class="eyebrow" style="color:var(--green-text);justify-content:center">testimonios</span>
-    <h2 class="h-md" style="margin-top:16px">Lo que dicen nuestros clientes</h2>
-  </div>
-  <div class="test-track" id="test-track">
-    <!-- Slide 1 -->
-    <div class="test-slide">
-      <img class="bg" src="../assets/site/why-1.avif" alt="" loading="lazy">
-      <div class="wrap">
-        <blockquote>El Enertainer funcionó a la perfección desde el principio. No solo redujimos enormemente nuestras emisiones de CO2 —un objetivo clave para Gammon—, sino que lo hicimos con unos gastos operativos menores. Aunque era la primera vez que utilizábamos esta tecnología, el sistema de informes de datos de rendimiento del Enertainer nos dio mucha confianza. Estamos muy entusiasmados con la idea de utilizar esta tecnología en otras obras en el futuro.</blockquote>
-        <cite><strong>Andy Wong</strong><br>Jefe de Digital G, Gammon Construction</cite>
+<section class="testimonials light" id="testimonials">
+  <div class="wrap">
+    <div class="test-head reveal">
+      <span class="eyebrow">Testimonios</span>
+      <h2 class="h-md">Lo que dicen nuestros clientes</h2>
+    </div>
+    <div class="test-grid">
+      <!-- Column 1 -->
+      <div class="test-col">
+        <div class="test-quote reveal">
+          <blockquote>El Enertainer funcionó a la perfección desde el principio. No solo redujimos enormemente nuestras emisiones de CO2 —un objetivo clave para Gammon—, sino que lo hicimos con unos gastos operativos menores. Aunque era la primera vez que utilizábamos esta tecnología, el sistema de informes de datos de rendimiento del Enertainer nos dio mucha confianza. Estamos muy entusiasmados con la idea de utilizar esta tecnología en otras obras en el futuro.</blockquote>
+          <div class="name">Andy Wong</div>
+          <div class="role">Jefe de Digital G, Gammon Construction</div>
+        </div>
+        <div class="test-photo reveal">
+          <img src="../assets/products/enertainer/field-technician.jpg" alt="Técnico en terreno con Enertainer" loading="lazy" style="aspect-ratio:4/3">
+        </div>
+      </div>
+      <!-- Column 2 (tall photo + overlay) -->
+      <div class="test-col-center">
+        <div class="test-overlay reveal">
+          <div class="test-photo tall">
+            <img src="../assets/products/ampd-silo/web-hero.avif" alt="Ampd Silo en terreno" loading="lazy">
+          </div>
+          <div class="test-overlay-card">
+            <blockquote>Implementar los Enertainers de Ampd Energy en Olympia ha supuesto un antes y un después a la hora de reducir las emisiones de carbono y maximizar la fiabilidad y disponibilidad energética en la obra. Cada Enertainer ha sustituido a un generador de 500 kVA y todas sus emisiones, ruido, espacio y costes asociados. Por ello, representan un gran paso adelante en nuestra estrategia de superar los límites hacia una construcción más eficiente, baja en carbono, innovadora y rentable.</blockquote>
+            <div class="name">Ian Fleming</div>
+            <div class="role">Líder de Producto, Select Site Solutions</div>
+          </div>
+        </div>
+      </div>
+      <!-- Column 3 -->
+      <div class="test-col">
+        <div class="test-quote reveal">
+          <blockquote>No podemos hacerlo todo solos, por eso dedicamos mucho tiempo a construir un ecosistema de innovadores como Ampd para ayudarnos a alcanzar nuestros objetivos de sostenibilidad. Ningún producto ofrece características similares a las de Ampd, que proporciona la fiabilidad y estabilidad que necesita el sector de la construcción. Con una mayor concienciación, este esfuerzo de energía verde crecerá con el tiempo.</blockquote>
+          <div class="name">Ke-Vin Lim</div>
+          <div class="role">Jefe de Innovación de Grupo, CDL</div>
+        </div>
+        <div class="test-photo reveal">
+          <img src="../assets/products/ampd-400/field-site.jpg" alt="Ampd 400 en terreno" loading="lazy" style="aspect-ratio:4/3">
+        </div>
       </div>
     </div>
-    <!-- Slide 2 -->
-    <div class="test-slide">
-      <img class="bg" src="../assets/site/why-2.avif" alt="" loading="lazy">
-      <div class="wrap">
-        <blockquote>Implementar los Enertainers de Ampd Energy en Olympia ha supuesto un antes y un después a la hora de reducir las emisiones de carbono y maximizar la fiabilidad y disponibilidad energética en la obra. Cada Enertainer ha sustituido a un generador de 500 kVA y todas sus emisiones, ruido, espacio y costes asociados. Por ello, representan un gran paso adelante en nuestra estrategia de superar los límites hacia una construcción más eficiente, baja en carbono, innovadora y rentable.</blockquote>
-        <cite><strong>Ian Fleming</strong><br>Líder de Producto, Select Site Solutions</cite>
-      </div>
-    </div>
-    <!-- Slide 3 -->
-    <div class="test-slide">
-      <img class="bg" src="../assets/site/solution-cta.jpg" alt="" loading="lazy">
-      <div class="wrap">
-        <blockquote>No podemos hacerlo todo solos, por eso dedicamos mucho tiempo a construir un ecosistema de innovadores como Ampd para ayudarnos a alcanzar nuestros objetivos de sostenibilidad. Ningún producto ofrece características similares a las de Ampd, que proporciona la fiabilidad y estabilidad que necesita el sector de la construcción. Con una mayor concienciación, este esfuerzo de energía verde crecerá con el tiempo.</blockquote>
-        <cite><strong>Ke-Vin Lim</strong><br>Jefe de Innovación de Grupo, CDL</cite>
-      </div>
-    </div>
-  </div>
-  <div class="test-nav">
-    <button class="test-dot active" data-slide="0"><span class="bar"></span></button>
-    <button class="test-dot" data-slide="1"><span class="bar"></span></button>
-    <button class="test-dot" data-slide="2"><span class="bar"></span></button>
   </div>
 </section>
 
 <!-- ===== 8. CTA FINAL ===== -->
-<section class="final-cta light" id="contacto">
+<section class="final-cta dark" id="contacto">
   <div class="wrap">
-    <div class="final-cta-img reveal">
-      <img src="../assets/site/solution-cta.jpg" alt="Solución energética Ampd en terreno" loading="lazy">
-    </div>
-    <div class="final-cta-copy">
-      <h2 class="h-md reveal">¿Listo para impulsar su próximo proyecto con Ampd?</h2>
-      <p class="lead reveal">Su especialista local puede ofrecerle un desglose completo de costes, ahorro de combustible y CO&#8322; que deben evitarse en su sitio.</p>
-      <a href="mailto:contacto@enerterra.cl" class="btn btn-primary reveal">contáctanos<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <div class="final-cta-inner reveal">
+      <div class="final-cta-img">
+        <img src="../assets/site/solution-cta.jpg" alt="Solución energética Ampd en terreno" loading="lazy">
+      </div>
+      <div class="final-cta-panel">
+        <span class="eyebrow">Listo para impulsar su próximo proyecto con Ampd?</span>
+        <h2 class="h-md">Su especialista local puede ofrecerle un desglose completo de costes, ahorro de combustible y CO&#8322; que deben evitarse en su sitio.</h2>
+        <a href="mailto:contacto@enerterra.cl" class="btn-cta-outline">Contáctanos</a>
+      </div>
     </div>
   </div>
 </section>
@@ -669,46 +746,6 @@ footer a:hover{color:var(--blanco)}
   });
 })();
 
-/* ===== TESTIMONIAL SLIDER ===== */
-(function(){
-  var track=document.getElementById('test-track');
-  var dots=document.querySelectorAll('.test-dot');
-  var current=0;
-  var total=dots.length;
-  var interval=10000;
-  var timer=null;
-
-  function goTo(n){
-    current=n;
-    track.style.transform='translateX(-'+(current*(100/total))+'%)';
-    dots.forEach(function(d,i){
-      d.classList.toggle('active',i===current);
-      var bar=d.querySelector('.bar');
-      bar.style.animation='none';
-      bar.offsetHeight;
-      if(i===current){bar.style.animation='testProg '+interval+'ms linear forwards'}
-    });
-  }
-
-  function next(){goTo((current+1)%total)}
-
-  function startAuto(){clearInterval(timer);timer=setInterval(next,interval)}
-
-  dots.forEach(function(d){
-    d.addEventListener('click',function(){
-      goTo(+d.dataset.slide);
-      startAuto();
-    });
-  });
-
-  goTo(0);
-  startAuto();
-
-  /* Pause on hover */
-  var section=document.querySelector('.testimonials');
-  section.addEventListener('mouseenter',function(){clearInterval(timer)});
-  section.addEventListener('mouseleave',startAuto);
-})();
 </script>
 </body>
 </html>
