@@ -12,9 +12,18 @@ Sitio web de **Enerterra Chile SpA**, representante oficial de [Ampd Energy](htt
 ```
 enerterra-chile/
 ├── landing/                  ← Root del deploy en Vercel
-│   ├── index.html            ← Landing original (v1)
-│   ├── producto.html         ← Fichas de producto v1
-│   ├── productos-data.js     ← Data productos v1
+│   ├── index.html            ← Home (sitio actual, ex v2)
+│   ├── productos/            ← 5 fichas producto (?p=slug)
+│   │   ├── index.html
+│   │   └── data.js
+│   ├── sectores/             ← 8 páginas industria (?s=slug)
+│   │   ├── index.html
+│   │   └── data.js
+│   ├── v1/                   ← Landing original archivada (/v1/)
+│   │   ├── index.html
+│   │   ├── producto.html
+│   │   └── productos-data.js
+│   ├── vercel.json           ← trailingSlash + redirects /v2/* y /producto.html
 │   ├── img/                  ← Imágenes landing (32 archivos)
 │   ├── assets/               ← Assets del design system (135 archivos)
 │   │   ├── brand/            ← Logos Enerterra + Ampd
@@ -26,14 +35,7 @@ enerterra-chile/
 │   │   ├── team/             ← Fotos equipo directivo
 │   │   ├── site/             ← Fotos generales sitio web
 │   │   └── docs/             ← Brochures PDF
-│   └── v2/                   ← Sitio v2 (14 páginas)
-│       ├── index.html        ← Home
-│       ├── productos/        ← 5 fichas producto (?p=slug)
-│       │   ├── index.html
-│       │   └── data.js
-│       └── sectores/         ← 8 páginas industria (?s=slug)
-│           ├── index.html
-│           └── data.js
+│   └── dist/                 ← Standalone HTML (no se usa en el sitio)
 ├── design-system/            ← Design system exportado de Claude Design
 │   ├── README.md             ← Documentación completa del sistema
 │   ├── styles.css            ← Entry point CSS
@@ -47,7 +49,9 @@ enerterra-chile/
 └── .gitignore
 ```
 
-## Sitio v2
+## Sitio
+
+El sitio v2 es el sitio principal desde el 30-oct-2026 (antes vivía en `/v2/`). La landing v1 quedó archivada en `/v1/`. Las URLs antiguas `/v2/...` y `/producto.html` redirigen a las nuevas.
 
 Réplica del sitio de Ampd Energy adaptada para Enerterra Chile. 14 páginas estáticas con JS vanilla para renderizado dinámico de productos y sectores.
 
@@ -55,24 +59,25 @@ Réplica del sitio de Ampd Energy adaptada para Enerterra Chile. 14 páginas est
 
 | Página | URL | Descripción |
 |--------|-----|-------------|
-| Home | `/v2/` | Hero, logos clientes, por qué Ampd, productos, proceso, testimonios, CTA |
-| Ampd 200 | `/v2/productos/?p=ampd-200` | Ficha producto NextGen |
-| Ampd 400 | `/v2/productos/?p=ampd-400` | Ficha producto NextGen |
-| Enertainer | `/v2/productos/?p=enertainer` | Ficha producto original (stats, detalle, híbrido) |
-| Ampd Silo | `/v2/productos/?p=ampd-silo` | Ficha producto compacto |
-| Software | `/v2/productos/?p=software` | Ampd Pulse (monitoreo, reportes) |
-| Construcción | `/v2/sectores/?s=construccion` | Sector con desafío/solución y ROI |
-| Minería | `/v2/sectores/?s=mineria` | Sector con casos de uso mineros |
-| Infraestructura | `/v2/sectores/?s=infraestructura` | Túneles, ferroviario, vial |
-| Hormigón | `/v2/sectores/?s=hormigon` | Plantas de dosificación |
-| Oil & Gas | `/v2/sectores/?s=oil-gas` | Perforación y operaciones |
-| Microtúneles | `/v2/sectores/?s=microtuneles` | Tunelería de precisión |
-| Eventos | `/v2/sectores/?s=eventos` | Energía silenciosa para eventos |
-| Puertos | `/v2/sectores/?s=puertos` | Shore power y terminales |
+| Home | `/` | Hero, logos clientes, por qué Ampd, productos, proceso, testimonios, CTA |
+| Ampd 200 | `/productos/?p=ampd-200` | Ficha producto NextGen |
+| Ampd 400 | `/productos/?p=ampd-400` | Ficha producto NextGen |
+| Enertainer | `/productos/?p=enertainer` | Ficha producto original (stats, detalle, híbrido) |
+| Ampd Silo | `/productos/?p=ampd-silo` | Ficha producto compacto |
+| Software | `/productos/?p=software` | Ampd Pulse (monitoreo, reportes) |
+| Construcción | `/sectores/?s=construccion` | Sector con desafío/solución y ROI |
+| Minería | `/sectores/?s=mineria` | Sector con casos de uso mineros |
+| Infraestructura | `/sectores/?s=infraestructura` | Túneles, ferroviario, vial |
+| Hormigón | `/sectores/?s=hormigon` | Plantas de dosificación |
+| Oil & Gas | `/sectores/?s=oil-gas` | Perforación y operaciones |
+| Microtúneles | `/sectores/?s=microtuneles` | Tunelería de precisión |
+| Eventos | `/sectores/?s=eventos` | Energía silenciosa para eventos |
+| Puertos | `/sectores/?s=puertos` | Shore power y terminales |
 
 ### Stack técnico
 
 - **HTML estático** con CSS custom properties (tokens del design system)
+- **Rutas absolutas** (`/img/`, `/assets/`, `/productos/`): funcionan con o sin `/` final
 - **JS vanilla** para renderizado dinámico de productos/sectores y UI (mega menus, scroll reveal)
 - **Google Fonts:** Archivo (variable width) + Geist Mono (tabular nums)
 - **Imágenes:** AVIF, WebP, JPG, PNG — renders de producto y fotos de faena
@@ -92,7 +97,10 @@ Réplica del sitio de Ampd Energy adaptada para Enerterra Chile. 14 páginas est
 - [ ] Página "Nosotros"
 - [ ] Página "Contacto" con formulario
 - [ ] SEO: meta tags, sitemap, robots.txt
-- [ ] Decidir si v2 reemplaza v1 como landing principal
+- [x] v2 reemplaza v1 como landing principal (v1 en `/v1/`)
+- [ ] Teléfono real (hoy placeholder `+56200000000`)
+- [ ] LinkedIn real en footer
+- [ ] Optimizar imágenes pesadas (>1 MB) y sacar `dist/` del deploy
 
 ## Design System
 
@@ -104,8 +112,8 @@ Documentación completa en `design-system/README.md`. Incluye tokens CSS, catál
 # Servir el sitio completo
 npx serve landing -l 3000
 
-# Ver v1: http://localhost:3000
-# Ver v2: http://localhost:3000/v2/
-# Ver producto: http://localhost:3000/v2/productos/?p=ampd-400
-# Ver sector: http://localhost:3000/v2/sectores/?s=mineria
+# Home: http://localhost:3000/
+# Producto: http://localhost:3000/productos/?p=ampd-400
+# Sector: http://localhost:3000/sectores/?s=mineria
+# v1 archivada: http://localhost:3000/v1/
 ```
