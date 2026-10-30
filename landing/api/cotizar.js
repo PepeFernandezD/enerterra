@@ -8,6 +8,7 @@ const TO = process.env.COTIZAR_TO || 'gfernandez@enerterra.cl';
 const FROM = process.env.COTIZAR_FROM || 'Web Enerterra <web@enerterra.cl>';
 const SUBJECT = '[ Cotización - Enerterra ]';
 const LOGO = 'https://www.enerterra.cl/img/email/enerterra-logo-white.png';
+const LOGO_AMPD = 'https://www.enerterra.cl/img/email/ampd-logo-white.png';
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
 function esc(s) {
@@ -31,6 +32,15 @@ function fila(label, valor) {
 </tr>`;
 }
 
+function asunto(d) {
+  return `${SUBJECT} ${d.empresa}`;
+}
+
+// Borrador que se abre al apretar "Responder a ..." en el correo interno
+function respuestaTipo(d) {
+  return `Hola ${d.nombre.split(' ')[0]}, muchas gracias por tu interés en Enerterra.\r\n\r\n`;
+}
+
 function htmlCorreo(d, s) {
   const tel = d.telefono ? `<a href="tel:${esc(d.telefono.replace(/[^\d+]/g, ''))}" style="color:#0B7A64;text-decoration:none">${esc(d.telefono)}</a>` : '<span style="color:#96B3C8">No indicado</span>';
   const mensaje = d.mensaje ? esc(d.mensaje).replace(/\n/g, '<br>') : '<span style="color:#96B3C8">Sin mensaje adicional</span>';
@@ -41,9 +51,10 @@ function htmlCorreo(d, s) {
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;background:#FFFFFF;border-radius:12px;overflow:hidden">
 
   <tr><td style="background:#2D2D36;padding:28px 32px">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
-      <td><img src="${LOGO}" width="180" height="24" alt="Enerterra" style="display:block;border:0;width:180px;height:auto"></td>
-      <td align="right" style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#96B3C8;line-height:1.5">Representante oficial<br>de Ampd Energy</td>
+    <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+      <td style="vertical-align:middle;padding-right:14px"><img src="${LOGO}" width="180" height="24" alt="Enerterra" style="display:block;border:0;width:180px;height:auto"></td>
+      <td style="vertical-align:middle;border-left:1px solid #4A4A55;padding-left:12px;padding-right:10px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#B6CBDA;line-height:1.3;white-space:nowrap">Representante<br>oficial</td>
+      <td style="vertical-align:middle"><img src="${LOGO_AMPD}" width="82" height="18" alt="Ampd Energy" style="display:block;border:0;width:82px;height:auto"></td>
     </tr></table>
   </td></tr>
   <tr><td style="background:#0CB494;height:4px;line-height:4px;font-size:0">&nbsp;</td></tr>
@@ -74,7 +85,7 @@ function htmlCorreo(d, s) {
 
   <tr><td style="padding:28px 32px 32px">
     <table role="presentation" cellpadding="0" cellspacing="0"><tr><td style="background:#0CB494;border-radius:6px">
-      <a href="mailto:${esc(d.email)}?subject=${encodeURIComponent('Re: Cotización Enerterra · ' + d.empresa)}" style="display:inline-block;padding:14px 24px;font-size:14px;font-weight:bold;letter-spacing:.04em;color:#FFFFFF;text-decoration:none">Responder a ${esc(d.nombre.split(' ')[0])}</a>
+      <a href="mailto:${esc(d.email)}?subject=${encodeURIComponent(asunto(d))}&amp;body=${encodeURIComponent(respuestaTipo(d))}" style="display:inline-block;padding:14px 24px;font-size:14px;font-weight:bold;letter-spacing:.04em;color:#FFFFFF;text-decoration:none">Responder a ${esc(d.nombre.split(' ')[0])}</a>
     </td></tr></table>
   </td></tr>
 
@@ -115,7 +126,7 @@ module.exports = async (req, res) => {
     const r = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ from: FROM, to: [TO], reply_to: d.email, subject: SUBJECT, html: htmlCorreo(d, s), text: textoCorreo(d, s) }),
+      body: JSON.stringify({ from: FROM, to: [TO], reply_to: d.email, subject: asunto(d), html: htmlCorreo(d, s), text: textoCorreo(d, s) }),
     });
     if (!r.ok) {
       console.error('cotizar: Resend respondio', r.status, await r.text());
