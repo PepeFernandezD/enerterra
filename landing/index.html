@@ -624,7 +624,7 @@ footer a:hover{color:var(--blanco)}
     if(!ok){f.querySelector('.bad').focus();return}
     var data={};['nombre','empresa','email','telefono','sector','mensaje','web'].forEach(function(n){data[n]=f.elements[n].value.trim()});
     btn.disabled=true;btn.textContent='Enviando…';note.hidden=true;
-    fetch('/api/cotizar',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+    fetch('/api/cotizar/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
       .then(function(r){return r.json().catch(function(){return {}}).then(function(j){if(!r.ok||!j.ok)throw new Error('envio')})})
       .then(function(){
         document.getElementById('ok-nombre').textContent=data.nombre.split(' ')[0];
