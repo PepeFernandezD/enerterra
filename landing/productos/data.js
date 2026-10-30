@@ -1,12 +1,12 @@
 /* Contenido de las páginas de producto v2, replicando ampd.energy/es/products/* en español.
-   Imágenes: ../../img/ (landing) y ../../assets/ (design system). */
+   Imágenes: /img/ (landing) y /assets/ (design system). */
 
 window.PRODUCTOS = {
   "ampd-400": {
     nombre: "Ampd 400", tag: "NextGen", eyebrow: "Mejora la energía de tu faena",
     h1: "El futuro de la energía móvil: Ampd 400",
     intro: "El Ampd 400 es uno de los modelos insignia de nuestra gama de productos NextGen. Rediseñadas desde cero, estas unidades ofrecen la máxima flexibilidad y libertad energética para las industrias más exigentes del mundo.",
-    hero: "../../assets/products/ampd-400/web-hero.avif",
+    hero: "/assets/products/ampd-400/web-hero.avif",
     statement: "Ya sea que necesite energía para una obra de construcción remota o para un proyecto de infraestructura crítica, nuestros sistemas han sido diseñados priorizando la seguridad, la durabilidad y la resistencia.",
     features: {
       titulo: "Rendimiento inigualable",
@@ -20,21 +20,21 @@ window.PRODUCTOS = {
       ],
       nota: "*Característica opcional"
     },
-    brochure: "../../assets/docs/ampd-nextgen-brochure.pdf",
+    brochure: "/assets/docs/ampd-nextgen-brochure.pdf",
     software: true,
     industrias: true,
     assurance: [
-      ["Tecnología de baterías de primer nivel", "El Ampd 400 utiliza celdas LFP de CATL, el fabricante líder mundial, con una vida útil líder en la industria de 9.000 ciclos al 100 % de profundidad de descarga.", "../../assets/icons/assurance-01-battery.avif"],
-      ["Certificación global", "Todos nuestros productos NextGen están certificados según normas IEC y UL por SGS, el organismo de certificación de productos más reconocido a nivel global para la industria ESS.", "../../assets/icons/assurance-02-certification.avif"],
-      ["Fiabilidad validada", "A través de cientos de horas en terreno y pruebas exhaustivas, nos aseguramos de que cada unidad esté libre de problemas y completamente funcional desde el primer día.", "../../assets/icons/assurance-03-reliability.avif"],
-      ["Soporte local, garantía global", "Disfruta de 5 años de garantía en partes, respaldada por equipos de servicio locales y stock en la región.", "../../assets/icons/assurance-04-support.avif"]
+      ["Tecnología de baterías de primer nivel", "El Ampd 400 utiliza celdas LFP de CATL, el fabricante líder mundial, con una vida útil líder en la industria de 9.000 ciclos al 100 % de profundidad de descarga.", "/assets/icons/assurance-01-battery.avif"],
+      ["Certificación global", "Todos nuestros productos NextGen están certificados según normas IEC y UL por SGS, el organismo de certificación de productos más reconocido a nivel global para la industria ESS.", "/assets/icons/assurance-02-certification.avif"],
+      ["Fiabilidad validada", "A través de cientos de horas en terreno y pruebas exhaustivas, nos aseguramos de que cada unidad esté libre de problemas y completamente funcional desde el primer día.", "/assets/icons/assurance-03-reliability.avif"],
+      ["Soporte local, garantía global", "Disfruta de 5 años de garantía en partes, respaldada por equipos de servicio locales y stock en la región.", "/assets/icons/assurance-04-support.avif"]
     ]
   },
   "ampd-200": {
     nombre: "Ampd 200", tag: "NextGen", eyebrow: "Mejora la energía de tu faena",
     h1: "El futuro de la energía móvil: Ampd 200",
     intro: "El Ampd 200 es uno de los modelos insignia de nuestra gama de productos NextGen. Rediseñadas desde cero, estas unidades ofrecen la máxima flexibilidad y libertad energética para las industrias más exigentes del mundo.",
-    hero: "../../assets/products/ampd-200/web-hero.avif",
+    hero: "/assets/products/ampd-200/web-hero.avif",
     statement: "Ya sea que necesite energía para una obra de construcción remota o para un proyecto de infraestructura crítica, nuestros sistemas han sido diseñados priorizando la seguridad, la durabilidad y la resistencia.",
     features: {
       titulo: "Rendimiento inigualable",
@@ -47,21 +47,21 @@ window.PRODUCTOS = {
         ["Compatibilidad", "Paralelo con generadores"]
       ]
     },
-    brochure: "../../assets/docs/ampd-nextgen-brochure.pdf",
+    brochure: "/assets/docs/ampd-nextgen-brochure.pdf",
     software: true,
     industrias: true,
     assurance: [
-      ["Tecnología de baterías de primer nivel", "El Ampd 200 utiliza celdas LFP de CATL, el fabricante líder mundial, con una vida útil líder en la industria de 9.000 ciclos al 100 % de profundidad de descarga.", "../../assets/icons/assurance-01-battery.avif"],
-      ["Certificación global", "Nuestros productos NextGen están certificados según normas IEC y UL por SGS, el organismo de certificación de productos más reconocido a nivel global para la industria ESS.", "../../assets/icons/assurance-02-certification.avif"],
-      ["Fiabilidad validada", "A través de cientos de horas en terreno y pruebas exhaustivas, nos aseguramos de que cada unidad esté libre de problemas y completamente funcional desde el primer día.", "../../assets/icons/assurance-03-reliability.avif"],
-      ["Soporte local, garantía global", "Disfruta de 5 años de garantía en partes, respaldada por equipos de servicio locales y stock en la región.", "../../assets/icons/assurance-04-support.avif"]
+      ["Tecnología de baterías de primer nivel", "El Ampd 200 utiliza celdas LFP de CATL, el fabricante líder mundial, con una vida útil líder en la industria de 9.000 ciclos al 100 % de profundidad de descarga.", "/assets/icons/assurance-01-battery.avif"],
+      ["Certificación global", "Nuestros productos NextGen están certificados según normas IEC y UL por SGS, el organismo de certificación de productos más reconocido a nivel global para la industria ESS.", "/assets/icons/assurance-02-certification.avif"],
+      ["Fiabilidad validada", "A través de cientos de horas en terreno y pruebas exhaustivas, nos aseguramos de que cada unidad esté libre de problemas y completamente funcional desde el primer día.", "/assets/icons/assurance-03-reliability.avif"],
+      ["Soporte local, garantía global", "Disfruta de 5 años de garantía en partes, respaldada por equipos de servicio locales y stock en la región.", "/assets/icons/assurance-04-support.avif"]
     ]
   },
   "enertainer": {
     nombre: "Enertainer", eyebrow: "Limpio. Silencioso. Conectado.",
     h1: "Enertainer: el primer ESS del mundo para entornos exigentes",
     intro: "Nuestro sistema avanzado de almacenamiento de energía en baterías (ESS) de generación original, que sigue entregando energía limpia y confiable a las industrias pesadas del mundo desde 2019 y acumula más de 1.500.000 horas de operación sin incidentes.",
-    hero: "../../assets/products/enertainer/web-hero.jpg",
+    hero: "/assets/products/enertainer/web-hero.jpg",
     statement: "Lanzado en 2019, el Enertainer es nuestro sistema de almacenamiento original, diseñado sin concesiones. Construido para rendir en entornos industriales duros, dinámicos y con poco espacio, está disponible en múltiples configuraciones y es ideal para proyectos que requieren mayor salida AC.",
     stats: {
       titulo: "Sé parte de la solución hoy",
@@ -84,13 +84,13 @@ window.PRODUCTOS = {
         ["Baja mantención", "Promedio de 1 a 2 inspecciones anuales por Enertainer"]
       ]
     },
-    brochure: "../../assets/docs/ampd-product-company-brochure.pdf",
+    brochure: "/assets/docs/ampd-product-company-brochure.pdf",
     beneficios: true,
     detalle: {
       titulo: "Revolucionando las faenas con energía sin restricciones",
       texto: "El Enertainer es un sistema avanzado de almacenamiento de energía que entrega energía sin diésel para proyectos de industria pesada. Disponible en varias configuraciones, el Ampd Enertainer está diseñado sin concesiones para las necesidades duras, dinámicas y con poco espacio de las faenas.",
-      img: "../../assets/products/enertainer/render-front.png",
-      interior: "../../assets/products/enertainer/render-interior.png",
+      img: "/assets/products/enertainer/render-front.png",
+      interior: "/assets/products/enertainer/render-interior.png",
       hint: "Pasa el cursor para ver el interior"
     },
     software: true,
@@ -100,7 +100,7 @@ window.PRODUCTOS = {
     nombre: "Ampd Silo", eyebrow: "Limpio. Silencioso. Conectado.",
     h1: "Ampd Silo: ESS compacto y escalable",
     intro: "Nuestro sistema avanzado de almacenamiento de energía en baterías (ESS) que sigue entregando energía limpia y confiable a las industrias del mundo. Lanzado en 2024, el Ampd Silo fue nuestro producto de segunda generación.",
-    hero: "../../assets/products/ampd-silo/web-hero.avif",
+    hero: "/assets/products/ampd-silo/web-hero.avif",
     statement: "El paralelismo del Ampd Silo entrega mayor flexibilidad y escalabilidad. Pueden conectarse entre sí para entregar una mayor potencia AC con mayor capacidad de energía. La comunicación entre ellos está configurada para que la potencia requerida se comparta y distribuya de forma uniforme.",
     features: {
       titulo: "Durable y compacto",
@@ -113,13 +113,13 @@ window.PRODUCTOS = {
         ["Robusto y resistente", "Uso pesado, capaz de soportar condiciones climáticas extremas y entornos hostiles"]
       ]
     },
-    brochure: "../../assets/docs/ampd-product-company-brochure.pdf",
+    brochure: "/assets/docs/ampd-product-company-brochure.pdf",
     beneficios: true,
     detalle: {
       titulo: "Compacto y escalable",
       texto: "El Ampd Silo es una solución de energía flexible, escalable y móvil. Con su diseño compacto que entrega un rendimiento excepcional, está diseñado para reemplazar los generadores diésel sucios, ruidosos y peligrosos que alimentan las industrias del mundo.",
-      img: "../../assets/products/ampd-silo/render-front.png",
-      interior: "../../assets/products/ampd-silo/render-open.png",
+      img: "/assets/products/ampd-silo/render-front.png",
+      interior: "/assets/products/ampd-silo/render-open.png",
       hint: "Pasa el cursor para ver el interior"
     },
     software: true,
@@ -129,7 +129,7 @@ window.PRODUCTOS = {
     nombre: "Software", eyebrow: "Inteligencia de desempeño en tiempo real",
     h1: "El software Ampd es estándar en todas las unidades",
     intro: "Acceso a un stack de software líder en su clase que simplifica drásticamente la planificación previa al despliegue, la operación y mantención, la gestión de flota y el reporte de datos.",
-    hero: "../../assets/products/software/enernet-app-white.jpg", heroFit: "contain",
+    hero: "/assets/products/software/enernet-app-white.jpg", heroFit: "contain",
     features: {
       titulo: "Lo que obtienes de fábrica con una unidad Ampd:",
       items: [
@@ -138,7 +138,7 @@ window.PRODUCTOS = {
         ["Programación en la nube", "Personaliza el horario de operación de tu equipo según el ritmo de la faena con el Schedule Designer de Ampd Pulse, fácil de usar."]
       ]
     },
-    brochure: "../../assets/docs/ampd-brochure-2026.pdf",
+    brochure: "/assets/docs/ampd-brochure-2026.pdf",
     pulse: {
       eyebrow: "Ampd Pulse",
       titulo: "Ampd Pulse es nuestro portal en línea que se conecta a tu unidad Ampd",
@@ -160,7 +160,7 @@ window.PRODUCTOS = {
         ["Acceso desde cualquier lugar", "Accede a tus datos vía web y apps móviles (iOS y Android), con soporte multilenguaje (app) y API REST para integración."],
         ["Control de usuarios", "Control de acceso por rol a nivel de plataforma y de equipo, para que cada usuario vea y actualice solo lo que le corresponde."]
       ],
-      img: "../../assets/products/software/ampd-pulse-screens.avif"
+      img: "/assets/products/software/ampd-pulse-screens.avif"
     },
     aplicaciones: {
       titulo: "Aplicaciones por industria",
@@ -169,7 +169,7 @@ window.PRODUCTOS = {
         ["Construcción y eventos", "Monitorea sistemas de energía temporal y entrega a tus clientes la documentación del ahorro de combustible."],
         ["Ubicaciones remotas", "Monitoreo confiable para operaciones de minería, telecomunicaciones y oil & gas en entornos exigentes."]
       ],
-      img: "../../img/productos/tunneling.jpg"
+      img: "/img/productos/tunneling.jpg"
     },
     industrias: true
   }

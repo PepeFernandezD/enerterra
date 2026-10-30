@@ -3,7 +3,7 @@ window.SECTORES = {
     nombre: "Construcción",
     subtitulo: "Energía más inteligente para la construcción",
     intro: "Energía más limpia, silenciosa y eficiente en cada proyecto. El sector de la construcción ha avanzado en sus soluciones energéticas. Nuestros avanzados sistemas de almacenamiento de energía (ESS) han demostrado ser soluciones energéticas modernas, fiables y sostenibles.",
-    hero: "../../assets/industries/construction-dusk.jpg",
+    hero: "/assets/industries/construction-dusk.jpg",
     desafio: {
       titulo: "Arranques de alto par frente a la energía tradicional",
       texto: "Las obras de construcción dependen de generadores diésel para alimentar grúas, herramientas, plantas de hormigonado e instalaciones temporales. Sin embargo, el consumo de energía dista de ser constante. Los generadores diésel están diseñados para un funcionamiento constante a alta carga, no para las demandas fluctuantes del trabajo de construcción."
@@ -28,7 +28,7 @@ window.SECTORES = {
     nombre: "Minería",
     subtitulo: "Energía más inteligente y limpia para operaciones mineras",
     intro: "Reduzca el combustible, los costes y las emisiones de carbono en cada obra. Los avanzados sistemas de almacenamiento de energía (ESS) de Ampd funcionan en conjunto con sus activos en el lugar, permitiéndole ajustar el tamaño de su flota de generadores.",
-    hero: "../../assets/industries/mining-hero.avif",
+    hero: "/assets/industries/mining-hero.avif",
     desafio: {
       titulo: "Volatilidad de carga en operaciones mineras",
       texto: "La minería tiene más picos, sobrecargas y volatilidad de lo que se cree. Los generadores sufren en entornos con peaks de demanda, operando en ralentí durante largos períodos y consumiendo combustible de forma ineficiente."
@@ -53,7 +53,7 @@ window.SECTORES = {
     nombre: "Infraestructura",
     subtitulo: "Energía eficiente para las obras que construyen el futuro",
     intro: "Túneles, obras ferroviarias y montajes demandan potencia muy variable, inadecuada para generadores diésel convencionales. Los ESS de Ampd entregan respuesta instantánea y estabilidad.",
-    hero: "../../assets/industries/infrastructure-bridge.jpg",
+    hero: "/assets/industries/infrastructure-bridge.jpg",
     desafio: {
       titulo: "Demanda de potencia altamente variable",
       texto: "Los proyectos de infraestructura requieren picos de energía impredecibles para grúas, tuneladoras y equipos de bombeo, mientras la carga base permanece baja. Los generadores se sobredimensionan para cubrir estos peaks."
@@ -73,7 +73,7 @@ window.SECTORES = {
     nombre: "Plantas de hormigón",
     subtitulo: "Energía confiable y limpia para plantas de hormigón",
     intro: "Reduzca la ineficiencia, el desperdicio de combustible y el desgaste causado por cargas erráticas en plantas de dosificación de hormigón.",
-    hero: "../../assets/industries/site-aerial.jpg",
+    hero: "/assets/industries/site-aerial.jpg",
     desafio: {
       titulo: "Cargas erráticas en dosificación",
       texto: "Las plantas de hormigón tienen perfiles de carga altamente variables con picos durante el mezclado y períodos largos de baja demanda, forzando a los generadores a operar de forma ineficiente."
@@ -95,7 +95,7 @@ window.SECTORES = {
     nombre: "Oil & gas",
     subtitulo: "Energía ininterrumpida para infraestructura crítica",
     intro: "Perfil de potencia altamente volátil donde la combinación de generador + Ampd es la solución óptima para operaciones de petróleo y gas.",
-    hero: "../../assets/industries/site-aerial.jpg",
+    hero: "/assets/industries/site-aerial.jpg",
     desafio: {
       titulo: "Volatilidad extrema en perfiles de potencia",
       texto: "Las operaciones de oil & gas requieren energía continua y confiable para equipos de perforación, compresores y bombas, con picos de demanda impredecibles."
@@ -115,7 +115,7 @@ window.SECTORES = {
     nombre: "Microtunelería",
     subtitulo: "Energía confiable y de bajas emisiones para microtúneles",
     intro: "Precisión absoluta y soporte a picos de alto torque para tuneladoras y equipos de separación de lodos.",
-    hero: "../../assets/industries/tunnel-aerial.jpg",
+    hero: "/assets/industries/tunnel-aerial.jpg",
     desafio: {
       titulo: "Picos de alto torque en tunelería",
       texto: "Las tuneladoras requieren picos de potencia extremos durante el arranque y cambios de terreno, mientras los sistemas de control e instrumentación necesitan energía estable y limpia."
@@ -135,7 +135,7 @@ window.SECTORES = {
     nombre: "Eventos",
     subtitulo: "Energía silenciosa y sustentable para eventos de clase mundial",
     intro: "Ampd como buffer silencioso del generador: sin ruido, vibración ni humos para festivales, conciertos y eventos corporativos.",
-    hero: "../../assets/industries/site-aerial.jpg",
+    hero: "/assets/industries/site-aerial.jpg",
     desafio: {
       titulo: "Ruido y emisiones en eventos",
       texto: "Los eventos requieren energía confiable para audiovisual, iluminación y escenarios, pero los generadores diésel generan ruido, vibraciones y humos inaceptables para el público."
@@ -155,7 +155,7 @@ window.SECTORES = {
     nombre: "Puertos",
     subtitulo: "Mantén en movimiento puertos y terminales",
     intro: "Alternativa a generadores sobredimensionados en ralentí que queman combustible, elevan mantención y generan emisiones innecesarias en terminales portuarios.",
-    hero: "../../assets/industries/ports-hero.avif",
+    hero: "/assets/industries/ports-hero.avif",
     desafio: {
       titulo: "Generadores sobredimensionados en terminales",
       texto: "Los puertos dependen de generadores diésel grandes que operan en ralentí la mayor parte del tiempo para cubrir picos esporádicos de grúas, reefers y shore power, desperdiciando combustible y generando emisiones."

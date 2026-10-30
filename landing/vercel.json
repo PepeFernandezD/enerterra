@@ -1,3 +1,8 @@
 {
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/v2", "destination": "/", "permanent": true },
+    { "source": "/v2/:path*", "destination": "/:path*", "permanent": true },
+    { "source": "/producto.html", "destination": "/productos/", "permanent": true }
+  ]
 }

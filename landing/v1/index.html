@@ -1,0 +1,597 @@
+<!-- @dsCard group="Website" viewport="1280x800" name="Landing Enerterra (standalone)" subtitle="Landing page HTML standalone, 9 bloques estilo Aggreko/Megapack, responsive, formulario y barra sticky" -->
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<style data-omelette-injected>html,body{background:transparent}</style><script data-omelette-injected>(()=>{{const n=new URLSearchParams(location.search).get("theme");if(n==="light"||n==="dark"){document.documentElement.dataset.theme=n}}{if(new URLSearchParams(location.search).get("_omthumb")==="1"){const n=(f)=>{const g=f.focus;if(!g)return;f.focus=function(h){g.call(this,{...h,preventScroll:true})}};n(HTMLElement.prototype);n(SVGElement.prototype);if(typeof MathMLElement!=="undefined"){n(MathMLElement.prototype)}const d=(f)=>{f.removeAttribute("autofocus");f.inert=true;if(!(f instanceof HTMLElement))f.removeAttribute("tabindex")};const p=(f)=>{if(f.hasAttribute("autofocus"))d(f);for(const g of f.querySelectorAll("[autofocus]")){d(g)}};p(document.documentElement);new MutationObserver((f)=>{for(const g of f){for(const h of g.addedNodes){if(h.nodeType===1)p(h)}}}).observe(document,{childList:true,subtree:true})}}{const n=()=>{try{if(document.querySelector('meta[name="color-scheme"]'))return;const d=getComputedStyle(document.documentElement).getPropertyValue("color-scheme").trim();if(d&&d!=="normal")return;const p=(y)=>{if(!y)return null;const m=getComputedStyle(y).backgroundColor.match(/^rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:[,\s/]+([\d.]+%?))?\s*\)$/);if(!m)return null;const w=m[4]==null?1:parseFloat(m[4])/(m[4].endsWith("%")?100:1);if(w<0.99)return null;return[+m[1],+m[2],+m[3]]};const f=p(document.body)||p(document.documentElement);if(!f)return;const g=(y)=>{const m=y/255;return m<=0.04045?m/12.92:((m+0.055)/1.055)**2.4};const h=0.2126*g(f[0])+0.7152*g(f[1])+0.0722*g(f[2]);document.documentElement.style.setProperty("color-scheme",h<0.4?"dark":"light")}catch{}};if(document.readyState==="complete")n();else window.addEventListener("load",n)}var I=["https://claude.ai","https://preview.claude.ai","https://ae4ef756-7dc0-4d13-be0e-41707ba9ed9b.claudeusercontent.com"];var B=true;var K=false;var C=()=>{};if(K===true){try{const n=setTimeout.bind(window);const d=1e4;const p=15;const f=1e4;const g=120000;const h=200;const y=(o)=>{try{let r;if(typeof o==="string")r=o;else if(o instanceof URL)r=o.href;else if(typeof Request!=="undefined"&&o instanceof Request)r=o.url;else return null;if(!r)return null;const l=document.baseURI;const i=new URL(r,l);if(i.protocol!=="http:"&&i.protocol!=="https:")return null;if(i.origin!==new URL(l).origin)return null;return i.origin+i.pathname}catch{return null}};const m=new Map;const w=(o)=>{let r=m.get(o);if(!r){if(m.size>=h){const l=m.keys().next().value;if(l!==undefined)m.delete(l)}r={fails:[],until:0,cooldown:f,hard:false};m.set(o,r)}return r};const R=(o)=>{const r=m.get(o);return r!==undefined&&r.until>Date.now()};const O=(o,r)=>{const l=Date.now();const i=w(o);if(r)i.hard=true;if(i.until>l)return;i.fails.push(l);while(i.fails.length>0&&i.fails[0]<=l-d)i.fails.shift();if(i.fails.length>=p){i.until=l+i.cooldown;if(i.hard)i.cooldown=Math.min(i.cooldown*2,g);i.fails.length=0;try{n(()=>{try{S(true)}catch{}},i.until-l+100)}catch{}console.warn("[omelette] asset circuit breaker: pausing requests to "+o+" for "+Math.round((i.until-l)/1000)+"s after "+p+" failures in "+d/1000+"s")}};const e=(o)=>{m.delete(o)};const t=100;const a=new WeakMap;const u=new Set;let s=null;const S=(o)=>{for(const r of Array.from(u)){try{const l=a.get(r);if(l===undefined){u.delete(r);continue}if(o){const i=y(l);if(i!==null&&R(i))continue}a.delete(r);u.delete(r);if(s!==null)s.call(r,l)}catch{}}};C=()=>{try{m.clear();S(false)}catch{}};document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")C()});const _=window.fetch;if(typeof _==="function"){const o=function(...r){let l=null;try{l=y(r[0])}catch{}if(l!==null&&R(l)){let c;try{if(r[1]&&r[1].signal!==undefined){c=r[1].signal||undefined}else if(typeof Request!=="undefined"&&r[0]instanceof Request){c=r[0].signal||undefined}}catch{c=undefined}return new Promise((k,b)=>{const E=()=>{try{return c.reason!==undefined?c.reason:new DOMException("The operation was aborted.","AbortError")}catch{return new DOMException("The operation was aborted.","AbortError")}};try{if(c&&c.aborted){b(E());return}}catch{}let T=false;const j=()=>{if(T)return;T=true;b(E())};try{if(c)c.addEventListener("abort",j,{once:true})}catch{}n(()=>{if(T)return;T=true;try{if(c)c.removeEventListener("abort",j)}catch{}let L;try{L=new Response(null,{status:429,statusText:"Too Many Requests",headers:{"Retry-After":"10"}})}catch{L={ok:false,status:429}}k(L)},250)})}const i=_.apply(window,r);if(l!==null){const c=l;i.then((k)=>{try{if(k.ok)e(c);else if(k.status===401||k.status===403||k.status===404||k.status===429){O(c,k.status!==404)}}catch{}},()=>{})}return i};window.fetch=o}const v=Object.getOwnPropertyDescriptor(HTMLImageElement.prototype,"src");if(v!==undefined&&v.set!==undefined&&v.get!==undefined){const o=v.set;s=o;Object.defineProperty(HTMLImageElement.prototype,"src",{configurable:true,enumerable:v.enumerable,get:v.get,set(r){const l=`${r}`;try{const i=y(l);if(i!==null&&R(i)){a.set(this,l);if(u.size<t)u.add(this);return}}catch{}try{a.delete(this);u.delete(this)}catch{}o.call(this,l)}})}try{const o=HTMLImageElement.prototype.setAttribute;HTMLImageElement.prototype.setAttribute=function(r,l){if(arguments.length<2){o.apply(this,arguments);return}if(typeof r==="string"&&r.toLowerCase()==="src"){const i=`${l}`;try{const c=y(i);if(c!==null&&R(c)){a.set(this,i);if(u.size<t)u.add(this);return}a.delete(this);u.delete(this)}catch{}o.call(this,r,i);return}o.call(this,r,l)}}catch{}window.addEventListener("error",(o)=>{try{const r=o.target;if(r instanceof HTMLImageElement){const l=y(r.currentSrc||r.src||"");if(l!==null)O(l,true)}}catch{}},true);window.addEventListener("load",(o)=>{try{const r=o.target;if(r instanceof HTMLImageElement){const l=y(r.currentSrc||r.src||"");if(l!==null)e(l);const i=a.get(r);if(i!==undefined){let c=false;try{c=new URL(i,document.baseURI).href===new URL(r.currentSrc||r.src||"",document.baseURI).href}catch{c=false}if(c){a.delete(r);u.delete(r)}}}}catch{}},true)}catch{}}var J=30000;var G=3000;document.addEventListener("DOMContentLoaded",()=>{const n=window.Babel;const d="om-src-id";if(n&&n.registerPlugin&&!(n.availablePlugins&&n.availablePlugins[d])){n.registerPlugin(d,({types:h})=>({visitor:{JSXOpeningElement(y,m){const w=y.node;if(w.name&&w.name.type==="JSXMemberExpression")return;for(let t=0;t<w.attributes.length;t++){const a=w.attributes[t];if(a.type==="JSXAttribute"&&a.name&&a.name.name==="data-om-id")return}const R=m.file&&m.file.opts&&m.file.opts.filename||"?";const O=w.loc&&w.loc.start;const e=`jsx:${R}:${w.start??0}:${O?O.line:0}:${O?O.column+1:0}`;w.attributes.push(h.jsxAttribute(h.jsxIdentifier("data-om-id"),h.stringLiteral(e)))}}}))}const p="om-text-extract";let f=false;if(B&&n&&n.registerPlugin&&!(n.availablePlugins&&n.availablePlugins[p])){const h=window.React;if(h&&h.useSyncExternalStore&&h.createElement){f=true;const y={};const m=new Set;let w=0;window.__omTextO=y;window.__omTextSet=(e)=>{for(const t in e){const a=e[t];if(a==null)delete y[t];else y[t]=a}w++;m.forEach((t)=>t())};const R=(e)=>{m.add(e);return()=>m.delete(e)};const O=()=>w;window.__OmT=function e(t){h.useSyncExternalStore(R,O,O);return h.createElement("span",{"data-om-text":t.i,className:"__om-t"},t.i in y?y[t.i]:t.children)};n.registerPlugin(p,({types:e})=>{const t={style:1,script:1,noscript:1,textarea:1,title:1,option:1,text:1,tspan:1,textPath:1};const a={placeholder:1,alt:1,title:1,label:1,"aria-label":1,"aria-description":1,"aria-placeholder":1};const u=(o,r)=>e.logicalExpression("??",e.memberExpression(e.logicalExpression("||",e.memberExpression(e.identifier("window"),e.identifier("__omTextO")),e.objectExpression([])),e.stringLiteral(o),true),r);const s=(o)=>o.file&&o.file.opts&&o.file.opts.filename||"?";const S=(o)=>o.file&&o.file.code||"";const _=(o,r)=>{const l=(c)=>c&&c.start!=null&&c.end!=null&&(c.type==="StringLiteral"||c.type==="TemplateLiteral"&&c.expressions.length===0)?[c.start,c.end]:null;const i=l(r);if(i)return i;if(r&&r.type==="Identifier"){const c=o.scope.getBinding(r.name);if(c&&c.constant&&c.path.node.type==="VariableDeclarator"){return l(c.path.node.init)}}return null};const v=(o,r,l)=>{const i=o.node;let c=false;const k=(E,T)=>{c=true;return e.jsxElement(e.jsxOpeningElement(e.jsxIdentifier("__OmT"),[e.jsxAttribute(e.jsxIdentifier("i"),e.stringLiteral(E))],false),e.jsxClosingElement(e.jsxIdentifier("__OmT")),[T],false)};const b=i.children.map((E)=>{if(E.type==="JSXText"){if(E.start==null||E.end==null)return E;const T=l.slice(E.start,E.end);const j=T.length-T.trimStart().length;const L=T.length-T.trimEnd().length;if(j+L>=T.length)return E;return k(`txt:${r}:${E.start+j}:${E.end-L}`,E)}if(E.type==="JSXExpressionContainer"){const T=_(o,E.expression);if(T)return k(`str:${r}:${T[0]}:${T[1]}`,E)}return E});if(c)i.children=b};return{visitor:{JSXOpeningElement(o,r){const l=o.node;const i=s(r);const c={};for(let k=0;k<l.attributes.length;k++){const b=l.attributes[k];if(b.type!=="JSXAttribute"||!b.name)continue;const E=b.name.name;if(!a[E])continue;if(!b.value||b.value.type!=="StringLiteral")continue;if(b.value.start==null||b.value.end==null)continue;const T=`txt:${i}:${b.value.start}:${b.value.end}`;c[E]=T;b.value=e.jsxExpressionContainer(u(T,e.stringLiteral(b.value.value)))}if(Object.keys(c).length){l.attributes.push(e.jsxAttribute(e.jsxIdentifier("data-om-text-attrs"),e.stringLiteral(JSON.stringify(c))))}},JSXElement(o,r){const l=o.node.openingElement;const i=l&&l.name&&l.name.name;if(i==="__OmT")return;if(typeof i==="string"&&t[i])return;v(o,s(r),S(r))},JSXFragment(o,r){v(o,s(r),S(r))}}}})}}const g=f?["transform-react-jsx-source",d,p]:["transform-react-jsx-source",d];document.querySelectorAll('script[type="text/babel"],script[type="text/jsx"]').forEach((h,y)=>{const m=h.getAttribute("data-plugins")||"";const w=g.filter((R)=>m.indexOf(R)<0);if(w.length){h.setAttribute("data-plugins",m?`${m},${w.join(",")}`:w.join(","))}if(!h.hasAttribute("data-filename")){h.setAttribute("data-filename",h.getAttribute("src")||`inline-${y}`)}})});var A=window.parent;var U="not editable here — open the project in the Claude Design editor to save";var W=()=>Promise.resolve({persisted:false,noHost:true,reason:U});var H=W;var M="data/storage.json";var z=()=>{try{const n=new URL(document.baseURI);const d=n.pathname.match(/\/projects\/([^/]+)\/serve\//);if(d)return d[1];return n.hostname.split(".")[0]||""}catch{return location.hostname.split(".")[0]||""}};var Z=()=>{try{const n=new URL(document.baseURI);const d=n.pathname.indexOf("/serve/");if(d>=0)return n.origin+n.pathname.slice(0,d+"/serve/".length)+M}catch{}return"./"+M};var x=null;var N=()=>{if(!x){x=fetch(Z(),{cache:"no-store"}).then((n)=>{if(n.ok)return n.text();return n.status===404?"":null}).catch(()=>null).then((n)=>{if(n===null){x=null;return null}const d=new Map;if(!n)return d;let p;try{p=JSON.parse(n)}catch{console.warn("[omelette.storage] "+M+" is not valid JSON; treating the store as unreadable so a save cannot overwrite the "+"hand-edited bytes. Fix the JSON (or delete the file) to re-enable persistence.");x=null;return null}if(p===null||typeof p!=="object"||Array.isArray(p)){console.warn("[omelette.storage] "+M+" doesn't hold a JSON object; treating the store as unreadable so a save cannot "+"overwrite the hand-edited bytes. Make the top level a JSON object to re-enable persistence.");x=null;return null}const f=p;if("data"in f){const g=f.data;if(g===null||typeof g!=="object"||Array.isArray(g)){console.warn("[omelette.storage] "+M+' has a "data" field that is not a JSON object; treating the store as unreadable so a '+'save cannot overwrite the hand-edited bytes. Make "data" a JSON object to re-enable persistence.');x=null;return null}const h=f._meta;const y=h!==null&&typeof h==="object"?h.project:undefined;if(typeof y==="string"&&y!==""&&y!==z())return d;for(const m of Object.keys(g))d.set(m,g[m]);return d}for(const g of Object.keys(f)){if(g!=="_meta")d.set(g,f[g])}return d})}return x};var F=(n)=>H(M,JSON.stringify({_meta:{project:z(),version:1},data:Object.fromEntries(n)},null,2));var D=Promise.resolve();var $=(n)=>{const d=D.then(n);D=d.then(()=>{return},()=>{return});return d};var V=/sk-(?:ant-)?[A-Za-z0-9_-]{16,}|AKIA[0-9A-Z]{16}|gh[pousr]_[A-Za-z0-9]{20,}|xox[a-z]-[A-Za-z0-9][A-Za-z0-9-]{9,}|AIza[0-9A-Za-z_-]{30,}|-----BEGIN [A-Z ]*PRIVATE KEY-----/;var Y=/password|passwd|secret|api[_-]?key|access[_-]?token|auth[_-]?token|credential/i;var Q=(n,d,p)=>{if(V.test(d)||Y.test(n)&&typeof p==="string"&&p.length>=8){console.warn('[omelette.storage] the value for "'+n+'" looks like a credential. The storage file is a plaintext project file — visible to '+"everyone with project access and copied when the project is duplicated. Do not store secrets here.")}};var q={persisted:false,reason:"could not load the existing store — not overwriting it"};var X={persisted:false,reason:"stored value changed since a failed read — re-read this key before saving"};var P=new Set;var ee={get:(n)=>{if(typeof n!=="string"){return Promise.reject(new TypeError("storage.get: key must be a string"))}return $(N).then((d)=>{if(d===null){P.add(n);return null}P.delete(n);if(!d.has(n))return null;const p=d.get(n);return p==null?null:JSON.parse(JSON.stringify(p))})},set:(n,d)=>{if(typeof n!=="string"){return Promise.reject(new TypeError("storage.set: key must be a string"))}let p;try{p=JSON.stringify(d)}catch(g){return Promise.reject(new TypeError("storage.set: value must be JSON-serializable ("+String(g)+")"))}if(p===undefined){return Promise.reject(new TypeError("storage.set: value must be JSON-serializable"))}Q(n,p,d);const f=JSON.parse(p);return $(()=>N().then((g)=>{if(g===null)return q;if(P.has(n)){if(g.has(n))return X;P.delete(n)}g.set(n,f);return F(g)}))},delete:(n)=>{if(typeof n!=="string"){return Promise.reject(new TypeError("storage.delete: key must be a string"))}return $(()=>N().then((d)=>{if(d===null)return q;if(P.has(n)){if(d.has(n))return X;P.delete(n)}d.delete(n);return F(d)}))},keys:()=>$(N).then((n)=>n===null?[]:Array.from(n.keys()))};window.omelette={writeFile:(n,d)=>H(n,d).then((p)=>{if(!p.persisted&&!p.noHost){throw new Error(p.reason||"write failed")}}),storage:ee};if(A&&A!==window){const n=(e,t)=>{try{A.postMessage({__omelette_log:true,type:e,data:t},"*")}catch{}};["log","warn","error"].forEach((e)=>{const t=console[e];console[e]=(...a)=>{const u=a.map((s)=>{try{return typeof s==="object"?JSON.stringify(s):String(s)}catch{try{return String(s)}catch{return"[unstringifiable]"}}}).join(" ");n(e,u);t.apply(console,a)}});window.addEventListener("error",(e)=>{const t=e.target;if(t&&t!==window&&t.tagName){const a=t.src||t.href||"";n("resource_error",`${t.tagName} failed to load: ${a}`)}else{n("error",`${e.message||"Unknown error"} at ${e.filename||"?"}:${e.lineno||0}:${e.colno||0}`)}},true);window.addEventListener("unhandledrejection",(e)=>{const t=e.reason;const a=t instanceof Error?`${t.message} ${t.stack}`:String(t);n("error",`Unhandled rejection: ${a}`)});window.addEventListener("click",(e)=>{if(e.defaultPrevented||e.button!==0)return;if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;const t=e.composedPath?e.composedPath():[];const a=["button","input","select","textarea","summary","label"];let u=null;for(const v of t){if(!(v instanceof Element))continue;if(v.localName==="a"){if(!(v instanceof HTMLAnchorElement))return;u=v;break}if(a.indexOf(v.localName)!==-1)return}if(!u)return;if(u.isContentEditable)return;const s=u.closest("[contenteditable]");if(s&&s.getAttribute("contenteditable")!=="false")return;const S=(u.getAttribute("target")||"_self").toLowerCase();if(S!=="_self"&&S!=="_top"&&S!=="_parent")return;let _;try{_=new URL(u.href)}catch{return}if(_.protocol!=="http:"&&_.protocol!=="https:")return;if(location.origin==="null")return;if(_.origin===location.origin)return;e.preventDefault();window.open(_.href,"_blank","noopener,noreferrer")});const d=()=>{try{A.postMessage({type:"omelette:height",height:document.documentElement.scrollHeight},"*")}catch{}};if(window.ResizeObserver)new ResizeObserver(d).observe(document.documentElement);const p=()=>{d();if(!document.querySelector('script[type="text/babel"],script[type="text/jsx"]'))return;const e=()=>document.getElementById("root")||document.querySelector("body > div[id]");const t=e()?.firstElementChild??null;let a=0;const u=()=>{const s=e();if(s&&s.firstElementChild!==t||++a>30){d();return}setTimeout(u,100)};setTimeout(u,100)};if(document.readyState==="complete")p();else window.addEventListener("load",p);const f={};let g=0;const h=(e)=>new Promise((t,a)=>{if(!I.length){a(new Error("claude.complete: no parent origin"));return}const u=`c${++g}`;const s=()=>setTimeout(()=>{delete f[u];a(new Error(`claude.complete: no data for ${J/1000}s`))},J);const S=s();f[u]={resolve:t,reject:a,text:"",t:S,arm:s};try{for(const _ of I){A.postMessage({__om_api:true,id:u,body:e},_)}}catch(_){clearTimeout(S);delete f[u];a(_)}});const y=8;const m=async(e,t)=>{if(!Array.isArray(e.messages)){throw new Error("claude.complete: tools require a messages array")}const a=e.messages.slice();const u={...e,tools:e.tools.map((_)=>{if(_===null||typeof _!=="object")return _;const v={};for(const o of Object.keys(_)){if(typeof _[o]!=="function")v[o]=_[o]}return v})};const s=u.tool_choice;const S=s!=null&&(s.type==="any"||s.type==="tool")?{...u,tool_choice:s.disable_parallel_tool_use!==undefined?{type:"auto",disable_parallel_tool_use:s.disable_parallel_tool_use}:{type:"auto"}}:u;for(let _=0;_<y;_++){const v=await h({..._===0?u:S,messages:a});const o=v.message;const r=o&&Array.isArray(o.content)?o.content:null;const l=r?r.filter((c)=>c?.type==="tool_use"):[];if(o?.stop_reason!=="tool_use"||l.length===0){return v.text}const i=[];for(const c of l){const k=t.get(c.name);if(!k){i.push({type:"tool_result",tool_use_id:c.id,content:`no handler for tool "${c.name}"`,is_error:true});continue}try{const b=await k(c.input);const E=typeof b==="string"?b:O(b)??"";i.push({type:"tool_result",tool_use_id:c.id,content:E})}catch(b){i.push({type:"tool_result",tool_use_id:c.id,content:String(b?.message??b??"tool handler failed"),is_error:true})}}a.push({role:"assistant",content:r},{role:"user",content:i})}throw new Error(`claude.complete: exceeded ${y} tool turns`)};window.claude={complete(e){const t=e;if(t!==null&&typeof t==="object"&&Array.isArray(t.tools)&&t.tools.some((a)=>a!==null&&typeof a==="object"&&typeof a.run==="function")){const a=new Map;for(const u of t.tools){if(u!==null&&typeof u==="object"&&typeof u.run==="function"){a.set(String(u.name),u.run)}}return m(t,a)}return h(e).then((a)=>a.text)}};const w={};let R=0;H=(e,t)=>new Promise((a)=>{if(!I.length){a({persisted:false,noHost:true,reason:U});return}const u=`f${++R}`;const s=setTimeout(()=>{delete w[u];a({persisted:false,noHost:true,reason:U})},G);w[u]={settle:a,t:s};try{for(const S of I){A.postMessage({__om_file:true,id:u,op:"write",path:e,content:t},S)}}catch{clearTimeout(s);delete w[u];a({persisted:false,noHost:true,reason:U})}});const O=(e)=>{try{return JSON.stringify(e)}catch{return JSON.stringify(String(e))}};window.addEventListener("message",(e)=>{if(I.indexOf(e.origin)<0)return;if(e.source!==A)return;const t=e.data;if(!t)return;if(t.type==="omelette-preview-refresh"){if(typeof t.token!=="string"||!/^[0-9a-f.-]+(\.(rc|pr-[0-9]+))?(\.[0-9]+\.[0-9a-f]{16})?$/.test(t.token))return;const s=Math.max(1,Math.floor((t.expiresAt||0)-Date.now()/1000));document.cookie="__Host-omelette-preview="+t.token+"; Path=/; Secure; SameSite=None; Partitioned; Max-Age="+s;C();return}if(t.__om_file_r){const s=w[t.id];if(!s)return;clearTimeout(s.t);delete w[t.id];s.settle(t.ok?{persisted:true}:{persisted:false,reason:t.error||"write failed"});return}if(t.__om_api_r){const s=f[t.id];if(!s)return;if(t.error!=null){clearTimeout(s.t);delete f[t.id];s.reject(new Error(t.error));return}if(t.chunk!=null){clearTimeout(s.t);s.t=s.arm();s.text+=t.chunk;return}if(t.done){clearTimeout(s.t);delete f[t.id];s.resolve({text:t.text!=null?t.text:s.text,message:t.message});return}return}if(!t.__om_eval)return;const a=t;const u=(s)=>{e.source.postMessage({...s,__om_eval_r:1,id:a.id},e.origin)};try{const s=(0,eval)(a.code);if(s&&typeof s.then==="function"){s.then((S)=>u({ok:1,v:O(S)}),(S)=>u({ok:0,e:String(S)}))}else{u({ok:1,v:O(s)})}}catch(s){u({ok:0,e:String(s)})}})}})();
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Enerterra Chile · Energía sin diésel para faenas exigentes</title>
+<meta name="description" content="Enerterra Chile, representante oficial de Ampd Energy. Sistemas de almacenamiento de energía en baterías (BESS) que reemplazan grupos electrógenos diésel en minería, construcción y puertos.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..800&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+:root{--carbon:#0E1216;--carbon-2:#161B20;--blanco:#FFFFFF;--blanco-1:#F5F7F9;--green:#0CB494;--green-hover:#0F9E82;--green-active:#085C4B;--green-text:#0B7A64;--green-12:rgba(12,180,148,.12);--green-24:rgba(12,180,148,.24);--acero:#4F718A;--acero-300:#B6CBDA;--acero-400:#96B3C8;--acero-500:#7B9DB6;--acero-700:#3D5A70;--gris-500:#4A545E;--gris-400:#6B7580;--line-d:rgba(255,255,255,.14);--line-l:rgba(14,18,22,.12);--sans:"Archivo","Helvetica Neue",Arial,sans-serif;--mono:"Geist Mono",Menlo,Consolas,monospace;--pad:clamp(20px,5vw,72px);--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{margin:0;font-family:var(--sans);color:var(--carbon);background:var(--blanco);line-height:1.5;font-size:17px}
+h1,h2,h3,p{margin:0;text-wrap:pretty}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.dark{background:var(--carbon);color:var(--blanco)}
+.light{background:var(--blanco);color:var(--carbon)}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:1px;background:currentColor}
+.h-xl{font-size:clamp(40px,7.2vw,96px);line-height:.98;letter-spacing:-.03em;font-weight:600;font-variation-settings:"wdth" 105}
+.h-lg{font-size:clamp(36px,5.6vw,76px);line-height:1;letter-spacing:-.03em;font-weight:600;font-variation-settings:"wdth" 105}
+.h-md{font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-.02em;font-weight:600}
+.lead{font-size:clamp(17px,1.4vw,21px);line-height:1.5;max-width:56ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:6px;font-weight:600;font-size:16px;letter-spacing:.01em;border:1px solid transparent;cursor:pointer;transition:background .15s var(--ease),border-color .15s var(--ease),color .15s var(--ease),transform .15s var(--ease);white-space:nowrap;font-family:inherit}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible{outline:none;box-shadow:0 0 0 2px var(--blanco),0 0 0 4px var(--green)}
+.btn-primary{background:var(--green);color:var(--carbon);border-color:var(--green)}
+.btn-primary:hover{background:var(--green-hover);border-color:var(--green-hover)}
+.btn-primary:active{background:var(--green-active);border-color:var(--green-active);color:var(--blanco)}
+.btn-outline{background:transparent;color:currentColor;border-color:currentColor}
+.dark .btn-outline{border-color:rgba(255,255,255,.5)}.dark .btn-outline:hover{border-color:var(--blanco);background:rgba(255,255,255,.06)}
+.light .btn-outline{border-color:var(--line-l)}.light .btn-outline:hover{border-color:var(--carbon);background:rgba(14,18,22,.04)}
+.btn svg{width:18px;height:18px;flex:none}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* NAV */
+.nav{position:absolute;top:0;left:0;right:0;z-index:20;height:80px;display:flex;align-items:center;color:var(--blanco)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%;gap:32px}
+.nav .nav-links{margin-left:auto}
+.brand{display:inline-flex;align-items:center;gap:14px;font-weight:700;letter-spacing:-.02em;font-size:20px;line-height:1}
+.brand small{display:inline-flex;align-items:center;gap:10px;padding-left:12px;border-left:1px solid var(--line-d);font-weight:400;font-size:9px;letter-spacing:.1em;color:var(--acero-300);line-height:1.15;white-space:nowrap}
+.brand img{height:18px;width:auto}
+.brand img.et{height:26px}
+.brand img.plate{background:var(--blanco);padding:3px 6px;border-radius:3px}
+.nav-links{display:flex;gap:28px;font-size:15px;font-weight:500}
+.nav-links a{opacity:.85}.nav-links a:hover{opacity:1;color:var(--green)}
+@media (max-width:640px){.brand small span{display:none}.brand img.et{height:22px}}
+
+
+
+/* BURGER + MOBILE PANEL */
+.burger{display:none;width:44px;height:44px;border:1px solid rgba(255,255,255,.3);border-radius:6px;background:none;color:#fff;cursor:pointer;place-items:center}
+.burger svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.mob{position:fixed;inset:0;z-index:70;background:var(--carbon);color:#fff;overflow:auto;display:none;padding:0 var(--pad) 40px}
+.mob.open{display:block}
+.mob .top{height:80px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line-d)}
+.mob h5{margin:28px 0 8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--acero-400);font-weight:600}
+.mob a.row{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line-d)}
+.mob a.row .ic{width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,.06);display:grid;place-items:center;overflow:hidden}
+.mob a.row .ic img{max-width:80%;max-height:80%;object-fit:contain}.mob a.row .ic svg{width:22px;height:22px;stroke:var(--green);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.mob a.row b{display:block;font-size:17px;font-weight:600}.mob a.row span{display:block;font-size:13px;color:var(--acero-300);margin-top:2px}
+.mob a.plain{display:block;padding:14px 0;font-size:20px;font-weight:600;border-bottom:1px solid var(--line-d)}
+.mob .btn{width:100%;margin-top:28px}
+@media (max-width:1000px){.nav-links{display:none}.burger{display:grid}.nav .btn-primary{display:none}}
+
+/* MEGA MENU (formato ampd.energy) */
+.nav-links{position:relative}
+.nav-links .dd{position:relative}
+.nav-links .dd>a{display:inline-flex;align-items:center;gap:6px}
+.nav-links .dd>a svg{width:14px;height:14px;transition:transform .2s var(--ease)}
+.nav-links .dd.open>a svg{transform:rotate(180deg)}
+.menu{position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%) translateY(6px);min-width:560px;background:#fff;color:var(--carbon);border-radius:10px;box-shadow:0 24px 64px rgba(14,18,22,.22);padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:4px;opacity:0;pointer-events:none;transition:opacity .18s var(--ease),transform .18s var(--ease);z-index:30}
+.menu.wide{min-width:760px}
+.menu::before{content:"";position:absolute;top:-18px;left:0;right:0;height:18px}
+.dd.open .menu{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.menu a{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;padding:12px 14px;border-radius:8px;opacity:1}
+.menu a:hover{background:var(--blanco-1);color:var(--carbon)}
+.menu a .ic{width:44px;height:44px;border-radius:8px;background:var(--blanco-1);display:grid;place-items:center;overflow:hidden}
+.menu a .ic img{max-width:80%;max-height:80%;object-fit:contain}
+.menu a .ic svg{width:22px;height:22px;stroke:var(--green-text);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.menu a b{display:block;font-size:15px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
+.menu a span{display:block;font-size:12px;color:var(--gris-400);margin-top:2px;line-height:1.3}
+.menu .all{grid-column:1/-1;border-top:1px solid var(--line-l);margin-top:6px;padding-top:12px;display:flex;justify-content:flex-start;gap:8px;font-size:13px;font-weight:600;color:var(--green-text)}
+
+/* STICKY CONTACT */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;transform:translateY(110%);transition:transform .35s var(--ease);background:var(--carbon);color:var(--blanco);border-top:1px solid var(--line-d)}
+.sticky.show{transform:none}
+.sticky .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.sticky .msg{font-size:15px;color:var(--acero-300)}
+.sticky .msg strong{color:var(--blanco);font-weight:600}
+.sticky .acts{display:flex;gap:10px}
+.sticky .btn{height:44px;padding:0 18px;font-size:14px}
+@media (max-width:640px){.sticky .msg{display:none}.sticky .acts{width:100%}.sticky .acts .btn{flex:1}}
+
+/* 1 HERO */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;color:var(--blanco);isolation:isolate}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:78% center;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,18,22,.88) 0%,rgba(14,18,22,.72) 38%,rgba(14,18,22,.25) 62%,rgba(14,18,22,.15) 100%),linear-gradient(180deg,rgba(14,18,22,0) 55%,rgba(14,18,22,.6) 100%);z-index:-1}
+@media (max-width:760px){.hero img.bg{object-position:70% center}.hero::after{background:linear-gradient(180deg,rgba(14,18,22,.35) 0%,rgba(14,18,22,.85) 70%)}}
+.hero .wrap{padding-top:120px;padding-bottom:80px;display:grid;gap:28px;width:100%}
+.badge{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 12px;border:1px solid var(--green);border-radius:4px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--blanco);width:max-content;background:rgba(14,18,22,.4)}
+.badge img{height:18px;width:auto;display:inline-block;position:relative;top:2px}
+.hero .h-xl{max-width:12ch}
+.hero .wrap>*{max-width:min(100%,640px)}
+@media (min-width:1100px){.hero .h-xl{font-size:clamp(56px,6.2vw,88px)}}
+.hero .lead{color:var(--acero-300)}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+@media (max-width:640px){.ctas .btn{width:100%}}
+
+/* 2 STATEMENT */
+.statement{padding:clamp(96px,14vw,200px) 0}
+.statement .h-lg{max-width:18ch}
+.statement a.more{display:inline-flex;align-items:center;gap:10px;margin-top:40px;font-weight:600;color:var(--green-text);font-size:17px;border-bottom:1px solid transparent}
+.statement a.more:hover{border-bottom-color:var(--green-text)}
+.statement a.more svg{width:18px;height:18px;transition:transform .15s var(--ease)}.statement a.more:hover svg{transform:translateX(4px)}
+
+/* 3 PILARES */
+.pilares{padding:0 0 clamp(96px,12vw,160px)}
+.pilares .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-l);border-top:1px solid var(--line-l);border-bottom:1px solid var(--line-l)}
+.pilar{background:var(--blanco);padding:clamp(32px,4vw,56px) clamp(24px,3vw,40px) clamp(40px,4vw,64px) 0;display:grid;gap:22px;align-content:start}
+.pilar+.pilar{padding-left:clamp(24px,3vw,40px)}
+.pilar svg{width:36px;height:36px;stroke:var(--carbon);stroke-width:1.25;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.pilar .n{font-family:var(--mono);font-size:13px;color:var(--acero)}
+.pilar h3{font-size:clamp(26px,2.4vw,34px);letter-spacing:-.02em;font-weight:600;line-height:1.05}
+.pilar p{color:var(--gris-500);font-size:17px;max-width:34ch}
+@media (max-width:860px){.pilares .grid{grid-template-columns:1fr}.pilar,.pilar+.pilar{padding:36px 0}}
+
+/* 4 CIFRAS */
+.cifras{padding:clamp(96px,12vw,180px) 0}
+.cifra{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:center;padding:clamp(28px,4vw,56px) 0;border-top:1px solid var(--line-d)}
+.cifra:last-child{border-bottom:1px solid var(--line-d)}
+.cifra .num{font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:500;font-size:clamp(64px,11vw,160px);line-height:.95;letter-spacing:-.04em;color:var(--blanco)}
+.cifra .num span{color:var(--green)}
+.cifra .u{font-size:clamp(18px,1.8vw,26px);color:var(--acero-400);line-height:1.35;max-width:26ch}
+@media (max-width:760px){.cifra{grid-template-columns:1fr;gap:8px}}
+
+
+.soft{background:var(--blanco-1);color:var(--carbon)}
+/* 4b COSTO REAL */
+.costo{padding:clamp(96px,12vw,160px) 0}
+.costo .h-lg{max-width:22ch}.costo .lead{color:var(--gris-500);margin-top:16px}
+.costo .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line-l);border:1px solid var(--line-l);border-radius:8px;overflow:hidden;margin-top:48px}
+.costo .c{background:var(--blanco);padding:28px 24px;display:grid;gap:12px;align-content:start;position:relative}
+.costo .c svg{width:32px;height:32px;stroke:var(--green-text);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.costo .c b{font-size:18px;font-weight:600;letter-spacing:-.01em}.costo .c p{font-size:15px;color:var(--gris-500)}
+.costo .c i{position:absolute;right:-13px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:99px;background:var(--blanco);border:1px solid var(--line-l);display:grid;place-items:center;font-style:normal;font-weight:600;color:var(--green-text);z-index:2}
+.costo .c:last-child i{display:none}
+.costo .note{margin-top:32px;padding:24px 28px;border:1px solid var(--green);border-radius:8px;background:var(--green-12);font-size:clamp(17px,1.5vw,22px);font-weight:600;letter-spacing:-.01em;text-align:center}
+@media (max-width:1000px){.costo .grid{grid-template-columns:1fr 1fr}.costo .c i{display:none}}@media (max-width:560px){.costo .grid{grid-template-columns:1fr}}
+
+/* 7a PILOTO */
+.piloto{padding:clamp(96px,12vw,160px) 0}
+.piloto .top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,96px);align-items:end}
+.piloto .h-lg{max-width:18ch}.piloto .lead{color:var(--gris-500);margin-top:16px}
+.piloto blockquote{margin:0;font-size:clamp(26px,2.8vw,40px);line-height:1.15;letter-spacing:-.02em;font-weight:600;border-left:3px solid var(--green);padding-left:24px;max-width:18ch}
+.pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-l);border-top:1px solid var(--line-l);border-bottom:1px solid var(--line-l);margin-top:56px}
+.paso{background:var(--blanco);padding:32px 28px 36px 0;display:grid;gap:14px;align-content:start}.paso+.paso{padding-left:28px}
+.paso i{font-style:normal;font-family:var(--mono);font-size:13px;color:var(--green-text);font-weight:500}
+.paso svg{width:32px;height:32px;stroke:var(--carbon);fill:none;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}
+.paso b{font-size:20px;font-weight:600;letter-spacing:-.01em}.paso p{font-size:15px;color:var(--gris-500)}
+.piloto .next{margin-top:40px;display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:space-between;padding:24px 28px;border-radius:8px;background:var(--carbon);color:#fff}
+.piloto .next p{font-size:17px}.piloto .next p b{color:var(--green)}
+@media (max-width:900px){.piloto .top{grid-template-columns:1fr}.pasos{grid-template-columns:1fr 1fr}}@media (max-width:560px){.pasos{grid-template-columns:1fr}.paso,.paso+.paso{padding:24px 0}}
+
+/* 5 SECTORES */
+.sectores{padding:clamp(96px,12vw,160px) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:48px;flex-wrap:wrap}
+.sec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.sector{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:8px;display:flex;align-items:flex-end;color:var(--blanco);isolation:isolate}
+.sector img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .6s var(--ease)}
+.sector::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(14,18,22,0) 40%,rgba(14,18,22,.85) 100%)}
+.sector::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--green-24);opacity:0;transition:opacity .3s var(--ease)}
+.sector:hover img{transform:scale(1.04)}.sector:hover::after{opacity:1}
+.sector .t{position:relative;padding:24px;display:grid;gap:6px;width:100%}
+.sector h3{font-size:clamp(24px,2vw,30px);letter-spacing:-.02em;font-weight:600}
+.sector p{font-size:14px;color:var(--acero-300)}
+.sector .arr{position:absolute;top:20px;right:20px;width:36px;height:36px;border:1px solid rgba(255,255,255,.4);border-radius:99px;display:grid;place-items:center}
+.sector .arr svg{width:16px;height:16px}
+@media (max-width:1000px){.sec-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.sec-grid{grid-template-columns:1fr}.sector{aspect-ratio:4/3}}
+
+/* 6 PRODUCTOS · patrón "Our Products" de ampd.energy */
+.productos{padding:clamp(96px,12vw,160px) 0}
+.prod-list{border-top:1px solid var(--line-l);margin-top:48px}
+.prod{display:grid;grid-template-columns:200px minmax(0,1fr) minmax(0,.9fr) 48px;gap:clamp(20px,3vw,48px);align-items:center;padding:28px 0;border-bottom:1px solid var(--line-l);color:inherit;transition:background .2s var(--ease)}
+.prod:hover{background:var(--blanco-1)}
+.prod .pi{width:200px;height:150px;display:grid;place-items:center;background:var(--blanco-1);border-radius:6px;overflow:hidden}
+.prod .pi img{max-width:84%;max-height:84%;object-fit:contain;transition:transform .4s var(--ease)}
+.prod .pi img.photo{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover}
+.prod:hover .pi img{transform:scale(1.04)}
+.prod h3{font-size:clamp(24px,2.2vw,32px);letter-spacing:-.02em;font-weight:600;line-height:1.05;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.prod h3 .tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--green-text);border:1px solid var(--green);border-radius:4px;padding:3px 8px}
+.prod p{margin-top:8px;color:var(--gris-500);font-size:15px;max-width:44ch}
+.prod .out{font-family:var(--mono);font-variant-numeric:tabular-nums;display:grid;gap:4px}
+.prod .out b{font-weight:500;font-size:clamp(18px,1.5vw,22px);letter-spacing:-.01em}
+.prod .out span{font-size:13px;color:var(--gris-400)}
+.prod .arr{width:44px;height:44px;border:1px solid var(--line-l);border-radius:99px;display:grid;place-items:center;transition:all .2s var(--ease);transform:translateX(-20px)}
+.prod .arr svg{width:16px;height:16px}
+.prod:hover .arr{background:var(--green);border-color:var(--green)}
+@media (max-width:900px){.prod{grid-template-columns:120px minmax(0,1fr) 44px;grid-template-areas:"img txt arr" "img out arr"}.prod .pi{width:120px;height:120px;grid-area:img}.prod .out{grid-area:out}.prod .arr{grid-area:arr}}
+@media (max-width:560px){.prod{grid-template-columns:1fr;grid-template-areas:"img" "txt" "out";padding:24px 0}.prod .pi{width:100%;height:180px}.prod .arr{display:none}}
+
+/* 6b DETALLE ENERTAINER */
+.producto{padding:0 0 clamp(96px,12vw,160px)}
+.prod-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(40px,6vw,96px);align-items:center}
+.prod-img{background:var(--blanco);border:1px solid var(--line-l);border-radius:8px;padding:clamp(24px,4vw,56px);aspect-ratio:1;display:grid;place-items:center}
+.prod-img img{width:100%;height:100%;object-fit:contain}
+.prod-img.photo{padding:0;overflow:hidden}.prod-img.photo img{object-fit:cover}
+.prod-copy{display:grid;gap:28px}
+.specs{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;border-top:1px solid var(--line-l)}
+.spec{padding:18px 0;border-bottom:1px solid var(--line-l);display:grid;gap:4px}
+.spec dt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gris-400)}
+.spec dd{margin:0;font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:clamp(18px,1.6vw,24px);font-weight:500;letter-spacing:-.01em;line-height:1.25}
+.spec dd small{display:block;font-family:var(--sans);font-size:13px;color:var(--gris-500);margin-top:2px;letter-spacing:0}
+@media (max-width:900px){.prod-grid{grid-template-columns:1fr}.prod-img{aspect-ratio:4/3}}
+@media (max-width:520px){.specs{grid-template-columns:1fr}}
+
+/* 7 SUSTENTABILIDAD */
+.sust{position:relative;min-height:70svh;display:flex;align-items:center;color:var(--blanco);isolation:isolate}
+.sust img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.sust::after{content:"";position:absolute;inset:0;background:rgba(14,18,22,.62);z-index:-1}
+.sust .wrap{padding-top:clamp(96px,12vw,160px);padding-bottom:clamp(96px,12vw,160px);display:grid;gap:32px}
+.sust .h-lg{max-width:16ch}
+.sust p{color:var(--acero-300);max-width:52ch;font-size:clamp(17px,1.4vw,20px)}
+
+/* 8 CTA + FORM */
+.cta{padding:clamp(96px,12vw,160px) 0}
+.cta-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,96px);align-items:start}
+.cta .h-lg{max-width:14ch}
+.cta .lead{color:var(--acero-400);margin-top:24px}
+.contact{margin-top:48px;display:grid;gap:14px;font-size:16px;color:var(--acero-300)}
+.contact a{display:inline-flex;align-items:center;gap:12px}.contact a:hover{color:var(--green)}
+.contact svg{width:18px;height:18px;stroke:var(--green);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.contact .mono{font-family:var(--mono);font-size:15px}
+form{display:grid;gap:16px;background:var(--carbon-2);border:1px solid var(--line-d);border-radius:8px;padding:clamp(24px,3vw,40px)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:8px;font-size:14px;font-weight:500;color:var(--acero-300)}
+input,select,textarea{width:100%;height:52px;padding:0 14px;font:inherit;font-size:16px;color:var(--blanco);background:var(--carbon);border:1px solid var(--line-d);border-radius:6px;outline:none;transition:border-color .15s,box-shadow .15s;-webkit-appearance:none;appearance:none}
+textarea{height:auto;padding:12px 14px;resize:vertical;min-height:96px}
+select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2396B3C8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m6 9 6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+select option{color:var(--carbon);background:#fff}
+input::placeholder,textarea::placeholder{color:#5C6771}
+input:focus,select:focus,textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px var(--green-24)}
+.unit{position:relative}.unit span{position:absolute;right:14px;top:0;height:52px;display:flex;align-items:center;font-family:var(--mono);font-size:13px;color:var(--acero-500);pointer-events:none}
+.unit input{padding-right:64px}
+.legal{font-size:12px;color:var(--acero-500)}
+form .btn{height:56px;width:100%;margin-top:6px}
+.ok{display:none;text-align:center;padding:48px 24px;gap:12px}
+.ok.show{display:grid}form.sent .fields,form.sent .sched{display:none}
+/* AGENDA */
+.sched{display:grid;gap:20px}
+.sched .head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.sched .head b{font-size:18px;font-weight:600;letter-spacing:-.01em}.sched .head span{font-size:13px;color:var(--acero-400)}
+.sched .steps{display:flex;gap:6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--acero-500)}.sched .steps i{font-style:normal}.sched .steps i.on{color:var(--green)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cal .dow{text-align:center;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--acero-500);padding:4px 0 6px}
+.cal button{height:44px;border-radius:6px;border:1px solid transparent;background:var(--carbon);color:var(--blanco);font:inherit;font-family:var(--mono);font-size:15px;cursor:pointer;transition:all .15s var(--ease)}
+.cal button:hover{border-color:var(--acero-500)}.cal button.on{background:var(--green);color:var(--carbon);border-color:var(--green);font-weight:600}
+.cal button:disabled{color:#3A4552;background:transparent;cursor:default}.cal button.today{box-shadow:inset 0 0 0 1px var(--acero-500)}
+.cal .nav-m{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.cal .nav-m b{font-size:15px;font-weight:600;text-transform:capitalize}.cal .nav-m button{width:40px;height:40px;font-family:var(--sans);font-size:18px}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.slots button{height:48px;border-radius:6px;border:1px solid var(--line-d);background:var(--carbon);color:var(--blanco);font:inherit;font-family:var(--mono);font-size:15px;cursor:pointer;transition:all .15s var(--ease)}
+.slots button:hover{border-color:var(--acero-400)}.slots button.on{background:var(--green);color:var(--carbon);border-color:var(--green);font-weight:600}
+.slots button:disabled{opacity:.3;cursor:default;text-decoration:line-through}
+.tz{font-size:12px;color:var(--acero-500)}
+.sched .back{background:none;border:none;color:var(--acero-300);font:inherit;font-size:14px;cursor:pointer;padding:0;display:inline-flex;align-items:center;gap:6px}.sched .back:hover{color:#fff}
+.pick{display:flex;gap:12px;align-items:center;padding:14px 16px;border:1px solid var(--green);border-radius:6px;background:var(--green-12);font-size:15px}
+.pick b{font-family:var(--mono);font-weight:500}.pick svg{width:18px;height:18px;stroke:var(--green);fill:none;stroke-width:2;flex:none}
+.slots .col{grid-column:1/-1;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--acero-500);margin-top:6px}
+@media (max-width:520px){.slots{grid-template-columns:1fr 1fr}}
+.ok svg{width:40px;height:40px;stroke:var(--green);fill:none;stroke-width:2;margin:0 auto}
+@media (max-width:960px){.cta-grid{grid-template-columns:1fr}}
+@media (max-width:520px){.row2{grid-template-columns:1fr}}
+
+/* 9 FOOTER */
+footer{padding:56px 0 calc(40px + 72px);border-top:1px solid var(--line-d);color:var(--acero-400);font-size:14px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+footer .brand{color:var(--blanco);margin-bottom:18px}
+footer p{max-width:38ch;line-height:1.55}
+footer h4{margin:0 0 14px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--acero-500);font-weight:600}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a:hover{color:var(--blanco)}
+footer .bottom{grid-column:1/-1;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--line-d);font-size:12px;color:var(--acero-500)}
+footer .bottom a{display:inline-flex;align-items:center;gap:8px}
+footer .bottom svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.75}
+@media (max-width:820px){footer .wrap{grid-template-columns:1fr 1fr}footer .wrap>div:first-child{grid-column:1/-1}}
+
+/* ===== MÓVIL ===== */
+@media (max-width:640px){
+.hero{min-height:100svh}
+.hero .wrap{padding-top:112px;padding-bottom:56px;gap:20px}
+.hero .wrap>*{max-width:100%;min-width:0}
+.hero .h-xl{max-width:100%;font-size:clamp(36px,10.5vw,44px);line-height:1.02;overflow-wrap:anywhere}
+.hero .lead{font-size:17px}
+.badge{height:auto;min-height:34px;padding:7px 12px;white-space:normal;line-height:1.3;font-size:11px;letter-spacing:.06em;max-width:100%}
+.badge img{height:14px;top:1px}
+.h-lg{font-size:clamp(30px,8.5vw,36px)}.h-md{font-size:clamp(24px,7vw,28px)}
+.statement{padding:80px 0}
+.cifras{padding:72px 0}.cifra{padding:24px 0;gap:6px}.cifra .num{font-size:clamp(56px,17vw,72px)}.cifra .u{font-size:16px}
+.costo .grid{border-radius:6px}.costo .c{padding:20px}
+.costo .note{font-size:16px;padding:18px 20px;text-align:left}
+.sec-head{margin-bottom:28px}
+.prod{padding:20px 0}.prod .pi{height:160px}
+.prod .arr{transform:none}
+.specs{gap:16px}
+.pasos{margin-top:36px}.piloto blockquote{font-size:26px;padding-left:18px}
+.piloto .next{padding:20px}.piloto .next .btn{width:100%}
+.sust{min-height:auto}.sust .wrap{padding-top:88px;padding-bottom:88px}
+.cta{padding:80px 0}
+form{padding:20px}
+.cal button{height:40px;font-size:14px}.cal{gap:4px}
+.sched .head{flex-direction:column;align-items:flex-start;gap:10px}
+footer{padding:48px 0 calc(32px + 72px)}footer .wrap{grid-template-columns:1fr!important;gap:28px}
+.sticky .acts .btn{height:48px}
+.mob a.plain{font-size:18px}
+}
+@media (max-width:400px){.hero .h-xl{font-size:34px}.cifra .num{font-size:56px}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="brand"><img class="et" src="/img/enerterra-logo-white.png" alt="Enerterra"></a>
+    <nav class="nav-links"><div class="dd"><a href="#sectores">Sectores<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></a><div class="menu wide"><a href="/sectores/?s=construccion"><span class="ic"><svg viewBox="0 0 24 24"><path d="M2 18h20M4 18V10l8-6 8 6v8M9 18v-5h6v5"/></svg></span><div><b>Construcción</b><span>Energía más inteligente para la construcción</span></div></a><a href="/sectores/?s=mineria"><span class="ic"><svg viewBox="0 0 24 24"><path d="M14.5 6.5 17 4l3 3-2.5 2.5M4 20l6.5-6.5M3 21l3-3M9 15l6-6"/></svg></span><div><b>Minería</b><span>Energía más limpia e inteligente para operaciones mineras</span></div></a><a href="/sectores/?s=infraestructura"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 12h18M6 12V8M12 12V6M18 12V8M4 20h16"/></svg></span><div><b>Infraestructura</b><span>Energía eficiente para las obras que construyen el futuro</span></div></a><a href="/sectores/?s=hormigon"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 9h18l-2 11H5L3 9ZM7 9V5h10v4"/></svg></span><div><b>Plantas de hormigón</b><span>Energía confiable y limpia para plantas de hormigón</span></div></a><a href="/sectores/?s=oil-gas"><span class="ic"><svg viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span><div><b>Oil & gas</b><span>Energía ininterrumpida para infraestructura crítica</span></div></a><a href="/sectores/?s=microtuneles"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 20V12a8 8 0 0 1 16 0v8M4 20h16M9 20v-5a3 3 0 0 1 6 0v5"/></svg></span><div><b>Microtunelería</b><span>Energía confiable y de bajas emisiones para microtúneles</span></div></a><a href="/sectores/?s=eventos"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3.5 21 14 3M20.5 21 10 3M15.5 21 12 15l-3.5 6M2 21h20"/></svg></span><div><b>Eventos</b><span>Energía silenciosa y sustentable para eventos de clase mundial</span></div></a><a href="/sectores/?s=puertos"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><path d="M12 22V8M5 12H2a10 10 0 0 0 20 0h-3"/></svg></span><div><b>Puertos</b><span>Mantén en movimiento puertos y terminales</span></div></a></div></div><div class="dd"><a href="#productos">Productos<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></a><div class="menu"><a href="/productos/?p=ampd-200"><span class="ic"><img src="/img/producto-ampd-200.png" alt=""></span><div><b>Ampd 200</b><span>Sistema de almacenamiento NextGen</span></div></a><a href="/productos/?p=ampd-400"><span class="ic"><img src="/img/producto-ampd-400.png" alt=""></span><div><b>Ampd 400</b><span>Sistema de almacenamiento NextGen</span></div></a><a href="/productos/?p=enertainer"><span class="ic"><img src="/img/producto-enertainer-lista.png" alt=""></span><div><b>Enertainer</b><span>Sistema de almacenamiento de energía</span></div></a><a href="/productos/?p=ampd-silo"><span class="ic"><img src="/img/producto-ampd-silo.png" alt=""></span><div><b>Ampd Silo</b><span>Sistema de almacenamiento de energía</span></div></a><a href="/productos/?p=software"><span class="ic"><svg viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><div><b>Software</b><span>Ampd Pulse · monitoreo y reportes</span></div></a><a href="#productos" class="all">Ver todos los productos →</a></div></div></nav>
+    <a href="#cotizar" class="btn btn-primary" style="height:44px;padding:0 18px;font-size:14px">Cotiza tu proyecto</a>
+    <button class="burger" id="burger" type="button" aria-label="Menú"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+<div class="mob" id="mob" aria-label="Menú"><div class="top"><a href="#top" class="brand"><img class="et" src="/img/enerterra-logo-white.png" alt="Enerterra"></a><button class="burger" id="mob-close" type="button" aria-label="Cerrar" style="display:grid"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div><div id="mob-body"></div><a href="#cotizar" class="btn btn-primary">Cotiza tu proyecto</a></div>
+
+<!-- 1 HERO -->
+<section class="hero" id="top">
+  <img class="bg" data-img="hero" src="/img/hero-enertainer-faena.jpg" alt="Sistema de baterías Ampd operando en faena" fetchpriority="high">
+  <div class="wrap">
+    <span class="badge reveal">Representante oficial de <img src="/img/ampd-logo-white.svg" alt="Ampd Energy"> en Chile</span>
+    <h1 class="h-xl reveal">Energía sin diésel para faenas exigentes.</h1>
+    <p class="lead reveal">Sistemas de almacenamiento en baterías (BESS) que reemplazan al grupo electrógeno en minería, construcción y puertos.</p>
+    <div class="ctas reveal">
+      <a href="#cotizar" class="btn btn-primary">Cotiza tu proyecto<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="#sectores" class="btn btn-outline">Ver sectores</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2 STATEMENT -->
+<section class="statement light" id="nosotros">
+  <div class="wrap">
+    <h2 class="h-lg reveal">La faena no se detiene. Tu energía tampoco.</h2>
+  </div>
+</section>
+
+<!-- 3 PILARES -->
+<section class="pilares light" id="pilares">
+  <div class="wrap">
+    <div class="grid">
+      <div class="pilar reveal">
+        <svg viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+        <span class="n">01</span>
+        <h3>Evaluamos</h3>
+        <p>Levantamos la carga real de tu faena, el grupo electrógeno actual y las condiciones del sitio: altura, polvo, temperatura.</p>
+      </div>
+      <div class="pilar reveal">
+        <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <span class="n">02</span>
+        <h3>Instalamos</h3>
+        <p>Despliegue plug-and-play junto a tu equipo, en paralelo con el generador o en modo off-grid. Operativo en horas, no semanas.</p>
+      </div>
+      <div class="pilar reveal">
+        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <span class="n">03</span>
+        <h3>Monitoreamos</h3>
+        <p>Continuidad operativa con datos en tiempo real: estado de carga, potencia, combustible ahorrado y CO₂ evitado, 24/7.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 CIFRAS -->
+<section class="cifras dark">
+  <div class="wrap">
+    <div class="cifra reveal"><div class="num"><span>−90%</span></div><div class="u">de emisiones de CO₂ frente a un grupo electrógeno diésel</div></div>
+    <div class="cifra reveal"><div class="num"><span>−80%</span></div><div class="u">de costo operativo: sin combustible, sin reabastecimiento, mantención mínima</div></div>
+    <div class="cifra reveal"><div class="num"><span>30x</span></div><div class="u">más silencioso que un generador. Operación nocturna y junto a campamentos.</div></div>
+  </div>
+</section>
+
+
+<!-- 4b COSTO REAL (presentación comercial, slide 3) -->
+<section class="costo light" id="costo">
+  <div class="wrap">
+    <span class="eyebrow reveal" style="color:var(--green-text)">Costo real de la energía temporal</span>
+    <h2 class="h-lg reveal" style="margin-top:16px">El combustible es solo una parte del costo de tu grupo electrógeno.</h2>
+    <div class="grid">
+      <div class="c reveal"><svg viewBox="0 0 24 24"><path d="M3 22V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M3 22h12M6 10h6M15 10h2a2 2 0 0 1 2 2v5a1.5 1.5 0 0 0 3 0v-7l-3-3"/></svg><b>Combustible</b><p>Precio del diésel y su volatilidad.</p><i>+</i></div>
+      <div class="c reveal"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg><b>Mantención</b><p>Repuestos, servicios y tiempos de inactividad.</p><i>+</i></div>
+      <div class="c reveal"><svg viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2M15 18H9M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62L18.3 9.38A1 1 0 0 0 17.52 9H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg><b>Transporte y logística</b><p>Traslados, izajes, permisos y movilización.</p><i>+</i></div>
+      <div class="c reveal"><svg viewBox="0 0 24 24"><path d="m12 14 4-4M3.34 19a10 10 0 1 1 17.32 0"/></svg><b>Ineficiencia operacional</b><p>Baja carga, arranques frecuentes y pérdidas de eficiencia.</p><i>+</i></div>
+      <div class="c reveal"><svg viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg><b>Ruido y emisiones</b><p>Impactos ambientales, comunitarios y regulatorios.</p><i></i></div>
+    </div>
+    <p class="note reveal">El costo real aumenta cuando el generador opera muchas horas, a baja carga y con alta variabilidad.</p>
+  </div>
+</section>
+
+<!-- 5 SECTORES -->
+<section class="sectores light" id="sectores">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow reveal" style="color:var(--green-text)">Sectores</span><h2 class="h-md reveal" style="margin-top:16px;max-width:20ch">Diseñado para la industria pesada chilena.</h2></div>
+      <a href="#cotizar" class="btn btn-outline reveal">Habla con un ingeniero</a>
+    </div>
+    <div class="sec-grid">
+      <a href="#cotizar" class="sector reveal"><img data-img="mineria" src="/img/sector-mineria.jpg" alt="Faena minera" loading="lazy"><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span><div class="t"><h3>Minería</h3><p>Campamentos, bombeo, talleres y carga de vehículos eléctricos en altura.</p></div></a>
+      <a href="#cotizar" class="sector reveal"><img data-img="construccion" src="/img/sector-construccion.jpg" alt="Obra de construcción" loading="lazy" style="object-position:22% center"><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span><div class="t"><h3>Construcción</h3><p>Grúas torre, ascensores de obra y faenas urbanas con restricción de ruido.</p></div></a>
+      <a href="#cotizar" class="sector reveal"><img data-img="puertos" src="/img/sector-puertos.jpg" alt="Terminal portuario" loading="lazy"><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span><div class="t"><h3>Puertos</h3><p>Shore power, grúas, reefers y respaldo en terminales con espacio limitado.</p></div></a>
+      <a href="#cotizar" class="sector reveal"><img data-img="industria" src="/img/sector-industria.jpg" alt="Obra de infraestructura" loading="lazy" style="object-position:78% 45%"><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span><div class="t"><h3>Industria</h3><p>Túneles, plantas de hormigón, oil &amp; gas y obras lineales fuera de la red.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- 6 PRODUCTOS -->
+<section class="productos light" id="productos">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:0">
+      <div><span class="eyebrow reveal" style="color:var(--green-text)">Nuestros productos</span><h2 class="h-md reveal" style="margin-top:16px;max-width:22ch">Un sistema de almacenamiento para cada faena.</h2></div>
+      <a href="producto.html?p=ampd-400" class="btn btn-outline reveal">Ver fichas de producto</a>
+    </div>
+    <div class="prod-list">
+      <a href="producto.html?p=ampd-200" class="prod reveal"><span class="pi"><img data-img="ampd200" src="/img/producto-ampd-200.png" alt="Ampd 200" loading="lazy" style="transform:translateY(-12px)"></span><div><h3>Ampd 200<span class="tag">NextGen</span></h3><p>Sistema NextGen de formato intermedio para obras urbanas, plantas y campamentos. Refrigeración líquida, IP55, hasta 215 kWh.</p></div><div class="out"><b>Hasta 292 kW / 297 kVA</b><span>193 kW / 214 kVA continua</span></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a>
+      <a href="producto.html?p=ampd-400" class="prod reveal"><span class="pi"><img data-img="ampd400" src="/img/producto-ampd-400.png" alt="Ampd 400" loading="lazy" style="transform:translate(11px,-6px)"></span><div><h3>Ampd 400<span class="tag">NextGen</span></h3><p>Buque insignia de la gama NextGen. Rediseñado desde cero para las faenas más exigentes: hasta 430 kWh, +55 °C, 4 unidades en paralelo.</p></div><div class="out"><b>Hasta 585 kW / 595 kVA</b><span>386 kW / 428 kVA continua</span></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a>
+      <a href="producto.html?p=enertainer" class="prod reveal"><span class="pi"><img data-img="enertainer-lista" src="/img/producto-enertainer-lista.png" alt="Enertainer" loading="lazy"></span><div><h3>Enertainer</h3><p>El sistema original, en operación desde 2019 con más de 1.500.000 horas sin incidentes. Ideal para proyectos con mayor salida AC.</p></div><div class="out"><b>Hasta 470 kW / 525 kVA</b><span>427 kW / 437 kVA continua</span></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a>
+      <a href="producto.html?p=ampd-silo" class="prod reveal"><span class="pi"><img data-img="silo" src="/img/producto-ampd-silo.png" alt="Ampd Silo" loading="lazy"></span><div><h3>Ampd Silo</h3><p>Compacto, transportable en grúa horquilla y escalable en paralelo. Para campamentos, oficinas de faena y equipos livianos.</p></div><div class="out"><b>Hasta 57,5 kW / 57,5 kVA</b><span>50 kW / 50 kVA continua · Silo M: 115 kW</span></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a>
+      <a href="producto.html?p=software" class="prod reveal"><span class="pi"><img class="photo" data-img="pulse" src="/img/producto-ampd-pulse.jpg" alt="Software Ampd Pulse" loading="lazy" style="object-fit:contain;background:#fff;padding:6px;box-sizing:border-box"></span><div><h3>Software Ampd Pulse</h3><p>Estándar en todas las unidades: monitoreo remoto, cálculo de ahorro de combustible y CO₂, reportes mensuales y Schedule Designer.</p></div><div class="out"><b>24/7 en tiempo real</b><span>Web · app iOS/Android · API</span></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 6b DETALLE ENERTAINER -->
+<section class="producto" id="producto">
+  <div class="wrap">
+    <div class="prod-grid">
+      <div class="prod-img reveal photo"><img data-img="enertainer" src="/img/producto-enertainer.jpg" alt="Ampd Enertainer en faena" loading="lazy"></div>
+      <div class="prod-copy">
+        <span class="eyebrow reveal" style="color:var(--green-text)">Ampd Enertainer</span>
+        <h2 class="h-md reveal">El BESS de alta potencia con más horas en faena del mundo.</h2>
+        <p class="reveal" style="color:var(--gris-500);font-size:17px">En operación desde 2019, con más de 1.500.000 horas sin incidentes en obras de Hong Kong, Londres, Singapur y Sídney. Reemplaza directo a un grupo electrógeno de 500 kVA.</p>
+        <dl class="specs reveal">
+          <div class="spec"><dt>Potencia</dt><dd>470 kW / 525 kVA<small>427 kW / 437 kVA continua</small></dd></div>
+          <div class="spec"><dt>Capacidad</dt><dd>Hasta 430 kWh<small>Celdas LFP CATL · 9.000 ciclos</small></dd></div>
+          <div class="spec"><dt>Operación</dt><dd>Altura · polvo · calor<small>IP45 · −20 a +45 °C · gabinete sellado</small></dd></div>
+          <div class="spec"><dt>Emisiones locales</dt><dd>0<small>Sin CO, NOx, PM ni SO₂ en sitio</small></dd></div>
+          <div class="spec"><dt>Ruido</dt><dd>30x menor<small>Sin partes móviles</small></dd></div>
+          <div class="spec"><dt>Integración</dt><dd>Red · generador · solar<small>Paralelo universal · MEM u off-grid</small></dd></div>
+        </dl>
+        <div class="ctas reveal"><a href="#cotizar" class="btn btn-primary">Cotiza tu proyecto</a><a href="producto.html?p=enertainer" class="btn btn-outline">Ver ficha del Enertainer</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 7a PILOTO 60 DÍAS (slide 10) -->
+<section class="piloto light" id="piloto">
+  <div class="wrap">
+    <div class="top">
+      <div><span class="eyebrow reveal" style="color:var(--green-text)">Piloto 60 días</span><h2 class="h-lg reveal" style="margin-top:16px">La mejor forma de validar el ahorro es medirlo en terreno.</h2><p class="lead reveal">Instalamos un Enertainer en tu faena, levantamos datos de consumo y comparamos contra tu operación actual. Sin compromiso de escalar.</p></div>
+      <blockquote class="reveal">No te pedimos que creas. Te proponemos medir.</blockquote>
+    </div>
+    <div class="pasos">
+      <div class="paso reveal"><i>01</i><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><b>Diagnóstico</b><p>Carga, horas, generador actual y condiciones del sitio.</p></div>
+      <div class="paso reveal"><i>02</i><svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><b>Diseño de solución</b><p>Producto, configuración híbrida o reemplazo, y plan de despliegue.</p></div>
+      <div class="paso reveal"><i>03</i><svg viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 15h3v3H8z"/></svg><b>Piloto 60 días</b><p>Operación real con monitoreo 24/7 y reportes de combustible y CO₂.</p></div>
+      <div class="paso reveal"><i>04</i><svg viewBox="0 0 24 24"><path d="M3 3v18h18M7 16l4-4 4 4 5-6"/></svg><b>Decisión y escalamiento</b><p>Con datos medidos, decides cuántas unidades y en qué faenas.</p></div>
+    </div>
+    <div class="next reveal"><p><b>Próximo paso:</b> seleccionar una faena piloto y levantar datos de consumo.</p><a href="#cotizar" class="btn btn-primary">Proponer faena piloto<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+  </div>
+</section>
+
+<!-- 7 SUSTENTABILIDAD -->
+<section class="sust">
+  <img data-img="sustentabilidad" src="/img/sustentabilidad-faena.jpg" alt="Vista aérea de faena" loading="lazy">
+  <div class="wrap">
+    <span class="eyebrow reveal" style="color:var(--green)">Sustentabilidad</span>
+    <h2 class="h-lg reveal">Acelera tu camino a cero emisiones en faena.</h2>
+    <p class="reveal">Cada unidad reporta el CO₂ evitado y el combustible ahorrado, mes a mes. Datos listos para tu reporte de sustentabilidad y tus compromisos con la comunidad.</p>
+    <div class="ctas reveal"><a href="#cotizar" class="btn btn-outline">Calcula el ahorro de tu faena</a></div>
+  </div>
+</section>
+
+<!-- 8 CTA + FORM -->
+<section class="cta dark" id="cotizar">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div>
+        <h2 class="h-lg reveal">¿Listo para sacar el diésel de tu faena?</h2>
+        <p class="lead reveal">Agenda 30 minutos con un ingeniero de Enerterra. Revisamos tu carga y condiciones del sitio y salimos de la reunión con producto recomendado, ahorro estimado y CO₂ evitado.</p>
+        <div class="contact reveal">
+          <a href="mailto:contacto@enerterra.cl"><svg viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>contacto@enerterra.cl</a>
+          <a href="tel:+56200000000" class="mono"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+56 2 ···· ····</a>
+          <span style="display:inline-flex;align-items:center;gap:12px"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Santiago, Chile · atención en todo el país</span>
+        </div>
+      </div>
+      <form id="quote" class="reveal" novalidate>
+        <div class="sched" id="sched">
+          <div class="head"><div><b>Habla con un ingeniero</b><br><span>Videollamada de 30 min · sin costo</span></div><div class="steps"><i class="on" data-s="1">1 Día</i><i data-s="2">2 Hora</i><i data-s="3">3 Datos</i></div></div>
+          <div id="s1"><div class="cal" id="cal"></div><p class="tz" style="margin-top:12px">Lunes a viernes · horario de Chile continental</p></div>
+          <div id="s2" hidden><button type="button" class="back" data-back="1">← Cambiar día</button><div class="pick" id="pick-day"></div><div class="slots" id="slots"></div><p class="tz">Horario de Chile continental (GMT−3 / GMT−4)</p></div>
+          <div id="s3" hidden><button type="button" class="back" data-back="2">← Cambiar hora</button><div class="pick" id="pick-full"></div></div>
+        </div>
+        <div class="fields" id="fields" style="display:none;gap:16px">
+          <div class="row2"><label>Nombre<input name="nombre" required placeholder="Nombre y apellido" autocomplete="name"></label><label>Empresa<input name="empresa" required placeholder="Razón social" autocomplete="organization"></label></div>
+          <div class="row2"><label>Correo corporativo<input name="email" type="email" required placeholder="nombre@empresa.cl" autocomplete="email"></label><label>Teléfono<input name="telefono" type="tel" placeholder="+56 9 ···· ····" autocomplete="tel"></label></div>
+          <label>Faena / región<select name="region"><option value="" selected disabled>Selecciona</option><option>Arica y Parinacota</option><option>Tarapacá</option><option>Antofagasta</option><option>Atacama</option><option>Coquimbo</option><option>Valparaíso</option><option>Metropolitana</option><option>O'Higgins</option><option>Maule</option><option>Ñuble</option><option>Biobío</option><option>La Araucanía</option><option>Los Ríos</option><option>Los Lagos</option><option>Aysén</option><option>Magallanes</option></select></label>
+          <label>¿Qué quieres resolver? <span style="font-weight:400;color:var(--acero-500)">(opcional)</span><textarea name="mensaje" placeholder="Generador actual, equipos a alimentar, horas de operación."></textarea></label>
+          <button type="submit" class="btn btn-primary">Confirmar reunión<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          <p class="legal">Recibirás la invitación de calendario por correo. Puedes reagendar cuando quieras.</p>
+        </div>
+        <div class="ok"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><h3 class="h-md">Reunión agendada.</h3><p style="color:var(--acero-300)" id="ok-when"></p><p style="color:var(--acero-400);font-size:15px">Te enviamos la invitación con el enlace de la videollamada. Un ingeniero de Enerterra te llamará a la hora acordada.</p></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- 9 FOOTER -->
+<footer class="dark">
+  <div class="wrap">
+    <div>
+      <a href="#top" class="brand"><img class="et" src="/img/enerterra-logo-white.png" alt="Enerterra"><small><span>REPRESENTANTE<br>OFICIAL</span><img src="/img/ampd-logo-white.svg" alt="Ampd Energy"></small></a>
+      <p>Enerterra Chile SpA. Representante oficial de Ampd Energy en Chile. Sistemas de almacenamiento de energía en baterías para minería, construcción, puertos e industria.</p>
+    </div>
+    <div><h4>Contacto</h4><ul><li><a href="mailto:contacto@enerterra.cl">contacto@enerterra.cl</a></li><li><a href="tel:+56200000000">+56 2 ···· ····</a></li><li>Santiago, Chile</li></ul></div>
+    <div><h4>Enlaces</h4><ul><li><a href="#sectores">Sectores</a></li><li><a href="#productos">Productos</a></li><li><a href="#cotizar">Cotizar</a></li><li><a href="https://www.ampd.energy" target="_blank" rel="noopener">ampd.energy</a></li></ul></div>
+    <div class="bottom"><span>© 2026 Enerterra Chile SpA. Ampd Energy es marca registrada de Ampd Energy Ltd.</span><a href="https://www.linkedin.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></div>
+  </div>
+</footer>
+
+<!-- STICKY CONTACT -->
+<div class="sticky" id="sticky">
+  <div class="wrap">
+    <span class="msg"><strong>¿Hablamos de tu faena?</strong> Respuesta en menos de 48 horas hábiles.</span>
+    <div class="acts"><a href="tel:+56200000000" class="btn btn-outline">Llamar</a><a href="#cotizar" class="btn btn-primary">Cotiza tu proyecto</a></div>
+  </div>
+</div>
+
+<script>
+(function(){var b=document.getElementById('burger'),m=document.getElementById('mob'),c=document.getElementById('mob-close');if(!b||!m)return;
+var src=document.querySelector('.nav-links');var dds=src.querySelectorAll('.dd');var html='';
+dds.forEach(function(d){var lbl=d.querySelector('a').textContent.trim();html+='<h5>'+lbl+'</h5>';d.querySelectorAll('.menu a:not(.all)').forEach(function(a){html+='<a class="row" href="'+a.getAttribute('href')+'">'+a.innerHTML+'</a>'})});
+src.querySelectorAll(':scope > a').forEach(function(a){html+='<a class="plain" href="'+a.getAttribute('href')+'">'+a.textContent+'</a>'});
+document.getElementById('mob-body').innerHTML=html;
+b.onclick=function(){m.classList.add('open');document.body.style.overflow='hidden'};function close(){m.classList.remove('open');document.body.style.overflow=''}
+c.onclick=close;m.addEventListener('click',function(e){if(e.target.closest('a'))close()});document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});})();
+
+(function(){var dds=document.querySelectorAll('.nav-links .dd');function close(){dds.forEach(function(d){d.classList.remove('open')})}
+dds.forEach(function(d){var t;d.addEventListener('mouseenter',function(){clearTimeout(t);close();d.classList.add('open')});d.addEventListener('mouseleave',function(){t=setTimeout(function(){d.classList.remove('open')},160)});d.querySelector('a').addEventListener('click',function(e){if(window.matchMedia('(hover:none)').matches){e.preventDefault();var o=d.classList.contains('open');close();if(!o)d.classList.add('open')}})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});})();
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%4)*60+'ms';io.observe(el)});
+  var sticky=document.getElementById('sticky'),hero=document.querySelector('.hero'),cta=document.getElementById('cotizar');
+  function onScroll(){var y=window.scrollY,past=y>hero.offsetHeight*.7,inCta=cta.getBoundingClientRect().top<window.innerHeight*.6;sticky.classList.toggle('show',past&&!inCta)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  /* Agenda */
+  var f=document.getElementById('quote'),cal=document.getElementById('cal'),slotsEl=document.getElementById('slots');
+  var MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'],DOW=['lu','ma','mi','ju','vi','sá','do'];
+  var today=new Date();today.setHours(0,0,0,0);var view=new Date(today.getFullYear(),today.getMonth(),1),sel={day:null,time:null};
+  var min=new Date(today);min.setDate(min.getDate()+1);var max=new Date(today);max.setDate(max.getDate()+45);
+  var HORAS=['09:00','09:30','10:00','10:30','11:00','11:30','12:00','14:30','15:00','15:30','16:00','16:30','17:00'];
+  function seeded(d){var s=d.getDate()*7+d.getMonth()*3;return function(){s=(s*9301+49297)%233280;return s/233280}}
+  function fmt(d){return DOW[(d.getDay()+6)%7].replace('lu','lunes').replace('ma','martes').replace('mi','miércoles').replace('ju','jueves').replace('vi','viernes')+' '+d.getDate()+' de '+MES[d.getMonth()]}
+  function step(n){[1,2,3].forEach(function(i){document.getElementById('s'+i).hidden=i!==n});document.querySelectorAll('.steps i').forEach(function(i){i.classList.toggle('on',+i.dataset.s<=n)});document.getElementById('fields').style.display=n===3?'grid':'none'}
+  function renderCal(){var y=view.getFullYear(),m=view.getMonth(),first=new Date(y,m,1),off=(first.getDay()+6)%7,days=new Date(y,m+1,0).getDate(),h='';
+    var prevOk=new Date(y,m,0)>=new Date(min.getFullYear(),min.getMonth(),1),nextOk=new Date(y,m+1,1)<=max;
+    h+='<div class="nav-m"><button type="button" data-m="-1" '+(prevOk?'':'disabled')+' aria-label="Mes anterior">‹</button><b>'+MES[m]+' '+y+'</b><button type="button" data-m="1" '+(nextOk?'':'disabled')+' aria-label="Mes siguiente">›</button></div>';
+    DOW.forEach(function(d){h+='<span class="dow">'+d+'</span>'});for(var i=0;i<off;i++)h+='<span></span>';
+    for(var d=1;d<=days;d++){var dt=new Date(y,m,d),wd=dt.getDay(),dis=wd===0||wd===6||dt<min||dt>max,on=sel.day&&dt.getTime()===sel.day.getTime();h+='<button type="button" data-d="'+d+'" '+(dis?'disabled':'')+' class="'+(on?'on ':'')+(dt.getTime()===today.getTime()?'today':'')+'">'+d+'</button>'}
+    cal.innerHTML=h}
+  function renderSlots(){var r=seeded(sel.day),h='<span class="col">Mañana</span>';HORAS.forEach(function(t,i){if(i===7)h+='<span class="col">Tarde</span>';var busy=r()<.3;h+='<button type="button" data-t="'+t+'" '+(busy?'disabled':'')+' class="'+(sel.time===t?'on':'')+'">'+t+'</button>'});slotsEl.innerHTML=h;document.getElementById('pick-day').innerHTML='<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>'+fmt(sel.day)+'</span>'}
+  cal.addEventListener('click',function(e){var b=e.target.closest('button');if(!b||b.disabled)return;if(b.dataset.m){view.setMonth(view.getMonth()+ +b.dataset.m);renderCal();return}sel.day=new Date(view.getFullYear(),view.getMonth(),+b.dataset.d);sel.time=null;renderCal();renderSlots();step(2)});
+  slotsEl.addEventListener('click',function(e){var b=e.target.closest('button');if(!b||b.disabled)return;sel.time=b.dataset.t;renderSlots();document.getElementById('pick-full').innerHTML='<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>'+fmt(sel.day)+' · <b>'+sel.time+'</b> hrs · 30 min</span>';step(3);setTimeout(function(){f.querySelector('[name=nombre]').focus()},50)});
+  f.addEventListener('click',function(e){var b=e.target.closest('.back');if(b)step(+b.dataset.back)});
+  renderCal();
+  f.addEventListener('submit',function(e){e.preventDefault();var ok=true;f.querySelectorAll('[required]').forEach(function(i){var bad=!i.value||(i.type==='email'&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(i.value));i.style.borderColor=bad?'#D23B36':'';if(bad)ok=false});if(!ok||!sel.day||!sel.time)return;document.getElementById('ok-when').textContent=fmt(sel.day).replace(/^\w/,function(c){return c.toUpperCase()})+' a las '+sel.time+' hrs (Chile continental).';f.classList.add('sent');f.querySelector('.ok').classList.add('show')});
+})();
+</script>
+
+</body>
+</html>
